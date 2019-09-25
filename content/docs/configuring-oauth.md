@@ -73,7 +73,7 @@ Before enabling any provider on Fider, we highly recommend that you keep it disa
   <li>
     Update your environment variable as follows
     <ul>
-      <li><strong>OAUTH_GOOGLE_APPID:</strong> <code>use the Client ID given by Google</code></li>
+      <li><strong>OAUTH_GOOGLE_CLIENTID:</strong> <code>use the Client ID given by Google</code></li>
       <li><strong>OAUTH_GOOGLE_SECRET:</strong> <code>use the Client Secret given by Google</code></li>
     </ul>
   </li>
@@ -93,7 +93,7 @@ Before enabling any provider on Fider, we highly recommend that you keep it disa
   <li>
     Update your environment variable as follows
     <ul>
-      <li><strong>OAUTH_GITHUB_APPID:</strong> <code>use the Client ID given by GitHub</code></li>
+      <li><strong>OAUTH_GITHUB_CLIENTID:</strong> <code>use the Client ID given by GitHub</code></li>
       <li><strong>OAUTH_GITHUB_SECRET:</strong> <code>use the Client Secret given by GitHub</code></li>
     </ul>
   </li>
