@@ -106,7 +106,7 @@ variables: <code>EMAIL_SMTP_HOST</code>, <code>EMAIL_SMTP_PORT</code>, <code>EMA
 
 <p>
 The easiest way to deploy your application to Heroku is to connect your application to a github repository. 
-Fork the <a href="">Fider official repository</a> and connect this fork to your Heroku application under the 
+Fork the <a href="https://github.com/getfider/fider" target="_blank">Fider official repository</a> and connect this fork to your Heroku application under the 
 <b>Deploy</b> tab in the <b>Deployment method</b>.
 </p> 
 
