@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation on Fider</title>
+    <link>https://getfider.com/docs/</link>
+    <description>Recent content in Documentation on Fider</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://getfider.com/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/authentication/</guid>
+      <description>Authentication Some API endpoint require authentication to work. This section explains how to make authenticated HTTP Requests to Fider.
+The first step is to generate an API Key on your user profile. Sign in on Fider and navigate to Settings -&amp;gt; API Key and click on Regenerate API Key. An API Key will be shown. Take note of it as you won&amp;rsquo;t be able to retrieve this key again. If your Key is lost or has been compromised, you can always repeat this process to generate a new Key.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/best-practices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/best-practices/</guid>
+      <description>Best Practices Service Account
+A common approach when using Fider API is to sign in with a generic email address (like admin@yourcompany.com), then switch to an Administrator user and promote the new user to an Adminitrator as well. This allows you to use a common user account on all API operations, which having to use a personal user account.
+How to properly use impersonation
+We usually recommend the usage of impersonation in combination with the Create User API.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/comments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/comments/</guid>
+      <description>Comments  List Comments Get a Comment Add a Comment Edit a Comment Delete a Comment  List Comments  Authentication: Optional  GET /api/v1/posts/{number}/comments  Parameters
+  Name Type Description   number number Required. The number of the post to get comments from.    Example
+GET &amp;lt;baseURL&amp;gt;/api/v1/posts/47/comments  Response
+[ { &amp;quot;id&amp;quot;:67, &amp;quot;content&amp;quot;:&amp;quot;Sounds good, right?&amp;quot;, &amp;quot;createdAt&amp;quot;:&amp;quot;2017-07-26T04:15:22.72261Z&amp;quot;, &amp;quot;user&amp;quot;:{ &amp;quot;id&amp;quot;:54, &amp;quot;name&amp;quot;:&amp;quot;Michael Jackson&amp;quot;, &amp;quot;role&amp;quot;:&amp;quot;visitor&amp;quot; } }, { &amp;quot;id&amp;quot;:68, &amp;quot;content&amp;quot;:&amp;quot;Definitely.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/invitations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/invitations/</guid>
+      <description>Invitations  Send a Sample Send an Invite  Send a Sample Sample invitations are example of invitations emails that are sent to current authenticated user&amp;rsquo;s email. Use it to see how the email looks like before sending to other users.
+ Authentication: Required Required Role: Collaborator or Administrator  POST /api/v1/invitations/sample  Parameters
+  Name Type Description   subject number Required. The subject of the email to be sent.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/overview/</guid>
+      <description>Overview Welcome to the Fider API documentation.
+The Fider API allows you to manage Posts and other data within your Fider instance in a simple, programmatic way using conventional HTTP requests. The endpoints are intuitive and powerful, allowing you to easily make calls to retrieve information or to execute actions.
+Version
+The API v1 was introduced on Fider v0.16.0. Make sure you&amp;rsquo;re running the latest version of Fider to leverage the API.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/posts/</guid>
+      <description>Posts  List Posts Get a Post Create a Post Edit a Post Delete a Post Respond to a Post  A Post is new topic created by a user on the Feedback Site, while it&amp;rsquo;s usually a suggestion or feature request, sometimes it might also be a bug report or a complain.
+List Posts  Authentication: Optional  GET /api/v1/posts  Parameters
+  Name Type Description   query string The search keywords   view string  The filter and order to apply.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/tags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/tags/</guid>
+      <description>Tags  List Tags Create a Tag Edit a Tag Delete a Tag Tag a Post Untag a Post  List Tags  Authentication: Optional  GET /api/v1/tags  The list of tags returned by this endpoint depends on the role of the authenticated user. Private Tags are only returned for users with either administrator or collaborator role.
+Example
+GET &amp;lt;baseURL&amp;gt;/api/v1/tags  Response
+200 OK --- [ { &amp;quot;id&amp;quot;: 8, &amp;quot;name&amp;quot;: &amp;quot;Under Consideration&amp;quot;, &amp;quot;slug&amp;quot;: &amp;quot;under-consideration&amp;quot;, &amp;quot;color&amp;quot;: &amp;quot;87BE1F&amp;quot;, &amp;quot;isPublic&amp;quot;: true }, { &amp;quot;id&amp;quot;: 86, &amp;quot;name&amp;quot;: &amp;quot;Hard&amp;quot;, &amp;quot;slug&amp;quot;: &amp;quot;hard&amp;quot;, &amp;quot;color&amp;quot;: &amp;quot;E60737&amp;quot;, &amp;quot;isPublic&amp;quot;: false } ]  Create a Tag  Authentication: Required Required Role: Administrator  POST /api/v1/tags  Parameters</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/users/</guid>
+      <description>Users  List Users Create a User  List Users  Authentication: Required Required Role: Collaborator or Administrator  GET /api/v1/users  Example
+GET &amp;lt;baseURL&amp;gt;/api/v1/users  Response
+200 OK --- [ { &amp;quot;id&amp;quot;: 3, &amp;quot;name&amp;quot;: &amp;quot;Arya Stark&amp;quot;, &amp;quot;role&amp;quot;: &amp;quot;administrator&amp;quot;, &amp;quot;status&amp;quot;: &amp;quot;active&amp;quot;, }, { &amp;quot;id&amp;quot;: 5, &amp;quot;name&amp;quot;: &amp;quot;Jon Snow&amp;quot;, &amp;quot;role&amp;quot;: &amp;quot;visitor&amp;quot;, &amp;quot;status&amp;quot;: &amp;quot;active&amp;quot; }, { &amp;quot;id&amp;quot;: 24, &amp;quot;name&amp;quot;: &amp;quot;The Queen&amp;quot;, &amp;quot;role&amp;quot;: &amp;quot;collaborator&amp;quot;, &amp;quot;status&amp;quot;: &amp;quot;blocked&amp;quot; }, { ... } ]  Create a User  Authentication: Required Required Role: Administrator  POST /api/v1/users  The Create User API will only create a new user if it cannot find an existing user with given email or reference ID.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/votes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/votes/</guid>
+      <description>Votes  Vote on a Post Remove Vote from on a Post List Votes of a Post  Vote on a Post  Authentication: Required  When casting a vote upon a post, the vote is registered under the current authenticated user. Impersonate another user to vote on behalf of them.
+POST /api/v1/posts/{number}/votes  Parameters
+  Name Type Description   number number Required. The number of the post to vote on.</description>
+    </item>
+    
+    <item>
+      <title>API Reference</title>
+      <link>https://getfider.com/docs/api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/</guid>
+      <description>Overview Welcome to the Fider API documentation.
+The Fider API allows you to manage Posts and other data within your Fider instance in a simple, programmatic way using conventional HTTP requests. The endpoints are intuitive and powerful, allowing you to easily make calls to retrieve information or to execute actions.
+Version
+The API v1 was introduced on Fider v0.16.0. Make sure you&amp;rsquo;re running the latest version of Fider to leverage the API.</description>
+    </item>
+    
+    <item>
+      <title>Configuring OAuth</title>
+      <link>https://getfider.com/docs/configuring-oauth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/configuring-oauth/</guid>
+      <description>OAuth is an open standard for authentication and authorization. Fider is an OAuth client that can connect to any OAuth2 provider to enable a fast, easy and secure sigin in process.
+Fider has native support to Facebook, Google and GitHub. To add any other OAuth provider please follow this guide.
+Registering a new OAuth Provider While logged in as an Administrator, navigate to Site Settings -&amp;gt; Authentication.
+This page list all registered providers, either Enabled or Disabled.</description>
+    </item>
+    
+    <item>
+      <title>Hosting an instance on Heroku</title>
+      <link>https://getfider.com/docs/hosting-on-heroku/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/hosting-on-heroku/</guid>
+      <description>Prerequisites   A Heroku account It&#39;s totally free to sign up, and will allow you to deploy your application for free on a small instance.
+  Deploying your instance Step 1: Create a new heroku app  Click the upper left button to create a new application. You will be prompted for an app name, you can choose anything you want. You also need to choose the hosting region, choose the one closest to you or your users.</description>
+    </item>
+    
+    <item>
+      <title>Hosting your own instance</title>
+      <link>https://getfider.com/docs/hosting-instance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/hosting-instance/</guid>
+      <description>Prerequisites   Docker As we don&#39;t distribute Linux or Windows specific binaries, Docker is a must to host Fider. It provides a consistent runtime environment and is widely adopted. You can run it standalone or in your favorite container-orchestration system, whatever floats your boat.
+  PostgreSQL 9.6+ Database This tutorial uses a Docker PostgreSQL image for the sake of simplicity, but we strongly recommend the usage of a database outside Docker, unless you&#39;re very confident on how to host a Database inside Docker.</description>
+    </item>
+    
+    <item>
+      <title>How to enable SSL</title>
+      <link>https://getfider.com/docs/how-to-enable-ssl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/how-to-enable-ssl/</guid>
+      <description>Prerequisites In order to configure HTTPS, you&amp;rsquo;ll need a Certificate and the Private Key.
+How to enable it These are the two environment variables that have to be set.
+ SSL_CERT: The name of the Certificate file. SSL_CERT_KEY: The name of the Private Key file.  Fider&amp;rsquo;s Docker image expects both file to be available on /app/etc. You can copy these files anywhere you want on your server and share them with your Docker container by using volumes.</description>
+    </item>
+    
+    <item>
+      <title>How to show Legal Pages</title>
+      <link>https://getfider.com/docs/how-to-show-legal-pages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/how-to-show-legal-pages/</guid>
+      <description>Starting from Fider 0.13, it is now possible host custom Privacy Policy and Terms of Service that will be displayed to all users during the registration and sign in process.
+Prerequisites You will need both documents written in a markdown format, they need to be named terms.md and privacy.md.
+How to Fider&amp;rsquo;s Docker image expects both file to be available on /app/etc. You can copy these files anywhere you want on your server and share them with your Docker container by using volumes.</description>
+    </item>
+    
+  </channel>
+</rss>

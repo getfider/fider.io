@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/logo-100x100.png" >
+    <title>How we reduced our initial JS/CSS size by 67% · Fider</title>
+    <meta name="description" content="We have been working on reducing the amount of bytes that we send to all Fider users. Being a web application built with React, we have focused on JS and CSS. On this post we share our learnings, some concepts and suggestions on how you can do the same with your web application.">
+    
+    
+    <link rel="canonical" href="https://goenning.net/2018/11/26/how-we-reduced-initial-jscss-size/">
+    
+
+    <meta property="og:title" content="How we reduced our initial JS/CSS size by 67% · Fider">
+    <meta property="og:image" content="https://getfider.com/images/logo-small.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://getfider.com/" />
+    <meta property="og:description" content="We have been working on reducing the amount of bytes that we send to all Fider users. Being a web application built with React, we have focused on JS and CSS. On this post we share our learnings, some concepts and suggestions on how you can do the same with your web application.">
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-100812395-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="/font.min.a3218f4d9a6c7dff3067d261349676d5bc4b4a4be31dbdaf8a600b71e38f66bb.css" integrity="sha256-oyGPTZpsff8wZ9JhNJZ21bxLSkvjHb2vimALceOPZrs=" media="screen">  
+    
+    <link rel="stylesheet" href="/fider.min.e42cf6de0eeb0d456dd7092aea1299a503def39689ffa68d48602a22efd789b6.css" integrity="sha256-5Cz23g7rDUVt1wkq6hKZpQPe85aJ/6aNSGAqIu/XibY=" media="screen">  
+  </head>
+
+  <body>
+    
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img class="logo" alt="logo" src="/images/logo-100x100.png">
+          <span class="logo-title">Fider</span>
+        </a>
+    
+        <a id="site-burger" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+    
+        <div class="navbar-end">
+          <a class="navbar-item" href="/blog">Blog</a>
+          <a class="navbar-item" href="/docs">Documentation</a>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href="#start" class="button is-primary">
+                <strong>Get Started</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    
+<main class="blog-single">
+  <section class="section">
+    <div class="container">
+      <div class="header">
+        <h1 class="title">How we reduced our initial JS/CSS size by 67%</h1>
+        <h2 class="subtitle">
+          We have been working on reducing the amount of bytes that we send to all Fider users. Being a web application built with React, we have focused on JS and CSS. On this post we share our learnings, some concepts and suggestions on how you can do the same with your web application.
+        </h2>
+        <time datetime="2018-10-24T00:00:00&#43;00:00">Oct 24, 2018</time>
+        <hr />
+      </div>
+      <div class="content">
+        
+
+<figure>
+  <img src="/images/blog/bundle-size-improvements.png" />
+</figure>
+
+<p>Fider is built with React and Webpack on the frontend, so the topics below will be mostly useful for teams using same stack, but the concepts can also be applied to other stacks.</p>
+
+<h3 id="table-of-contents">Table of Contents</h3>
+
+<ul>
+<li><a href="#webpack-bundle-analyzer">Webpack Bundle Analyzer</a></li>
+<li><a href="#long-term-caching-with-content-hash">Long term caching with content hash</a></li>
+<li><a href="#the-common-bundle">The common bundle</a></li>
+<li><a href="#code-splitting-on-route-level">Code Splitting on route level</a></li>
+<li><a href="#loading-external-dependencies-on-demand">Loading external dependencies on demand</li>
+<li><a href="#font-awesome-and-tree-shaking">Font Awesome and Tree Shaking</a></li>
+<li><a href="#switching-from-big-to-small-npm-packages">Switching from big to small NPM packages</a></li>
+<li><a href="#optimising-the-main-bundle-is-crucial">Optimising the main bundle is crucial</a></li>
+<li><a href="#tslib-typescript-only">TSLib (TypeScript only)</a></li>
+</ul>
+
+<h2 id="webpack-bundle-analyzer">Webpack Bundle Analyzer</h2>
+
+<p><a href="https://www.npmjs.com/package/webpack-bundle-analyzer">webpack-bundle-analyzer</a> is a webpack plugin that generates an interactive zoomable treemap of all your bundles. This has been crucial for us to understand which modules are inside each bundle. You can also see which are the biggest modules within each bundle.</p>
+
+<p><em>If you don’t know the root cause, how can you tackle it?</em></p>
+
+<p>This is an example of what this plugin will generate for you.</p>
+
+<figure>
+  <img src="/images/blog/bundle-size-initial-view.png" />
+</figure>
+
+<p>Did you notice that huge <strong>entities.json</strong> inside the vendor bundle? That&rsquo;s a good starting point to analyze the content of your bundle.</p>
+
+<h2 id="long-term-caching-with-content-hash">Long term caching with content hash</h2>
+
+<p>Long term caching is the process of telling the browser to cache a file for a long time, like 3 months or even 1 year. This is a important settings to ensure that returning users won’t need to download the same JS/CSS files over and over again.</p>
+
+<p>The browser will cache files based on its full path name, so if you need to force the user to download a new version of your bundle, you need to rename it. Luckly webpack provides a feature to generate the bundles with a dynamic name, hence forcing the browser to download new files only.</p>
+
+<p>We have previously used <strong>chunkhash</strong> for a long time on our webpack configuration. 99% of the cases where you want long term cache, the best option is to use <strong>contenthash</strong>, which will generate a hash based on its content.</p>
+
+<p>This technique does not reduce the bundle size, but it certainly helps to reduce the amount of times the user has to download our bundles. If the bundle didn’t change, don’t force the user to download it again.</p>
+
+<p>To learn more, visit the official documentation <a href="https://webpack.js.org/guides/caching/">https://webpack.js.org/guides/caching/</a></p>
+
+<h2 id="the-common-bundle">The common bundle</h2>
+
+<p>Combining all the NPM packages into a separate bundle has been a long time practice for many teams. This is very useful when combined with long term caching.</p>
+
+<p>NPM packages change less often than our app code, so we don’t need to force users to download all your NPM packages if nothing has changed. This is usually called the <strong>vendor bundle</strong>.</p>
+
+<p>But we can take this practice one step further.</p>
+
+<p>What about your own code that also change less often? Maybe you have a few basic components like Button, Grid, Toggle, etc. that have been created some time ago and haven&rsquo;t changed in a while.</p>
+
+<p>This is a good candidate for a <strong>common bundle</strong>. You can check this <a href="https://github.com/getfider/fider/pull/636">PR #636</a> where we basically move all our own modules inside some specific folders into a common bundle.</p>
+
+<p>This will ensure that, unless we change our base components, the user won’t need to redownload it.</p>
+
+<h2 id="code-splitting-on-route-level">Code Splitting on route level</h2>
+
+<p>Code splitting is currently a hot topic. This has been around for some time, but the tools and frameworks have evolved a lot, to the point where doing code splitting is much simpler now.</p>
+
+<p>It’s very common to have applications that push one big bundle that contains all the JS/CSS required to render any page within the application, even if the user is only looking at the Home page. We don’t know if the user will ever visit the Site Settings page, but we have pushed all the code for that already. Fider has been doing this for a long time and we now have changed it.</p>
+
+<p>The idea of Code Splitting is to generate multiple smaller bundles, usually one per route, and a main bundle. The only bundle we send to all the users is the main bundle, which will then asynchronously download all the required bundles to render the current page.</p>
+
+<p>It seems complicated, but thanks to React and Webpack, this is not rocket science anymore. For those using React &lt;= 16.5, we recommend <a href="https://github.com/jamiebuilds/react-loadable">react-loadable</a>. If you’re already on React 16.6, then you can use React.lazy() which has been a new addition to this version.</p>
+
+<ul>
+<li>In this PR you can find how <a href="https://github.com/cfilby">@cfilby</a> (thank you!) added code splitting to Fider with react-loadable: <a href="https://github.com/getfider/fider/pull/596">PR #596</a></li>
+<li>After we migrated to React 16.6, we have then replaced this external package with React.lazy and Suspense: <a href="https://github.com/getfider/fider/pull/646">PR #646</a></li>
+</ul>
+
+<p>We also had issues with some rare events where users were having issues to download asynchronous bundles. A potential solution has been documented on <a href="https://goenning.net/2018/11/16/how-to-retry-dynamic-import-with-react-lazy/">How to retry when React lazy fails</a>.</p>
+
+<h2 id="loading-external-dependencies-on-demand">Loading external dependencies on demand</h2>
+
+<p>By using the Webpack Bundle Analyzer we noticed that our vendor bundle had all the content of react-toastify, which is the toaster library that we use. That is usually ok, except that 95% of the Fider users will never see a toaster message. There are very few places we show a toaster, so <strong>why do we push 30kB of JavaScript to every user if they don’t need it</strong>?</p>
+
+<p>This is a similar problem to the one above, except that we are not talking about routes anymore, this is a feature used in multiple routes. Can you code split on a feature level?</p>
+
+<p>Yes, you can!</p>
+
+<p>In a nutshell, what you have to do is switch from static import to dynamic import.</p>
+
+<pre><code class="language-javascript">// before
+import { toast } from &quot;./toastify&quot;;
+toast(&quot;Hello World&quot;);
+
+// after
+import(&quot;./toastify&quot;).then(module =&gt; {
+  module.toast(&quot;Hello World&quot;);
+});
+</code></pre>
+
+<p>Webpack will bundle the toastify module and all its NPM dependencies separately. The <strong>browser will then only download that bundle when the toast is needed</strong>. If you have configured long term caching, then on the second toaster call it won’t have to download it again.</p>
+
+<p>The video below shows how it looks like on the browser.</p>
+
+<figure>
+  <img src="/images/blog/bundle-size-async-toastify.gif" />
+</figure>
+
+<p>You can see the details on how this was implemented on <a href="https://github.com/getfider/fider/pull/645">PR #645</a></p>
+
+<h2 id="font-awesome-and-tree-shaking">Font Awesome and Tree Shaking</h2>
+
+<p>Tree Shaking is the process of importing only what you need from a module and discarding the rest. This is enabled by default when running webpack on production mode.</p>
+
+<p>The usual approach to use Font Awesome is to import an external font file and a CSS that maps each character (icon) on that font to one CSS class. The result is that even though we only use icon A, B and C, we are forcing the browsers to download this external font and a CSS definition of 600+ icons.</p>
+
+<p>Thankfully we found <strong>react-icons</strong>, a NPM package with all free Font Awesome (and other icon packages too!) in a SVG format and exported as React Components on a ES Module format.</p>
+
+<p>You can then <strong>import only the icons you need</strong> and webpack will remove all other icons from the bundle. The result? Our CSS has is now <strong>~68kB smaller</strong>. Not to mention that we don’t need to download external fonts anymore. This change was the biggest contributor on reducing the CSS size on Fider.</p>
+
+<p>Want see how? Check out this <a href="https://github.com/getfider/fider/pull/631">PR #631</a></p>
+
+<h2 id="switching-from-big-to-small-npm-packages">Switching from big to small NPM packages</h2>
+
+<blockquote>
+<p>&ldquo;NPM is like a lego store full of building blocks that you can just pick whichever one you like. You don’t pay for the package you install, but your users pay for the byte size that it adds to your application. Choose wisely.&rdquo; - @goenning</p>
+</blockquote>
+
+<p>While using the Bundle Analyzer we found that markdown-it alone was consuming ~40% of our vendor bundle. We have then decided to go shopping on NPM and look for an alternative markdown parser. The goal was to find a package that was smaller, well maintained and had all the features we needed.</p>
+
+<p>We’ve been using <a href="https://bundlephobia.com/">bundlephobia.com</a> to analyse the byte size of any NPM package before installing it. We have switched from markdown-it to marked, which <strong>reduced ~63kB from our vendor bundle</strong> with minimal API change.</p>
+
+<p>Curious about it? Check out <a href="https://github.com/getfider/fider/pull/643">PR #643</a>.</p>
+
+<p>You can also compare these two packages on bundlephobia:</p>
+
+<ul>
+<li><a href="https://bundlephobia.com/result?p=marked@0.5.2">https://bundlephobia.com/result?p=marked@0.5.2</a></li>
+<li><a href="https://bundlephobia.com/result?p=markdown-it@8.4.2">https://bundlephobia.com/result?p=markdown-it@8.4.2</a></li>
+</ul>
+
+<p>Think twice before adding a large package. Do you really need it? Can your team implement a simpler alternative? If not, can you find another package that does the same job with less bytes? Ultimately, you can still add the NPM package and load it asynchronously like we did with react-toastify mentioned above.</p>
+
+<h2 id="optimising-the-main-bundle-is-crucial">Optimising the main bundle is crucial</h2>
+
+<p>Imagine that you have an application doing code splitting by route. It’s already running in production and you commit a change to your Dashboard route component. You might think that Webpack will only generate a different file for the bundle that contain the Dashboard route, correct?</p>
+
+<p>Well, that’s not what actually happens.</p>
+
+<p>Webpack will <strong>ALWAYS</strong> regenerate the main bundle if something else changes in your application. The reason being that the main bundle is a pointer to all other bundles. If the hash of another bundle has changed, the main bundle has to change its content so that it now points to the new hash of the Dashboard bundle. Makes sense?</p>
+
+<p>So if your main bundle contains not only the pointers, but also a lot of common components like Buttons, Toggle, Grids and Tabs, you’re basically forcing the browser to redownload something that has not changed.</p>
+
+<p>Use the webpack bundle analyzer to understand what’s inside your main bundle. You can then apply some of the techniques we’ve mentioned above to reduce the main bundle size.</p>
+
+<h2 id="tslib-typescript-only">TSLib (TypeScript only)</h2>
+
+<p>When compiling TypeScript code to ES5, the TypeScript Compiler will also emit some helper functions to the output JavaScript file. This process ensures that the code we wrote in TypeScript is compatible with older browsers that doesn’t support ES6 features like Classes and Generators.</p>
+
+<p>These helper functions are very small, but when there are many TypeScript files, these helper functions will be present on every file that uses a non-ES5 code. Webpack won’t be able to tree shake it and the final bundle will contain multiple occurrences of the very same code. The result? A slightly bigger bundle.</p>
+
+<p>Thankfully there’s a solution for this. There is a NPM package called <strong>tslib</strong> that contains all the helper functions needed by TypeScript. We can then tell the compiler to import the helper functions from the tslib package instead of emitting it to the output JavaScript file. This is done by setting <strong>importHelpers: true</strong> on the <strong>tsconfig.json</strong> file. Don’t forget to install tslib with <strong>npm install tslib —save</strong>.</p>
+
+<p>That’s all!</p>
+
+<p>The amount of bytes this can reduce from the bundle will depend on the amount of non-ES5 files, which can be a lot on a React app if most of the Components are classes.</p>
+
+<h2 id="the-next-billions-users">The next billions users</h2>
+
+<p>Are you ready for <a href="https://developers.google.com/web/billions/">the next billion users</a>? Think about all the potential users of your app that currently struggle to use it because on a low-cost device and slower network.</p>
+
+<p>Reducing the byte size of our bundles has a direct impact on the performance of our applications and can help us make it more accessible to everyone. Hopefully this post can you help on this journey.</p>
+
+<p>Thank you for reading!</p>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+    
+<footer class="footer">
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-start">
+        <a href="/" class="navbar-item"><strong>Fider</strong></a>
+        <a href="/blog" class="navbar-item">Blog</a>
+        <a href="/docs" class="navbar-item">Documentation</a>
+        <a href="https://status.fider.io/" class="navbar-item">Status</a>
+        <a href="https://feedback.fider.io/" class="navbar-item">Feedback</a>
+      </div>
+  
+      <div class="navbar-end">
+        <a href="https://github.com/getfider" class="navbar-item"><i class="fab fa-github"></i>GitHub</a>
+        <a href="https://twitter.com/getfider" class="navbar-item"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="mailto:contact@fider.io" class="navbar-item"><i class="fas fa-at"></i>contact@fider.io</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <script src="/fider.min.5169ae553693713a5134ba40ebb710dd78a6c317bb62bcd975627aaedc17fedc.js" integrity="sha256-UWmuVTaTcTpRNLpA67cQ3Ximwxe7YrzZdWJ6rtwX/tw="></script>
+  </body>
+</html>

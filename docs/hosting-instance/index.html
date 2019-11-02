@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/logo-100x100.png" >
+    <title>Hosting your own instance · Fider</title>
+    <meta name="description" content="Up and running in under a minute">
+    
+    
+
+    <meta property="og:title" content="Hosting your own instance · Fider">
+    <meta property="og:image" content="https://getfider.com/images/logo-small.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://getfider.com/" />
+    <meta property="og:description" content="Up and running in under a minute">
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-100812395-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="/font.min.a3218f4d9a6c7dff3067d261349676d5bc4b4a4be31dbdaf8a600b71e38f66bb.css" integrity="sha256-oyGPTZpsff8wZ9JhNJZ21bxLSkvjHb2vimALceOPZrs=" media="screen">  
+    
+    <link rel="stylesheet" href="/fider.min.e42cf6de0eeb0d456dd7092aea1299a503def39689ffa68d48602a22efd789b6.css" integrity="sha256-5Cz23g7rDUVt1wkq6hKZpQPe85aJ/6aNSGAqIu/XibY=" media="screen">  
+  </head>
+
+  <body>
+    
+    
+<main class="docs-single">
+  <div class="sidebar">
+    <div class="header">
+  <a href="/">
+    <img class="logo" alt="logo" src="/images/logo-100x100.png">
+  </a>
+  <h4>Fider<span class="color-primary">:docs</span></h4>
+</div>
+<div>
+  <ul class="docs-toc">
+    <li>
+      <a href="/docs">Home</a>
+    </li>
+    
+      <span class="category">How To</span>
+      
+        <li>
+          <a href="https://getfider.com/docs/configuring-oauth/">
+            &middot; Configuring OAuth
+          </a>
+        </li>
+      
+    
+      <span class="category">Self-Hosted</span>
+      
+        <li>
+          <a href="https://getfider.com/docs/hosting-on-heroku/">
+            &middot; Hosting an instance on Heroku
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://getfider.com/docs/hosting-instance/">
+            &middot; Hosting your own instance
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://getfider.com/docs/how-to-enable-ssl/">
+            &middot; How to enable SSL
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://getfider.com/docs/how-to-show-legal-pages/">
+            &middot; How to show Legal Pages
+          </a>
+        </li>
+      
+    
+    <span class="category">API Reference</span>
+    <li><a href="/docs/api#overview">&middot; Overview</a></li>
+    <li><a href="/docs/api#authentication">&middot; Authentication</a></li>
+    <li><a href="/docs/api#best-practices">&middot; Best Practices</a></li>
+    <li><a href="/docs/api#posts">&middot; Posts</a></li>
+    <li><a href="/docs/api#votes">&middot; Votes</a></li>
+    <li><a href="/docs/api#comments">&middot; Comments</a></li>
+    <li><a href="/docs/api#users">&middot; Users</a></li>
+    <li><a href="/docs/api#tags">&middot; Tags</a></li>
+    <li><a href="/docs/api#invitations">&middot; Invitations</a></li>
+  </ul>
+  <ul class="link-list">
+    <li>
+      <a href="/">
+        ← getfider.com
+      </a>
+    </li>
+  </ul>
+  <ul class="social-list">
+    <li>
+      <a href="https://github.com/getfider" target="_blank">
+        <i class="fab fa-lg fa-github"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/getfider" target="_blank">
+        <i class="fab fa-lg fa-twitter"></i>
+      </a>
+    </li>
+  </ul>
+  <span class="footer-text">
+    <span class="update-year">2018</span> Fider
+  </span>
+</div>
+  </div>
+  <div class="body">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img class="logo" alt="logo" src="/images/logo-100x100.png">
+        <h4>Fider<span class="color-primary">:docs</span></h4>
+      </a>
+  
+      <a id="sidebar-burger" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</nav>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Hosting your own instance</h1>
+        <h2 class="subtitle">
+          Up and running in under a minute
+        </h2>
+        <div class="content">
+          <h3>Prerequisites</h3>
+
+<ul>
+<li>
+  <b><a href="https://www.docker.com/" target="_blank">Docker</a></b>
+  <p>As we don't distribute Linux or Windows specific binaries, Docker is a must to host Fider. It provides a consistent runtime environment and is widely adopted. You can run it standalone or in your favorite container-orchestration system, whatever floats your boat.</p>
+</li> 
+<li>
+  <b><a href="https://www.postgresql.org" target="_blank">PostgreSQL 9.6+ Database</a></b>
+  <p>This tutorial uses a Docker PostgreSQL image for the sake of simplicity, but we <strong>strongly recommend</strong> the usage of a database outside Docker, unless you're very confident on how to host a Database inside Docker.</p>
+</li> 
+<li>
+  <b>E-mail sender service:</b>
+  <p>You can choose to use either a <b>SMTP Server</b> or <b><a href="https://www.mailgun.com/" target="_blank">Mailgun</a></b>.</p>
+</li>
+</ul>
+
+<h3>Installing and Running</h3>
+
+<h5>Step 1: Create a docker compose file</h5>
+
+<p>
+Create a <code>/var/fider</code> folder and copy content below into a file <code>/var/fider/docker-compose.yml</code>.
+Read the inline comments to know what each setting is used for. 
+</p>
+
+<pre>
+version: '2'
+services:
+  db:
+    restart: always
+    image: postgres:9.6
+    volumes:
+      - /var/fider/pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: fider
+      POSTGRES_PASSWORD: s0m3g00dp4ssw0rd
+
+  app:
+    restart: always
+    image: getfider/fider:stable
+    ports:
+      - "9999:3000"
+    environment:
+      ###
+      # REQUIRED
+      #
+      # All these settings are required
+      ###
+
+      # Use production for best performance
+      # Use development for verbose logs
+      GO_ENV: production
+      
+      # Connection string to the PostgreSQL database. 
+      # This example uses the Docker service defined above
+      DATABASE_URL: postgres://fider:s0m3g00dp4ssw0rd@db:5432/fider?sslmode=disable
+      
+      # CHANGE THIS! You can generate a strong secret at https://randomkeygen.com/
+      JWT_SECRET: tXQhvSMWMS11qZ9euEhE6lf2ferf0FR6RYGd8iMXiTxxXtJ1XDVdTXPaLtV12ZGp
+
+      # From which account e-mails will be sent (required)
+      EMAIL_NOREPLY: noreply@yourdomain.com
+
+      ###
+      # EMAIL
+      #
+      # Either EMAIL_MAILGUN_* or EMAIL_SMTP_* is required
+      ###
+
+      # EMAIL_MAILGUN_API: key-yourkeygoeshere
+      # EMAIL_MAILGUN_DOMAIN: yourdomain.com
+
+      # EMAIL_SMTP_HOST: smtp.yourdomain.com
+      # EMAIL_SMTP_PORT: 587
+      # EMAIL_SMTP_USERNAME: user@yourdomain.com
+      # EMAIL_SMTP_PASSWORD: s0m3p4ssw0rd
+      
+      ###
+      # OPTIONAL
+      #
+      # Following settings are optional
+      ###
+
+      # Social OAuth: 
+      # Read more on https://getfider.com/docs/configuring-oauth/
+
+      # Facebook
+      # OAUTH_FACEBOOK_APPID: &lt;fb_app_id&gt;
+      # OAUTH_FACEBOOK_SECRET: &lt;fb_app_secret&gt;
+
+      # Google
+      # OAUTH_GOOGLE_CLIENTID: &lt;google_app_id&gt;
+      # OAUTH_GOOGLE_SECRET: &lt;google_app_secret&gt;
+
+      # GitHub
+      # OAUTH_GITHUB_CLIENTID: &lt;github_client_id&gt;
+      # OAUTH_GITHUB_SECRET: &lt;github_secret&gt;
+
+    depends_on:
+      - db
+</pre>
+
+<p>The Docker Compose above defines two services: <code>db</code> and <code>app</code>. In case you're using an external Postgres database, remove <code>db</code> service and replace <code>DATABASE_URL</code> environment variable with your connection string.</p>
+
+<h5>Step 2: Pull the images and run it</h5>
+
+<p>Open your favorite terminal, navigate to <code>/var/fider</code> and run following command.</p>
+
+<pre>
+$ docker-compose pull
+$ docker-compose up
+</pre>
+
+<p><i><b>Important!</b></i> If you see messages like <code>Error: dial tcp &lt;any_ip&gt;:5432: connect: connection refused</code>. Don't panic, that's expected when using a docker PostgreSQL. That might happen because the application is trying to start while the database is still initializing.</p>
+
+<p>The message <code>http server started on :3000</code> means everything went well and you're ready to go.</p>
+
+<p>Just open your favorite browser and navigate to <a href="http://localhost:9999">http://localhost:9999</a>. You should see a page like the following.</p>
+
+<figure>
+    <img src="/images/docs/fider-clean-install.png" />
+    <figcaption>Installation page of a clean Fider instance</figcaption>
+</figure>
+
+<h3>Going forward</h3>
+
+<p>You now have a brand new Fider instance running, that's great! For a production environment we have a few recommendations.</p>
+
+<ul>
+  <li>
+    <b>Reverse Proxy</b>
+    <p>While you can expose Fider directly to the internet, we recommend the usage of a reverse proxy that supports TLS/SSL termination and load balancing, like Varnish, NGINX, Apache or Traefik.</p>
+  </li>
+  <li>
+    <b>TLS/SSL</b>
+    <p>If you choose to expose Fider to the internet, enable SSL. Take a look at <a href="/docs/how-to-enable-ssl" target="_blank">How to enable TLS/SSL</a>.</p>
+  </li>
+  <li>
+    <b>Container Orchestration</b>
+    <p>Although not required, we encourage the usage of a Container Orchestration like Kubernetes or Docker Swarm. If you choose to not use one, we recommend the usage of systemd to manage your Container, read more on <a href="https://success.docker.com/article/using-systemd-to-control-the-docker-daemon" target="_blank">Using systemd to control the Docker daemon</a>.</p>
+  </li>
+</ul>
+
+<h3>F.A.Q.</h3>
+
+<p><h5>I have filled in the installation form but I haven&rsquo;t got any confirmation email.</h5>
+<p>First of all, check your Spam folder, it shouldn&rsquo;t be there, but just be sure about that first. If not, it&rsquo;s highly likely that you either input the wrong email or your email configurations are invalid. When this happens, you&rsquo;ll notice that you can&rsquo;t fill in that form again as you&rsquo;ll be presented with a 404 page. This page will only go away when you click the confirmation link that Fider sends.</p>
+<p>To solve this you&rsquo;ll need to log into your Postgres Database and run <code>TRUNCATE TABLE tenants RESTART IDENTITY CASCADE;</code>. This command will purge all the data from Fider, thus making the installation page available again. You may now change your email configurations and try again. You can repeat this as much as you need.</p></p>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+    
+<a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+    <i class="stack-interface stack-up-open-big"></i>
+</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <script src="/fider.min.5169ae553693713a5134ba40ebb710dd78a6c317bb62bcd975627aaedc17fedc.js" integrity="sha256-UWmuVTaTcTpRNLpA67cQ3Ximwxe7YrzZdWJ6rtwX/tw="></script>
+  </body>
+</html>

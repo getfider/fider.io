@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/logo-100x100.png" >
+    <title>Fider 0.17 has been released with list of voters, better user management and huge performance improvements · Fider</title>
+    <meta name="description" content="In this next Fider release, we have released features like list of voters, better user management and huge performance improvements">
+    
+    
+
+    <meta property="og:title" content="Fider 0.17 has been released with list of voters, better user management and huge performance improvements · Fider">
+    <meta property="og:image" content="https://getfider.com/images/logo-small.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://getfider.com/" />
+    <meta property="og:description" content="In this next Fider release, we have released features like list of voters, better user management and huge performance improvements">
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-100812395-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="/font.min.a3218f4d9a6c7dff3067d261349676d5bc4b4a4be31dbdaf8a600b71e38f66bb.css" integrity="sha256-oyGPTZpsff8wZ9JhNJZ21bxLSkvjHb2vimALceOPZrs=" media="screen">  
+    
+    <link rel="stylesheet" href="/fider.min.e42cf6de0eeb0d456dd7092aea1299a503def39689ffa68d48602a22efd789b6.css" integrity="sha256-5Cz23g7rDUVt1wkq6hKZpQPe85aJ/6aNSGAqIu/XibY=" media="screen">  
+  </head>
+
+  <body>
+    
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img class="logo" alt="logo" src="/images/logo-100x100.png">
+          <span class="logo-title">Fider</span>
+        </a>
+    
+        <a id="site-burger" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+    
+        <div class="navbar-end">
+          <a class="navbar-item" href="/blog">Blog</a>
+          <a class="navbar-item" href="/docs">Documentation</a>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href="#start" class="button is-primary">
+                <strong>Get Started</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    
+<main class="blog-single">
+  <section class="section">
+    <div class="container">
+      <div class="header">
+        <h1 class="title">Fider 0.17 has been released with list of voters, better user management and huge performance improvements</h1>
+        <h2 class="subtitle">
+          In this next Fider release, we have released features like list of voters, better user management and huge performance improvements
+        </h2>
+        <time datetime="2018-12-02T00:00:00&#43;00:00">Dec 2, 2018</time>
+        <hr />
+      </div>
+      <div class="content">
+        
+
+<h3 id="1-list-of-voters">#1: List of Voters</h3>
+
+<p>Our <a href="https://feedback.fider.io/posts/33/list-who-voted">most wanted feature</a> has been implemented! 🎉</p>
+
+<p>It&rsquo;s now possible to see the list of everyone who voted on a given post. We&rsquo;ve added another sidebar panel to the post, like the following:</p>
+
+<figure>
+  <img src="/images/blog/v0.17-voters-panel.png" style="height:50px;" />
+</figure>
+
+<p>Staff members can drill down and see more information about everyone who voted on that post by clicking on <strong>+x more</strong>. Visitors doesn&rsquo;t have this access because this includes private information.</p>
+
+<h3 id="2-better-user-management">#2: Better User Management</h3>
+
+<p>The Members page has been redesigned to include features such as <strong>list of all registered users</strong> and <strong>block user</strong>.</p>
+
+<figure>
+  <img src="/images/blog/v0.17-members-page.png" style="height:400px;" />
+</figure>
+
+<p>Just like previous release where we released the <strong>delete comment</strong> feature, blocking a user allows site administrators to prevent spam by blocking spammers so they cannot access the Fider site anymore. This is a small feature, but very important to keep the house clean and fight spam and trolls.</p>
+
+<figure>
+  <img src="/images/blog/v0.17-block-user.png" style="height:200px;" />
+</figure>
+
+<h3 id="3-office-365-as-a-smtp-service">#3: Office 365 as a SMTP Service</h3>
+
+<p>Thanks to <a href="https://github.com/oxynux">@oxynux</a>, Fider can now use Office 365 to send e-mails. Up until now, Fider would only be compatible with SMTP services that implemented <strong>PLAIN</strong> authentication. oxynux implemented <strong>LOGIN</strong> and <strong>CRAM-MD5</strong> authentication mechanism, which is supported by Office 365 and many other services. Thank you for your contribution! 🥳</p>
+
+<h3 id="4-fider-on-a-diet-part-2">#4: Fider on a Diet (part 2)</h3>
+
+<p>Last release we mentioned that we&rsquo;d be improving performance and recuding the bundle size of Fider even more. And we did it! 😄</p>
+
+<p>To know more about it, we wrote a in depth article on <strong>how we reduced the bundle size by 67%</strong>, you <a href="https://getfider.com/blog/how-we-reduced-initial-jscss-size/">can read it here</a>. Special thanks to <a href="https://github.com/cfilby">@cfilby</a> for your help on implementing Code Splitting!</p>
+
+<h3 id="other-changes-on-fider-0-17">Other Changes on Fider 0.17</h3>
+
+<ul>
+<li>feature: allow support of Office 365 SMTP (<a href="https://github.com/getfider/fider/pull/584">#584</a>)</li>
+<li>feature: add API to return list of voters (<a href="https://github.com/getfider/fider/pull/654">#654</a>)</li>
+<li>feature: Add Code Splitting (<a href="https://github.com/getfider/fider/pull/596">#596</a>)</li>
+<li>enhancement: show more details when tenant is on pending status (<a href="https://github.com/getfider/fider/pull/611">#611</a>)</li>
+<li>enhancement: add Date and Message-ID to mail messages (<a href="https://github.com/getfider/fider/pull/573">#573</a>)</li>
+<li>enhancement: browser not supported page (<a href="https://github.com/getfider/fider/pull/620">#620</a>)</li>
+<li>enhancement: better ui errors, catch unhandledrejection and ignore noisy errors (<a href="https://github.com/getfider/fider/pull/622">#622</a>)</li>
+<li>enhancement: notify subscribers about posts being deleted (<a href="https://github.com/getfider/fider/pull/625">#625</a>)</li>
+<li>enhancement: replace semantic-ui with react icons (<a href="https://github.com/getfider/fider/pull/631">#631</a>)</li>
+<li>enhancement: increase tenants cache to 30 days (<a href="https://github.com/getfider/fider/pull/634">#634</a>)</li>
+<li>enhancement: show response for open status (<a href="https://github.com/getfider/fider/pull/638">#638</a>)</li>
+<li>tooling: check for missing dependencies when building Fider (<a href="https://github.com/getfider/fider/pull/593">#593</a>)</li>
+<li>tooling: update to Go 1.11.2 (<a href="https://github.com/getfider/fider/pull/617">#617</a>)</li>
+<li>fix: change from UTC to local time on unit tests (<a href="https://github.com/getfider/fider/pull/602">#602</a>)</li>
+<li>fix: ignore OAuth when session is already authenticated (<a href="https://github.com/getfider/fider/pull/615">#615</a>)</li>
+<li>fix: OAuth Echo was redirecting to home page (<a href="https://github.com/getfider/fider/pull/628">#628</a>)</li>
+<li>fix: allow page to connect to CDN (<a href="https://github.com/getfider/fider/pull/629">#629</a>)</li>
+<li>fix: remove title validation to support Chinese and Japanese (<a href="https://github.com/getfider/fider/pull/614">#614</a>)</li>
+<li>fix: use console logger for migration (<a href="https://github.com/getfider/fider/pull/657">#657</a>)</li>
+</ul>
+
+<h3 id="what-s-next">What&rsquo;s next?</h3>
+
+<p>Help us shape the future of Fider. Visit our <a href="https://feedback.fider.io/">feedback forum</a> and raise your voice. Tell us what to do next.</p>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+    
+<footer class="footer">
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-start">
+        <a href="/" class="navbar-item"><strong>Fider</strong></a>
+        <a href="/blog" class="navbar-item">Blog</a>
+        <a href="/docs" class="navbar-item">Documentation</a>
+        <a href="https://status.fider.io/" class="navbar-item">Status</a>
+        <a href="https://feedback.fider.io/" class="navbar-item">Feedback</a>
+      </div>
+  
+      <div class="navbar-end">
+        <a href="https://github.com/getfider" class="navbar-item"><i class="fab fa-github"></i>GitHub</a>
+        <a href="https://twitter.com/getfider" class="navbar-item"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="mailto:contact@fider.io" class="navbar-item"><i class="fas fa-at"></i>contact@fider.io</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <script src="/fider.min.5169ae553693713a5134ba40ebb710dd78a6c317bb62bcd975627aaedc17fedc.js" integrity="sha256-UWmuVTaTcTpRNLpA67cQ3Ximwxe7YrzZdWJ6rtwX/tw="></script>
+  </body>
+</html>

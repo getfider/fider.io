@@ -1,0 +1,81 @@
+<h3 id="overview">Overview</h3>
+
+<p>Welcome to the Fider API documentation.</p>
+
+<p>The Fider API allows you to manage Posts and other data within your Fider instance in a simple, programmatic way using conventional HTTP requests. The endpoints are intuitive and powerful, allowing you to easily make calls to retrieve information or to execute actions.</p>
+
+<p><strong>Version</strong></p>
+
+<p>The <strong>API v1</strong> was introduced on Fider <code>v0.16.0</code>. Make sure you&rsquo;re running the latest version of Fider to leverage the API. All Cloud users on <code>fider.io</code> are already on the latest so you can start using it right now.</p>
+
+<p><strong>Request</strong></p>
+
+<p>Allowed HTTP Verbs are GET, POST, PUT and DELETE. All data must be sent as JSON.</p>
+
+<p>Requests are sent to your Fider URL using the HTTP/HTTPS protocol.</p>
+
+<table>
+  <tr>
+    <th width="90">Hosting</th>
+    <th>URL</th>
+    <th width="110">Protocol</th>
+  </tr>
+  <tr>
+    <td>Cloud</td>
+    <td><code>https://&lt;subdomain&gt;.fider.io</code> or, if configured, your custom domain name (e.g: <code>https://feedback.yourcompany.com</code>)</td>
+    <td>HTTPS only</td>
+  </tr>
+  <tr>
+    <td>Self-Hosted</td>
+    <td>The URL you have configured</td>
+    <td>HTTP or HTTPS</td>
+  </tr>
+</table>
+
+<p><strong>Response</strong></p>
+
+<p>Every response will be encoded with <code>application/json</code> and one of the following status code.</p>
+
+<table>
+  <tr>
+    <th width="150">Status Code</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>200 OK</td>
+    <td>Fider has accepted and processed your request, no error was encountered.</td>
+  </tr>
+  <tr>
+    <td>400 Bad Request</td>
+    <td>Something is incorrect with your request, it might be missing a parameter or have an invalid value. See <strong>Error Messages</strong> below.</td>
+  </tr>
+  <tr>
+    <td>403 Forbidden</td>
+    <td>API Key is not present or not allowed to perform the operation</td>
+  </tr>
+  <tr>
+    <td>404 Not Found</td>
+    <td>The resource you're looking for doesn't exist.</td>
+  </tr>
+  <tr>
+    <td>500 Internal Error</td>
+    <td>This generally indicates a server-side problem on Fider and it cannot fulfill your request currently.</td>
+  </tr>
+</table>
+
+<p><strong>Error Messages</strong></p>
+
+<p>Every <code>400 Bad Request</code> response contains a JSON payload with details of what went wrong. Each <code>error (object)</code> contains a <code>message (string)</code> describing what is incorrect and may also contain a <code>field (string)</code> property. If the error object doesn&rsquo;t contain the field, that&rsquo;s a general error message.</p>
+
+<pre><code>{
+  &quot;errors&quot;: [
+    {
+      &quot;field&quot;: &quot;color&quot;,
+      &quot;message&quot;: &quot;'dark' is an invalid color.&quot;
+    },
+    {
+      &quot;message&quot;: &quot;A tag named 'suggestion' already exists.&quot;
+    }
+  ]
+}
+</code></pre>

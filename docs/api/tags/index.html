@@ -1,0 +1,292 @@
+<h3 id="tags">Tags</h3>
+
+<ul>
+  <li><a href="#list-tags">List Tags</a></li>
+  <li><a href="#create-tag">Create a Tag</a></li>
+  <li><a href="#edit-tag">Edit a Tag</a></li>
+  <li><a href="#delete-tag">Delete a Tag</a></li>
+  <li><a href="#tag-post">Tag a Post</a></li>
+  <li><a href="#untag-vote">Untag a Post</a></li>
+</ul>
+
+<h4 id="list-tags">List Tags</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Optional</li>
+</ul>
+
+<pre><code>GET /api/v1/tags
+</code></pre>
+
+<p>The list of tags returned by this endpoint depends on the role of the authenticated user. Private Tags are only returned for users with either <code>administrator</code> or <code>collaborator</code> role.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/tags
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+[
+  {
+    &quot;id&quot;: 8,
+    &quot;name&quot;: &quot;Under Consideration&quot;,
+    &quot;slug&quot;: &quot;under-consideration&quot;,
+    &quot;color&quot;: &quot;87BE1F&quot;,
+    &quot;isPublic&quot;: true
+  },
+  {
+    &quot;id&quot;: 86,
+    &quot;name&quot;: &quot;Hard&quot;,
+    &quot;slug&quot;: &quot;hard&quot;,
+    &quot;color&quot;: &quot;E60737&quot;,
+    &quot;isPublic&quot;: false
+  }
+]
+</code></pre>
+
+<h4 id="create-tag">Create a Tag</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Administrator</li>
+</ul>
+
+<pre><code>POST /api/v1/tags
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>name</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The display name of the tag.</td>
+  </tr>
+  <tr>
+    <td><code>color</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The Hex color of the tag (without #).</td>
+  </tr>
+  <tr>
+    <td><code>isPublic</code></td>
+    <td><code>boolean</code></td>
+    <td><strong>Required.</strong> <code>true</code> for public tags or <code>false</code> for private tags.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/tags
+---
+{
+  &quot;name&quot;: &quot;impact: big&quot;, 
+  &quot;color&quot;: &quot;FE422D&quot;, 
+  &quot;isPublic&quot;: true
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;: 1003,
+  &quot;name&quot;: &quot;impact: big&quot;,
+  &quot;slug&quot;: &quot;impact-big&quot;,
+  &quot;color&quot;: &quot;FE422D&quot;,
+  &quot;isPublic&quot;: true
+}
+</code></pre>
+
+<h4 id="edit-tag">Edit a Tag</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Administrator</li>
+</ul>
+
+<pre><code>PUT /api/v1/tags/{slug}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>slug</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The slug of the tag to be edited.</td>
+  </tr>
+  <tr>
+    <td><code>name</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The display name of the tag.</td>
+  </tr>
+  <tr>
+    <td><code>color</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The Hex color of the tag (without #).</td>
+  </tr>
+  <tr>
+    <td><code>isPublic</code></td>
+    <td><code>boolean</code></td>
+    <td><strong>Required.</strong> <code>true</code> for public tags or <code>false</code> for private tags.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>PUT &lt;baseURL&gt;/api/v1/tags/impact-big
+---
+{
+  &quot;name&quot;: &quot;impact: small&quot;, 
+  &quot;color&quot;: &quot;063589&quot;, 
+  &quot;isPublic&quot;: true
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;: 1003,
+  &quot;name&quot;: &quot;impact: small&quot;,
+  &quot;slug&quot;: &quot;impact-small&quot;,
+  &quot;color&quot;: &quot;063589&quot;,
+  &quot;isPublic&quot;: false
+}
+</code></pre>
+
+<h4 id="delete-tag">Delete a Tag</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Administrator</li>
+</ul>
+
+<pre><code>DELETE /api/v1/tags/{slug}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>slug</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The slug of the tag to be deleted.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>DELETE &lt;baseURL&gt;/api/v1/tags/impact-small
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="tag-post">Tag a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>POST /api/v1/posts/{number}/tags/{slug}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to add the tag.</td>
+  </tr>
+  <tr>
+    <td><code>slug</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The slug of the tag to be added.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts/47/tags/impact-big
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="untag-vote">Untag a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>DELETE /api/v1/posts/{number}/tags/{slug}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to remove the tag.</td>
+  </tr>
+  <tr>
+    <td><code>slug</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The slug of the tag to be removed.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>DELETE &lt;baseURL&gt;/api/v1/posts/47/tags/impact-big
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>

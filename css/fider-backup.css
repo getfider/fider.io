@@ -1,0 +1,206 @@
+section {
+  padding: 5em 0;
+}
+
+td code,
+p code {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  display: inline-block;
+  color: #393939;
+  padding: 0px 4px;
+  line-height: 20px;
+}
+
+.cover .btn {
+  min-width: 150px;
+  padding-left: 0em;
+  padding-right: 0em;
+}
+
+.cover .actions {
+  margin-top: 0 !important;
+}
+
+.cover .actions > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+header .bar .logo {
+  max-height: 2.3em;
+}
+
+header .bar.hidden-xs .menu-horizontal a {
+  font-size: 1em;
+}
+
+header .bar .menu-horizontal a {
+  font-size: 1.2em;
+}
+
+header .bar a:hover {
+  text-decoration: none;
+}
+
+header .bar .logo-title {
+  font-size: 28px;
+  color: #000;
+  vertical-align: bottom;
+}
+
+img.screenshot,
+.blog-single figure img,
+.docs-single figure img  {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+article .article__body p, 
+article .article__body ul,
+article .article__body table {
+  font-size: 1.2em;
+}
+
+article .article__body figure:not(:last-child)  {
+  margin-bottom: 1.36842105263158em;
+}
+
+i.icon--lg svg {
+  height: 84px;
+  width: 84px;
+}
+
+.pricing .h2 {
+  min-height: 50px;
+}
+
+.pricing .month {
+  font-size: 0.7em;
+}
+
+.pricing .star {
+  font-size: 0.5em;
+  color: #666666;
+}
+
+.pricing {
+  border-top: 2px solid #4a90e2 !important; 
+}
+
+.pricing:hover {
+  border: 1px solid #4a90e2; 
+}
+
+.pricing .btn__text {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.pricing-1 ul {
+  margin-bottom: 1em;
+}
+
+.pricing-1 ul li span {
+  font-weight: 600;
+}
+
+.checked {
+  margin-top: -3px;
+  width: 17px;
+  height: 17px;
+  color: #00b75a;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.unchecked {
+  margin-top: -3px;
+  width: 17px;
+  height: 17px;
+  color: #cd3100;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/*
+Blog
+*/
+
+.blog-single ul {
+  list-style-type: disc !important;
+  margin-left: 30px;
+}
+
+/*
+Documentation
+*/
+
+.docs-single .main-container ul,
+.docs-single .main-container ol {
+  margin-left: 2em;
+}
+
+.docs-single .main-container ul li,
+.docs-single .main-container ol li {
+  margin-bottom: 0;
+}
+
+.docs-single .main-container ul li {
+  list-style-type: circle;
+}
+
+.alert {
+  padding: 5px 10px;
+}
+
+.bg--warning {
+  border: 1px solid #e6a005;
+  color: rgb(112, 51, 2);
+  background: rgba(248, 187, 5, 0.22);
+}
+
+/* 
+Pricing 
+*/
+
+.strikeout {
+  position: relative;
+}
+
+.strikeout::after {
+  border-bottom: 0.125em solid rgba(255, 0, 0, 0.5);
+  content: "";
+  left: 0;
+  line-height: 1em;
+  margin-top: calc(0.125em / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+/* 
+Docs 
+*/
+
+.docs-toc span.category {
+  text-transform: uppercase;
+  font-size: 100%;
+  color: #FFF !important;
+  margin-top: 20px;
+  display: block;
+}
+
+.docs-single .main-container h1,
+.docs-single .main-container h2,
+.docs-single .main-container h3,
+.docs-single .main-container h4,
+.docs-single .main-container h5,
+.docs-single .main-container h6 {
+  color: #4a90e2 !important;
+}
+
+.docs-single .main-container table th,
+.docs-single .main-container table td {
+  padding: 5px;
+}

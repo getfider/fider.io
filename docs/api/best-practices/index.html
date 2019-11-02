@@ -1,0 +1,11 @@
+<h3 id="best-practices">Best Practices</h3>
+
+<p><strong id="service-account">Service Account</strong></p>
+
+<p>A common approach when using Fider API is to sign in with a generic email address (like <code>admin@yourcompany.com</code>), then switch to an Administrator user and promote the new user to an Adminitrator as well. This allows you to use a common user account on all API operations, which having to use a personal user account.</p>
+
+<p><strong id="use-impersonation-property">How to properly use impersonation</strong></p>
+
+<p>We usually recommend the usage of impersonation in combination with the <a href="#create-user">Create User</a> API. This API will retrieve or create a new user and returns its User ID, which can then be used to impersonate that user.</p>
+
+<p>As an example, imagine that you have a Mobile App that lists all your Fider posts and you want to let the user vote on it via your App. The first step is to call Create User with the name, email and an optional (altough recommended) reference ID. The API will the return a user ID. It might be a new user ID or an existing one, it doesn&rsquo;t matter. Call the <a href="#add-vote">Add Vote</a> API with the <code>X-Fider-UserID</code> parameter to execute this action under that user account.</p>

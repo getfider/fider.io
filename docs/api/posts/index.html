@@ -1,0 +1,377 @@
+<h3 id="posts">Posts</h3>
+
+<ul>
+  <li><a href="#list-posts">List Posts</a></li>
+  <li><a href="#get-post">Get a Post</a></li>
+  <li><a href="#create-post">Create a Post</a></li>
+  <li><a href="#edit-post">Edit a Post</a></li>
+  <li><a href="#delete-post">Delete a Post</a></li>
+  <li><a href="#respond-post">Respond to a Post</a></li>
+</ul>
+
+<p>A <strong>Post</strong> is new topic created by a user on the Feedback Site, while it&rsquo;s usually a suggestion or feature request, sometimes it might also be a bug report or a complain.</p>
+
+<h4 id="list-posts">List Posts</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Optional</li>
+</ul>
+
+<pre><code>GET /api/v1/posts
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="80">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>query</code></td>
+    <td><code>string</code></td>
+    <td>The search keywords</td>
+  </tr>
+  <tr>
+    <td><code>view</code></td>
+    <td><code>string</code></td>
+    <td>
+      The filter and order to apply. Possible values are <code>all</code>, <code>recent</code>, <code>my-votes</code>, <code>most-wanted</code>, <code>most-discussed</code>, <code>planned</code>, <code>started</code>, <code>completed</code>, <code>declined</code> and <code>trending</code>. Default: <code>all</code>
+    </td>
+  </tr>
+  <tr>
+    <td><code>limit</code></td>
+    <td><code>integer</code></td>
+    <td>The number of entries to return. Default: <code>30</code></td>
+  </tr>
+  <tr>
+    <td><code>tags</code></td>
+    <td><code>string</code></td>
+    <td>The list of tags to filter by. Separate multiple tags by <code>,</code></td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/posts?view=completed&amp;query=open+links&amp;limit=50
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+[
+  {
+    &quot;id&quot;: 4315,
+    &quot;number&quot;: 65,
+    &quot;title&quot;: &quot;Open links in new tab&quot;,
+    &quot;slug&quot;: &quot;open-links-in-new-tab&quot;,
+    &quot;description&quot;: &quot;When somebody pastes a link in the description of an item, it has to open link in a new tab so you don't lose focus in the app&quot;,
+    &quot;createdAt&quot;: &quot;2018-05-16T13:50:34.579281Z&quot;,
+    &quot;user&quot;: {
+      &quot;id&quot;: 45642,
+      &quot;name&quot;: &quot;Jon Snow&quot;,
+      &quot;role&quot;: &quot;visitor&quot;
+    },
+    &quot;hasVoted&quot;: true,
+    &quot;votesCount&quot;: 34,
+    &quot;commentsCount&quot;: 0,
+    &quot;status&quot;: &quot;completed&quot;,
+    &quot;response&quot;: {
+      &quot;text&quot;: &quot;This is now available on `v0.14`. Links from any markdown text will open in a new tab.&quot;,
+      &quot;respondedAt&quot;: &quot;2018-06-13T17:48:27.073178Z&quot;,
+      &quot;user&quot;: {
+        &quot;id&quot;: 8,
+        &quot;name&quot;: &quot;Arya Stark&quot;,
+        &quot;role&quot;: &quot;administrator&quot;
+      },
+      &quot;original&quot;: null
+    },
+    &quot;tags&quot;: [&quot;hard&quot;,&quot;critical&quot;]
+  },
+  {
+    ...
+  }
+]
+</code></pre>
+
+<h4 id="get-post">Get a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Optional</li>
+</ul>
+
+<pre><code>GET /api/v1/posts/{number}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="80">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to retrieve.</td>
+  </tr>
+  <tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/posts/65
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;: 4315,
+  &quot;number&quot;: 65,
+  &quot;title&quot;: &quot;Open links in new tab&quot;,
+  &quot;slug&quot;: &quot;open-links-in-new-tab&quot;,
+  &quot;description&quot;: &quot;When somebody pastes a link in the description of an item, it has to open link in a new tab so you don't lose focus in the app&quot;,
+  &quot;createdAt&quot;: &quot;2018-05-16T13:50:34.579281Z&quot;,
+  &quot;user&quot;: {
+    &quot;id&quot;: 45642,
+    &quot;name&quot;: &quot;Jon Snow&quot;,
+    &quot;role&quot;: &quot;visitor&quot;
+  },
+  &quot;hasVoted&quot;: true,
+  &quot;votesCount&quot;: 34,
+  &quot;commentsCount&quot;: 0,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;response&quot;: {
+    &quot;text&quot;: &quot;This is now available on `v0.14`. Links from any markdown text will open in a new tab.&quot;,
+    &quot;respondedAt&quot;: &quot;2018-06-13T17:48:27.073178Z&quot;,
+    &quot;user&quot;: {
+      &quot;id&quot;: 8,
+      &quot;name&quot;: &quot;Arya Stark&quot;,
+      &quot;role&quot;: &quot;administrator&quot;
+    },
+    &quot;original&quot;: null
+  },
+  &quot;tags&quot;: [&quot;hard&quot;,&quot;critical&quot;]
+}
+</code></pre>
+
+<h4 id="create-post">Create a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+</ul>
+
+<pre><code>POST /api/v1/posts
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>title</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The title of the post.</td>
+  </tr>
+  <tr>
+    <td><code>description</code></td>
+    <td><code>string</code></td>
+    <td>The description of the post.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts
+---
+{
+  &quot;title&quot;: &quot;Allow users to edit any comment&quot;,
+  &quot;description&quot;: &quot;This is useful to fix some minor typos or introduce more details&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;: 6848,
+  &quot;number&quot;: 47,
+  &quot;title&quot;: &quot;Allow users to edit any comment&quot;,
+  &quot;slug&quot;: &quot;allow-users-to-edit-any-comment&quot;
+}
+</code></pre>
+
+<h4 id="edit-post">Edit a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>PUT /api/v1/posts/{number}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to be edited.</td>
+  </tr>
+  <tr>
+    <td><code>title</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The title of the post.</td>
+  </tr>
+  <tr>
+    <td><code>description</code></td>
+    <td><code>string</code></td>
+    <td>The description of the post.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts/47
+---
+{
+  &quot;title&quot;: &quot;Allow users to edit their own comments&quot;,
+  &quot;description&quot;: &quot;This is useful to fix some minor typos or introduce more details&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="delete-post">Delete a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Administrator</li>
+</ul>
+
+<pre><code>DELETE /api/v1/posts/{number}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to be deleted.</td>
+  </tr>
+  <tr>
+    <td><code>text</code></td>
+    <td><code>string</code></td>
+    <td>The reason why this post is being deleted.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>DELETE &lt;baseURL&gt;/api/v1/posts/47
+---
+{
+  &quot;text&quot;: &quot;this is spam!&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="respond-post">Respond to a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>PUT /api/v1/posts/{number}/status
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to add a response.</td>
+  </tr>
+  <tr>
+    <td><code>status</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong>The new status of the post. Possible values are <code>open</code>, <code>planned</code>, <code>started</code>, <code>completed</code>, <code>declined</code> and <code>duplicate</code></td>
+  </tr>
+  <tr>
+    <td><code>text</code></td>
+    <td><code>string</code></td>
+    <td>An optional description of what is the status on this post. This is made visible to all visitors on the website.</td>
+  </tr>
+  <tr>
+    <td><code>originalNumber</code></td>
+    <td><code>number</code></td>
+    <td>The number of the post to merge this into. This parameter <strong>Required</strong> when status is <code>duplicate</code>.</td>
+  </tr>
+</table>
+
+<p><strong>Example #1</strong></p>
+
+<pre><code>PUT &lt;baseURL&gt;/api/v1/posts/47/status
+---
+{
+  &quot;status&quot;: &quot;declined&quot;,
+  &quot;text&quot;: &quot;this is spam!&quot;
+}
+</code></pre>
+
+<p><strong>Example #2</strong></p>
+
+<pre><code>PUT &lt;baseURL&gt;/api/v1/posts/47/status
+---
+{
+  &quot;status&quot;: &quot;duplicate&quot;,
+  &quot;originalNumber&quot;: 84
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>

@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/logo-100x100.png" >
+    <title>Fider 0.14 released with improved foundation and minor features · Fider</title>
+    <meta name="description" content="In this next Fider release, we&#39;ve improved our foundation to support the continued growth">
+    
+    
+
+    <meta property="og:title" content="Fider 0.14 released with improved foundation and minor features · Fider">
+    <meta property="og:image" content="https://getfider.com/images/logo-small.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://getfider.com/" />
+    <meta property="og:description" content="In this next Fider release, we&#39;ve improved our foundation to support the continued growth">
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-100812395-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="/font.min.a3218f4d9a6c7dff3067d261349676d5bc4b4a4be31dbdaf8a600b71e38f66bb.css" integrity="sha256-oyGPTZpsff8wZ9JhNJZ21bxLSkvjHb2vimALceOPZrs=" media="screen">  
+    
+    <link rel="stylesheet" href="/fider.min.e42cf6de0eeb0d456dd7092aea1299a503def39689ffa68d48602a22efd789b6.css" integrity="sha256-5Cz23g7rDUVt1wkq6hKZpQPe85aJ/6aNSGAqIu/XibY=" media="screen">  
+  </head>
+
+  <body>
+    
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img class="logo" alt="logo" src="/images/logo-100x100.png">
+          <span class="logo-title">Fider</span>
+        </a>
+    
+        <a id="site-burger" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+    
+        <div class="navbar-end">
+          <a class="navbar-item" href="/blog">Blog</a>
+          <a class="navbar-item" href="/docs">Documentation</a>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href="#start" class="button is-primary">
+                <strong>Get Started</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    
+<main class="blog-single">
+  <section class="section">
+    <div class="container">
+      <div class="header">
+        <h1 class="title">Fider 0.14 released with improved foundation and minor features</h1>
+        <h2 class="subtitle">
+          In this next Fider release, we&#39;ve improved our foundation to support the continued growth
+        </h2>
+        <time datetime="2018-06-30T00:00:00&#43;00:00">Jun 30, 2018</time>
+        <hr />
+      </div>
+      <div class="content">
+        
+
+<p>In this release we&rsquo;ve focused on technical improvements, but we managed to deliver minor features as well. This is a necessary step towards building a product that can be further enhanced with new features.</p>
+
+<h3 id="1-filter-ideas-that-i-voted">#1: Filter ideas that I voted</h3>
+
+<p>We&rsquo;ve included a new filter option: <strong>My Votes</strong>. This option will show all ideas that the current signed in user has already voted on. It is only available for signed in users</p>
+
+<figure>
+  <img src="/images/blog/v0.14-filters.png" />
+</figure>
+
+<h3 id="2-make-comment-optional-when-responding-to-an-idea">#2: Make comment optional when responding to an idea</h3>
+
+<p>Previously, when respoding to an idea, it was required to input a comment. With v0.14, this comment is now optional.</p>
+
+<h3 id="3-experimental-support-for-cdn">#3: Experimental Support for CDN</h3>
+
+<p>We&rsquo;ve introduced new settings that allow administrators to use a CDN to speed up delivery of static assets. This feature is still experimental and will be documented on next release.</p>
+
+<h3 id="breaking-changes-on-fider-0-14">Breaking Changes on Fider 0.14</h3>
+
+<p>This version doesn&rsquo;t introduce any breaking change.</p>
+
+<h3 id="other-changes-on-fider-0-14">Other Changes on Fider 0.14</h3>
+
+<ul>
+<li>enhancement: output logs to other systems (<a href="https://github.com/getfider/fider/issues/330">#330</a>)</li>
+<li>enhancement: Replace current database migrator with custom (<a href="https://github.com/getfider/fider/issues/401">#401</a>)</li>
+<li>tooling: Update Go, Node and NPM packages (<a href="https://github.com/getfider/fider/issues/422">#422</a>)</li>
+<li>refactoring: General React refactoring (<a href="https://github.com/getfider/fider/issues/423">#423</a>)</li>
+<li>fix: concurrency issue on dbx (<a href="https://github.com/getfider/fider/issues/424">#424</a>)</li>
+<li>enhancement: Remove support for TLS 1.0, TLS 1.1 and old ciphers (<a href="https://github.com/getfider/fider/issues/404">#404</a>)</li>
+<li>enhancement: Add Expire Date to all JWT Tokens (<a href="https://github.com/getfider/fider/issues/407">#407</a>)</li>
+<li>enhancement: Improve Performance on Home Page (<a href="https://github.com/getfider/fider/issues/403">#403</a>)</li>
+<li>enhancement: Markdown links should open in new tab (<a href="https://github.com/getfider/fider/issues/402">#402</a>)</li>
+<li>refactoring: Remove arrow functions from React components (<a href="https://github.com/getfider/fider/issues/192">#192</a>)</li>
+<li>refactoring: Enable tslint rule: jsx-no-lambda (<a href="https://github.com/getfider/fider/issues/181">#181</a>)</li>
+</ul>
+
+<h3 id="what-s-next">What&rsquo;s next?</h3>
+
+<p>Help us shape the future of Fider. Visit our <a href="https://feedback.fider.io/">feedback forum</a> and raise your voice. Tell us what to do next.</p>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+    
+<footer class="footer">
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-start">
+        <a href="/" class="navbar-item"><strong>Fider</strong></a>
+        <a href="/blog" class="navbar-item">Blog</a>
+        <a href="/docs" class="navbar-item">Documentation</a>
+        <a href="https://status.fider.io/" class="navbar-item">Status</a>
+        <a href="https://feedback.fider.io/" class="navbar-item">Feedback</a>
+      </div>
+  
+      <div class="navbar-end">
+        <a href="https://github.com/getfider" class="navbar-item"><i class="fab fa-github"></i>GitHub</a>
+        <a href="https://twitter.com/getfider" class="navbar-item"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="mailto:contact@fider.io" class="navbar-item"><i class="fas fa-at"></i>contact@fider.io</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <script src="/fider.min.5169ae553693713a5134ba40ebb710dd78a6c317bb62bcd975627aaedc17fedc.js" integrity="sha256-UWmuVTaTcTpRNLpA67cQ3Ximwxe7YrzZdWJ6rtwX/tw="></script>
+  </body>
+</html>

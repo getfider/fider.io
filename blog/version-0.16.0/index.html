@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/logo-100x100.png" >
+    <title>Fider 0.16 released with Public API, delete comments and other improvements · Fider</title>
+    <meta name="description" content="In this next Fider release, we have released our Public API and the ability to delete comments">
+    
+    
+
+    <meta property="og:title" content="Fider 0.16 released with Public API, delete comments and other improvements · Fider">
+    <meta property="og:image" content="https://getfider.com/images/logo-small.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://getfider.com/" />
+    <meta property="og:description" content="In this next Fider release, we have released our Public API and the ability to delete comments">
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-100812395-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="/font.min.a3218f4d9a6c7dff3067d261349676d5bc4b4a4be31dbdaf8a600b71e38f66bb.css" integrity="sha256-oyGPTZpsff8wZ9JhNJZ21bxLSkvjHb2vimALceOPZrs=" media="screen">  
+    
+    <link rel="stylesheet" href="/fider.min.e42cf6de0eeb0d456dd7092aea1299a503def39689ffa68d48602a22efd789b6.css" integrity="sha256-5Cz23g7rDUVt1wkq6hKZpQPe85aJ/6aNSGAqIu/XibY=" media="screen">  
+  </head>
+
+  <body>
+    
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img class="logo" alt="logo" src="/images/logo-100x100.png">
+          <span class="logo-title">Fider</span>
+        </a>
+    
+        <a id="site-burger" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+    
+        <div class="navbar-end">
+          <a class="navbar-item" href="/blog">Blog</a>
+          <a class="navbar-item" href="/docs">Documentation</a>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href="#start" class="button is-primary">
+                <strong>Get Started</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    
+<main class="blog-single">
+  <section class="section">
+    <div class="container">
+      <div class="header">
+        <h1 class="title">Fider 0.16 released with Public API, delete comments and other improvements</h1>
+        <h2 class="subtitle">
+          In this next Fider release, we have released our Public API and the ability to delete comments
+        </h2>
+        <time datetime="2018-10-21T00:00:00&#43;00:00">Oct 21, 2018</time>
+        <hr />
+      </div>
+      <div class="content">
+        
+
+<h3 id="1-public-api">#1: Public API</h3>
+
+<p>For a long time, the Public API has been <a href="https://feedback.fider.io/posts/55/provide-an-api-to-allow-integration-with-other-applications">the most wanted feature</a> on Fider. We&rsquo;re now happy to share that the API is live and ready to be used.</p>
+
+<p>The Public API allows site owners to perform different actions via a programmatic interface. The API uses common web standards like REST, HTTP and JSON to make it easier for anyone to integrate with Fider. Visit the <a href="/docs/api">Official API documentation</a> to learn more about it.</p>
+
+<p>If you have any suggestion on how to improve the API, share it with us on <a href="https://feedback.fider.io">https://feedback.fider.io</a>.</p>
+
+<h3 id="2-delete-comments">#2: Delete Comments</h3>
+
+<p>It&rsquo;s now possible to delete comments on Fider. This allows site owners to clean up inappropriate or abusive messages. Users are only allowed to delete their own comments, but staff members can delete any comment.</p>
+
+<p>Moderating the site and cleaning up negative messages is a very important process. Fider is meant to be a space for collaborative work and growth, so we&rsquo;ll deploy and enhance with tools that allows you to fight back internet trolls and spammers.</p>
+
+<figure>
+  <img src="/images/blog/v0.16-delete-comment.png" />
+</figure>
+
+<h3 id="3-fider-on-a-diet">#3: Fider on a Diet</h3>
+
+<p>We&rsquo;ve made various improvements that allowed us to reduce our frontend build time and bundle size.</p>
+
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>v0.15.0</th>
+<th>v0.16.0</th>
+<th>Difference</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Build Time</td>
+<td>~20s</td>
+<td>~8s</td>
+<td>-60%</td>
+</tr>
+
+<tr>
+<td>CSS Size (uncompressed)</td>
+<td>172 KiB</td>
+<td>115 KiB</td>
+<td>-33%</td>
+</tr>
+
+<tr>
+<td>JavaScript Size (uncompressed)</td>
+<td>662 KiB</td>
+<td>398 KiB</td>
+<td>-40%</td>
+</tr>
+</tbody>
+</table>
+
+<p>Fider is now able to run faster than before on all devices and network, while delivering the same great experience and features.</p>
+
+<p>And that&rsquo;s not all! We have a few other tasks on our backlog to improve this even further. Stay tuned!</p>
+
+<h3 id="hacktoberfest">Hacktoberfest</h3>
+
+<p>October has been an exciting month for us! Since the start of <a href="https://hacktoberfest.digitalocean.com">Hacktoberfest</a> our list of new contributors has grown a lot. We&rsquo;re very happy to have everyone aboard and we&rsquo;re looking forward to have more and more contributors!</p>
+
+<figure>
+  <img src="/images/blog/v0.16-hacktoberfest-collaborators.png" />
+</figure>
+
+<p>A number of improvements have been made — and other are on the pipeline — to make Fider easier to setup and start contributing to it.</p>
+
+<h3 id="other-changes-on-fider-0-16">Other Changes on Fider 0.16</h3>
+
+<ul>
+<li>feature: add sitemap.xml (<a href="https://github.com/getfider/fider/pull/558">#558</a>)</li>
+<li>feature: Add Support for Persisting Audit Events (<a href="https://github.com/getfider/fider/pull/551">#551</a>)</li>
+<li>enhancement: use sqlautocert instead of local cache folder (<a href="https://github.com/getfider/fider/pull/566">#566</a>)</li>
+<li>enhancement: Add ErrorBoundary and ShowError to handle React exceptions (<a href="https://github.com/getfider/fider/pull/549">#549</a>)</li>
+<li>fix: SVG are black on Firefox and MS Edge (<a href="https://github.com/getfider/fider/pull/497">#497</a>)</li>
+<li>fix: Invalid posts should return a 404 and not a 500 (<a href="https://github.com/getfider/fider/pull/589">#589</a>)</li>
+<li>fix: Some browsers are not persisting __oauth_identifier cookie (<a href="https://github.com/getfider/fider/issues/519">#519</a>)</li>
+<li>fix: Missing SMTP settings responds with ERR_EMPTY_RESPONSE and no logs (<a href="https://github.com/getfider/fider/issues/516">#516</a>)</li>
+<li>fix: social buttons with larger text (<a href="https://github.com/getfider/fider/pull/582">#582</a>)</li>
+<li>fix: return charset on HTTP Headers (<a href="https://github.com/getfider/fider/pull/572">#572</a>)</li>
+<li>fix: send EHLO during SMTP connection (<a href="https://github.com/getfider/fider/pull/525">#525</a>)</li>
+<li>fix: correctly position the burger menu toggle at the top right corner (<a href="https://github.com/getfider/fider/pull/587">#587</a>)</li>
+<li>refactor: replace Make with Mage (<a href="https://github.com/getfider/fider/pull/534">#534</a>)</li>
+<li>chore: fix typos in comments, variables and function names (<a href="https://github.com/getfider/fider/pull/565">#565</a>)</li>
+<li>docs: better contributing guide (<a href="https://github.com/getfider/fider/pull/574">#574</a>)</li>
+<li>tooling: add .nvmrc (<a href="https://github.com/getfider/fider/pull/546">#546</a>)</li>
+<li>tooling: update to Go 1.11.1 and enable SameSite=Lax (<a href="https://github.com/getfider/fider/pull/552">#552</a>)</li>
+</ul>
+
+<h3 id="what-s-next">What&rsquo;s next?</h3>
+
+<p>Help us shape the future of Fider. Visit our <a href="https://feedback.fider.io/">feedback forum</a> and raise your voice. Tell us what to do next.</p>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+    
+<footer class="footer">
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-start">
+        <a href="/" class="navbar-item"><strong>Fider</strong></a>
+        <a href="/blog" class="navbar-item">Blog</a>
+        <a href="/docs" class="navbar-item">Documentation</a>
+        <a href="https://status.fider.io/" class="navbar-item">Status</a>
+        <a href="https://feedback.fider.io/" class="navbar-item">Feedback</a>
+      </div>
+  
+      <div class="navbar-end">
+        <a href="https://github.com/getfider" class="navbar-item"><i class="fab fa-github"></i>GitHub</a>
+        <a href="https://twitter.com/getfider" class="navbar-item"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="mailto:contact@fider.io" class="navbar-item"><i class="fas fa-at"></i>contact@fider.io</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <script src="/fider.min.5169ae553693713a5134ba40ebb710dd78a6c317bb62bcd975627aaedc17fedc.js" integrity="sha256-UWmuVTaTcTpRNLpA67cQ3Ximwxe7YrzZdWJ6rtwX/tw="></script>
+  </body>
+</html>

@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collect and prioritize product feedback on Fider</title>
+    <link>https://getfider.com/</link>
+    <description>Recent content in Collect and prioritize product feedback on Fider</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 16 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://getfider.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fider 0.18 has been released with attachments and better SEO</title>
+      <link>https://getfider.com/blog/version-0.18.0/</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.18.0/</guid>
+      <description>#1: Image Attachments This is the third version in a row that we have delivered our most wanted feature, which in this version was Image Attachments on Posts and Comments 🎉
+This new feature that allows users to upload up to 3 images when submitting a new post or comment.
+Staff members still have full control over the post/comment and can delete or replace any uploaded image.
+  #2: Better SEO (experimental) For those who are new to Fider, it&amp;rsquo;s important to know that Fider is a client-side rendered application built with React.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.17 has been released with list of voters, better user management and huge performance improvements</title>
+      <link>https://getfider.com/blog/version-0.17.0/</link>
+      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.17.0/</guid>
+      <description>#1: List of Voters Our most wanted feature has been implemented! 🎉
+It&amp;rsquo;s now possible to see the list of everyone who voted on a given post. We&amp;rsquo;ve added another sidebar panel to the post, like the following:
+  Staff members can drill down and see more information about everyone who voted on that post by clicking on +x more. Visitors doesn&amp;rsquo;t have this access because this includes private information.</description>
+    </item>
+    
+    <item>
+      <title>How we reduced our initial JS/CSS size by 67%</title>
+      <link>https://getfider.com/blog/how-we-reduced-initial-jscss-size/</link>
+      <pubDate>Wed, 24 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/how-we-reduced-initial-jscss-size/</guid>
+      <description>Fider is built with React and Webpack on the frontend, so the topics below will be mostly useful for teams using same stack, but the concepts can also be applied to other stacks.
+Table of Contents  Webpack Bundle Analyzer Long term caching with content hash The common bundle Code Splitting on route level Loading external dependencies on demand Font Awesome and Tree Shaking Switching from big to small NPM packages Optimising the main bundle is crucial TSLib (TypeScript only)  Webpack Bundle Analyzer webpack-bundle-analyzer is a webpack plugin that generates an interactive zoomable treemap of all your bundles.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.16 released with Public API, delete comments and other improvements</title>
+      <link>https://getfider.com/blog/version-0.16.0/</link>
+      <pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.16.0/</guid>
+      <description>#1: Public API For a long time, the Public API has been the most wanted feature on Fider. We&amp;rsquo;re now happy to share that the API is live and ready to be used.
+The Public API allows site owners to perform different actions via a programmatic interface. The API uses common web standards like REST, HTTP and JSON to make it easier for anyone to integrate with Fider. Visit the Official API documentation to learn more about it.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.15 released with custom OAuth and minor improvements</title>
+      <link>https://getfider.com/blog/version-0.15.0/</link>
+      <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.15.0/</guid>
+      <description>In this release we&amp;rsquo;ve focused on authentication improvements for Fider. For a long time we have enabled visitors to sign in via Facebook, Google, GitHub and email, but that&amp;rsquo;s not enough. Custom providers was a highly requested feature so that we could have authentication via Twitch, Discord, Spotify, Azure AD, Strava and many many others.
+#1: Custom OAuth From the Site Settings -&amp;gt; Authentication, Administrators are now able to configure authentication with any provider that supports OAuth2.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.14 released with improved foundation and minor features</title>
+      <link>https://getfider.com/blog/version-0.14.0/</link>
+      <pubDate>Sat, 30 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.14.0/</guid>
+      <description>In this release we&amp;rsquo;ve focused on technical improvements, but we managed to deliver minor features as well. This is a necessary step towards building a product that can be further enhanced with new features.
+#1: Filter ideas that I voted We&amp;rsquo;ve included a new filter option: My Votes. This option will show all ideas that the current signed in user has already voted on. It is only available for signed in users</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.13 released with custom branding and legal compliance</title>
+      <link>https://getfider.com/blog/version-0.13.0/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.13.0/</guid>
+      <description>#1: Custom Branding First thing we&amp;rsquo;d like to highlight is that administratrors are now able to upload a logo for the site. This logo is shown on different places, like the Header, the error pages, favicon and also on social links. We highly recommend everyone to upload a company/product logo as this will result in a much nicer social sharing experience.
+  The other big addition is the Custom CSS, which allows administrators to write their own CSS to change the design of nearly everything on the site.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.12 released with features for privacy and export data</title>
+      <link>https://getfider.com/blog/version-0.12.0/</link>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.12.0/</guid>
+      <description>Introduction We&amp;rsquo;re super excited about this release! Private site was a highly requested feature that brings a lot of value in some particular situations. This feature open a range of possibilities on how people can leverage Fider on their projects and organizations.
+Aside from that, we&amp;rsquo;re also shipping a built-in option to export all your ideas to a CSV. This can be particularly useful if you want to do some analysis on an external tool like Excel or any of your favorite Business Intelligence tool.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.11 released with option to edit and delete ideas</title>
+      <link>https://getfider.com/blog/version-0.11.0/</link>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.11.0/</guid>
+      <description>Introduction It&amp;rsquo;s very well known that as the size of the codebase grows, so does the complexity and time needed to maintain it. This is a common characteristic of most software programs and thus, not different for Fider.
+As we evolve one version a month we need to always look back and improve older code, even those small pieces that are still working sometimes needs some love. Refactoring older code to make it easier to read, maintain and change is something we&amp;rsquo;ll be doing more often moving forward.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.10 released with notifications system and more</title>
+      <link>https://getfider.com/blog/version-0.10.0/</link>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.10.0/</guid>
+      <description>1. Web and Email Notifications This has been, for a long time, the most wanted feature of Fider. The notification system is based on a subscription model where users are only notified about ideas they subscribed to. This can be done manually by clicking on &amp;ldquo;Subscribe&amp;rdquo; or automatically whenever they vote or comment on it.
+As for Collaborators and Administrators, they automatically subscribe to all ideas, although it&amp;rsquo;s possible to unsubscribe from each idea individually.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.9 released with features to merge duplicate ideas, sort by trending ideas and more</title>
+      <link>https://getfider.com/blog/version-0.9.0/</link>
+      <pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.9.0/</guid>
+      <description>1. Merge duplicate ideas It&amp;rsquo;s now possible to mark an idea as a Duplicate of another idea. This is particular useful to clean up the ideas list when someone shares an idea that has already been posted before.
+When an idea is marked as a duplicate, it will show a link to the original idea and all its votes will be added to it as well.
+  2. Sort by trending Fider now shows trending ideas by default instead of recent ones.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.8 released with tags and edit posts feature</title>
+      <link>https://getfider.com/blog/version-0.8.0/</link>
+      <pubDate>Wed, 29 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.8.0/</guid>
+      <description>1. Assign tag to posts Our recent most wanted feature has been implemented. Starting from this release, administrators are able to create tags and assign tags to posts.
+  Tags can be either Public or Private. Private tags are especially helpful for administrators to organize their posts without leaking any information publicly.
+Tags can also be used to filter posts, alongside with the new free text search box.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.7 released with members administration and automatic SSL</title>
+      <link>https://getfider.com/blog/version-0.7.0/</link>
+      <pubDate>Tue, 31 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.7.0/</guid>
+      <description>1. Add/Remove Members This feature has been suggested during the month and received a few votes on a short amount of time. This is a really basic feature that we were missing and now we&amp;rsquo;re happy to ship the first version of it on this release.
+  2. Technical Improvements This release was all about Technical Improvements. We&amp;rsquo;ve removed echo, updated React to v16, increased code coverage, removed other dependencies and refactored a lot of code.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.6 released with sign in by email</title>
+      <link>https://getfider.com/blog/version-0.6.0/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.6.0/</guid>
+      <description>1. Sign in by email We heard more than once that required users to use their Social accounts to sign in is not the way to go. Some people might not have these accounts or don&amp;rsquo;t want to link they because of privacy concerns, which is totally understandable!
+With this in mind, we are happy to release v0.6.0 with a very simple sign in by email process. There&amp;rsquo;s no need for users to fill in any form, all they need to do is type their email and click on the link that we send.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.5 released with a great redesign and GitHub authentication</title>
+      <link>https://getfider.com/blog/version-0.5.0/</link>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.5.0/</guid>
+      <description>1. Redesign The goal of this redesign was a default theme that could be easily used any customer, without forcing the violet theme. We&amp;rsquo;ve also removed the focus from the vote counter to the content, while keeping it simple and clean.
+ Fider 0.4.0   Fider 0.5.0  2. Staff highlight Staff members will now have a different color on their names on discussions.
+  3. Login with GitHub GitHub is the world&amp;rsquo;s leading software development platform and now we allow users to log in using their GitHub profiles.</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.4 released with markdown and customizable text</title>
+      <link>https://getfider.com/blog/version-0.4.0/</link>
+      <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.4.0/</guid>
+      <description>1. Redesign The home page has been redesigned to make better use of the large screens on desktops, while keeping it clean and simple on mobile and tablets.
+ Fider 0.3.0   Fider 0.4.0  2. Ideas filter While on home page you&amp;rsquo;ll now be able to filter and sort ideas based on commonly used criteria.
+This will help you quickly find most wanted ideas and those that are currently trending!</description>
+    </item>
+    
+    <item>
+      <title>Fider 0.3 released with staff response, SSL and sign up process</title>
+      <link>https://getfider.com/blog/version-0.3.0/</link>
+      <pubDate>Wed, 05 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/blog/version-0.3.0/</guid>
+      <description>1. Staff now can add official response to ideas In you&amp;rsquo;re part of the Staff of a tenant, you&amp;rsquo;ll now see a Respond button where you can give your official status on what&amp;rsquo;s the plan for that idea. As of now, we&amp;rsquo;re currently supporting the following status: New, Started, Completed and Declined.
+  2. Much simpler Sign up / Installation process On previous versions, installing a new Fider instance required some SQL commands to be run.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/authentication/</guid>
+      <description>Authentication Some API endpoint require authentication to work. This section explains how to make authenticated HTTP Requests to Fider.
+The first step is to generate an API Key on your user profile. Sign in on Fider and navigate to Settings -&amp;gt; API Key and click on Regenerate API Key. An API Key will be shown. Take note of it as you won&amp;rsquo;t be able to retrieve this key again. If your Key is lost or has been compromised, you can always repeat this process to generate a new Key.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/best-practices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/best-practices/</guid>
+      <description>Best Practices Service Account
+A common approach when using Fider API is to sign in with a generic email address (like admin@yourcompany.com), then switch to an Administrator user and promote the new user to an Adminitrator as well. This allows you to use a common user account on all API operations, which having to use a personal user account.
+How to properly use impersonation
+We usually recommend the usage of impersonation in combination with the Create User API.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/comments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/comments/</guid>
+      <description>Comments  List Comments Get a Comment Add a Comment Edit a Comment Delete a Comment  List Comments  Authentication: Optional  GET /api/v1/posts/{number}/comments  Parameters
+  Name Type Description   number number Required. The number of the post to get comments from.    Example
+GET &amp;lt;baseURL&amp;gt;/api/v1/posts/47/comments  Response
+[ { &amp;quot;id&amp;quot;:67, &amp;quot;content&amp;quot;:&amp;quot;Sounds good, right?&amp;quot;, &amp;quot;createdAt&amp;quot;:&amp;quot;2017-07-26T04:15:22.72261Z&amp;quot;, &amp;quot;user&amp;quot;:{ &amp;quot;id&amp;quot;:54, &amp;quot;name&amp;quot;:&amp;quot;Michael Jackson&amp;quot;, &amp;quot;role&amp;quot;:&amp;quot;visitor&amp;quot; } }, { &amp;quot;id&amp;quot;:68, &amp;quot;content&amp;quot;:&amp;quot;Definitely.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/invitations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/invitations/</guid>
+      <description>Invitations  Send a Sample Send an Invite  Send a Sample Sample invitations are example of invitations emails that are sent to current authenticated user&amp;rsquo;s email. Use it to see how the email looks like before sending to other users.
+ Authentication: Required Required Role: Collaborator or Administrator  POST /api/v1/invitations/sample  Parameters
+  Name Type Description   subject number Required. The subject of the email to be sent.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/overview/</guid>
+      <description>Overview Welcome to the Fider API documentation.
+The Fider API allows you to manage Posts and other data within your Fider instance in a simple, programmatic way using conventional HTTP requests. The endpoints are intuitive and powerful, allowing you to easily make calls to retrieve information or to execute actions.
+Version
+The API v1 was introduced on Fider v0.16.0. Make sure you&amp;rsquo;re running the latest version of Fider to leverage the API.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/posts/</guid>
+      <description>Posts  List Posts Get a Post Create a Post Edit a Post Delete a Post Respond to a Post  A Post is new topic created by a user on the Feedback Site, while it&amp;rsquo;s usually a suggestion or feature request, sometimes it might also be a bug report or a complain.
+List Posts  Authentication: Optional  GET /api/v1/posts  Parameters
+  Name Type Description   query string The search keywords   view string  The filter and order to apply.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/tags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/tags/</guid>
+      <description>Tags  List Tags Create a Tag Edit a Tag Delete a Tag Tag a Post Untag a Post  List Tags  Authentication: Optional  GET /api/v1/tags  The list of tags returned by this endpoint depends on the role of the authenticated user. Private Tags are only returned for users with either administrator or collaborator role.
+Example
+GET &amp;lt;baseURL&amp;gt;/api/v1/tags  Response
+200 OK --- [ { &amp;quot;id&amp;quot;: 8, &amp;quot;name&amp;quot;: &amp;quot;Under Consideration&amp;quot;, &amp;quot;slug&amp;quot;: &amp;quot;under-consideration&amp;quot;, &amp;quot;color&amp;quot;: &amp;quot;87BE1F&amp;quot;, &amp;quot;isPublic&amp;quot;: true }, { &amp;quot;id&amp;quot;: 86, &amp;quot;name&amp;quot;: &amp;quot;Hard&amp;quot;, &amp;quot;slug&amp;quot;: &amp;quot;hard&amp;quot;, &amp;quot;color&amp;quot;: &amp;quot;E60737&amp;quot;, &amp;quot;isPublic&amp;quot;: false } ]  Create a Tag  Authentication: Required Required Role: Administrator  POST /api/v1/tags  Parameters</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/users/</guid>
+      <description>Users  List Users Create a User  List Users  Authentication: Required Required Role: Collaborator or Administrator  GET /api/v1/users  Example
+GET &amp;lt;baseURL&amp;gt;/api/v1/users  Response
+200 OK --- [ { &amp;quot;id&amp;quot;: 3, &amp;quot;name&amp;quot;: &amp;quot;Arya Stark&amp;quot;, &amp;quot;role&amp;quot;: &amp;quot;administrator&amp;quot;, &amp;quot;status&amp;quot;: &amp;quot;active&amp;quot;, }, { &amp;quot;id&amp;quot;: 5, &amp;quot;name&amp;quot;: &amp;quot;Jon Snow&amp;quot;, &amp;quot;role&amp;quot;: &amp;quot;visitor&amp;quot;, &amp;quot;status&amp;quot;: &amp;quot;active&amp;quot; }, { &amp;quot;id&amp;quot;: 24, &amp;quot;name&amp;quot;: &amp;quot;The Queen&amp;quot;, &amp;quot;role&amp;quot;: &amp;quot;collaborator&amp;quot;, &amp;quot;status&amp;quot;: &amp;quot;blocked&amp;quot; }, { ... } ]  Create a User  Authentication: Required Required Role: Administrator  POST /api/v1/users  The Create User API will only create a new user if it cannot find an existing user with given email or reference ID.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://getfider.com/docs/api/votes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/votes/</guid>
+      <description>Votes  Vote on a Post Remove Vote from on a Post List Votes of a Post  Vote on a Post  Authentication: Required  When casting a vote upon a post, the vote is registered under the current authenticated user. Impersonate another user to vote on behalf of them.
+POST /api/v1/posts/{number}/votes  Parameters
+  Name Type Description   number number Required. The number of the post to vote on.</description>
+    </item>
+    
+    <item>
+      <title>API Reference</title>
+      <link>https://getfider.com/docs/api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/api/</guid>
+      <description>Overview Welcome to the Fider API documentation.
+The Fider API allows you to manage Posts and other data within your Fider instance in a simple, programmatic way using conventional HTTP requests. The endpoints are intuitive and powerful, allowing you to easily make calls to retrieve information or to execute actions.
+Version
+The API v1 was introduced on Fider v0.16.0. Make sure you&amp;rsquo;re running the latest version of Fider to leverage the API.</description>
+    </item>
+    
+    <item>
+      <title>Configuring OAuth</title>
+      <link>https://getfider.com/docs/configuring-oauth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/configuring-oauth/</guid>
+      <description>OAuth is an open standard for authentication and authorization. Fider is an OAuth client that can connect to any OAuth2 provider to enable a fast, easy and secure sigin in process.
+Fider has native support to Facebook, Google and GitHub. To add any other OAuth provider please follow this guide.
+Registering a new OAuth Provider While logged in as an Administrator, navigate to Site Settings -&amp;gt; Authentication.
+This page list all registered providers, either Enabled or Disabled.</description>
+    </item>
+    
+    <item>
+      <title>Hosting an instance on Heroku</title>
+      <link>https://getfider.com/docs/hosting-on-heroku/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/hosting-on-heroku/</guid>
+      <description>Prerequisites   A Heroku account It&#39;s totally free to sign up, and will allow you to deploy your application for free on a small instance.
+  Deploying your instance Step 1: Create a new heroku app  Click the upper left button to create a new application. You will be prompted for an app name, you can choose anything you want. You also need to choose the hosting region, choose the one closest to you or your users.</description>
+    </item>
+    
+    <item>
+      <title>Hosting your own instance</title>
+      <link>https://getfider.com/docs/hosting-instance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/hosting-instance/</guid>
+      <description>Prerequisites   Docker As we don&#39;t distribute Linux or Windows specific binaries, Docker is a must to host Fider. It provides a consistent runtime environment and is widely adopted. You can run it standalone or in your favorite container-orchestration system, whatever floats your boat.
+  PostgreSQL 9.6+ Database This tutorial uses a Docker PostgreSQL image for the sake of simplicity, but we strongly recommend the usage of a database outside Docker, unless you&#39;re very confident on how to host a Database inside Docker.</description>
+    </item>
+    
+    <item>
+      <title>How to enable SSL</title>
+      <link>https://getfider.com/docs/how-to-enable-ssl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/how-to-enable-ssl/</guid>
+      <description>Prerequisites In order to configure HTTPS, you&amp;rsquo;ll need a Certificate and the Private Key.
+How to enable it These are the two environment variables that have to be set.
+ SSL_CERT: The name of the Certificate file. SSL_CERT_KEY: The name of the Private Key file.  Fider&amp;rsquo;s Docker image expects both file to be available on /app/etc. You can copy these files anywhere you want on your server and share them with your Docker container by using volumes.</description>
+    </item>
+    
+    <item>
+      <title>How to show Legal Pages</title>
+      <link>https://getfider.com/docs/how-to-show-legal-pages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getfider.com/docs/how-to-show-legal-pages/</guid>
+      <description>Starting from Fider 0.13, it is now possible host custom Privacy Policy and Terms of Service that will be displayed to all users during the registration and sign in process.
+Prerequisites You will need both documents written in a markdown format, they need to be named terms.md and privacy.md.
+How to Fider&amp;rsquo;s Docker image expects both file to be available on /app/etc. You can copy these files anywhere you want on your server and share them with your Docker container by using volumes.</description>
+    </item>
+    
+  </channel>
+</rss>

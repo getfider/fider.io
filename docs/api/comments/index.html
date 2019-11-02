@@ -1,0 +1,264 @@
+<h3 id="comments">Comments</h3>
+
+<ul>
+  <li><a href="#list-comments">List Comments</a></li>
+  <li><a href="#get-comment">Get a Comment</a></li>
+  <li><a href="#add-comment">Add a Comment</a></li>
+  <li><a href="#edit-comment">Edit a Comment</a></li>
+  <li><a href="#delete-comment">Delete a Comment</a></li>
+</ul>
+
+<h4 id="list-comments">List Comments</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Optional</li>
+</ul>
+
+<pre><code>GET /api/v1/posts/{number}/comments
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="80">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to get comments from.</td>
+  </tr>
+  <tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/posts/47/comments
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>[
+  {
+    &quot;id&quot;:67,
+    &quot;content&quot;:&quot;Sounds good, right?&quot;,
+    &quot;createdAt&quot;:&quot;2017-07-26T04:15:22.72261Z&quot;,
+    &quot;user&quot;:{
+      &quot;id&quot;:54,
+      &quot;name&quot;:&quot;Michael Jackson&quot;,
+      &quot;role&quot;:&quot;visitor&quot;
+    }
+  },
+  {
+    &quot;id&quot;:68,
+    &quot;content&quot;:&quot;Definitely. Just do it!&quot;,
+    &quot;createdAt&quot;:&quot;2017-07-26T06:49:03.951383Z&quot;,
+    &quot;user&quot;:{
+      &quot;id&quot;:23,
+      &quot;name&quot;:&quot;Darth Vader&quot;,
+      &quot;role&quot;:&quot;visitor&quot;
+    },
+    &quot;editedAt&quot;:&quot;2018-09-29T17:37:59.516909Z&quot;,
+    &quot;editedBy&quot;:{
+      &quot;id&quot;:1,
+      &quot;name&quot;:&quot;Jon Snow&quot;,
+      &quot;role&quot;:&quot;administrator&quot;
+    }
+  }
+]
+</code></pre>
+
+<h4 id="get-comment">Get a Comment</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Optional</li>
+</ul>
+
+<pre><code>GET /api/v1/posts/{number}/comments/{id}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="80">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to retrieve.</td>
+  </tr>
+  <tr>
+    <td><code>id</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The id of the comment to be retrieved.</td>
+  </tr>
+  <tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/posts/47/comments/68
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;:68,
+  &quot;content&quot;:&quot;Definitely. Just do it!&quot;,
+  &quot;createdAt&quot;:&quot;2017-07-26T06:49:03.951383Z&quot;,
+  &quot;user&quot;:{
+    &quot;id&quot;:23,
+    &quot;name&quot;:&quot;Darth Vader&quot;,
+    &quot;role&quot;:&quot;visitor&quot;
+  },
+  &quot;editedAt&quot;:&quot;2018-09-29T17:37:59.516909Z&quot;,
+  &quot;editedBy&quot;:{
+    &quot;id&quot;:1,
+    &quot;name&quot;:&quot;Jon Snow&quot;,
+    &quot;role&quot;:&quot;administrator&quot;
+  }
+}
+</code></pre>
+
+<h4 id="add-comment">Add a Comment</h4>
+
+<pre><code>POST /api/v1/posts/{number}/comments
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to add the comment.</td>
+  </tr>
+  <tr>
+    <td><code>content</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The content of the comment.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts/47/comments
+---
+{
+  &quot;content&quot;: &quot;Agreed, we'll soon need to act on this&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;:5675
+}
+</code></pre>
+
+<h4 id="edit-comment">Edit a Comment</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator.</li>
+</ul>
+
+<pre><code>PUT /api/v1/posts/{number}/comments/{id}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post that has given comment.</td>
+  </tr>
+  <tr>
+    <td><code>id</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The id of the comment to be edited.</td>
+  </tr>
+  <tr>
+    <td><code>content</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The new content of the comment.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts/47/comments/5675
+---
+{
+  &quot;content&quot;: &quot;Agreed, we need to act on this as soon as possible&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="delete-comment">Delete a Comment</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator.</li>
+</ul>
+
+<pre><code>DELETE /api/v1/posts/{number}/comments/{id}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post that has given comment.</td>
+  </tr>
+  <tr>
+    <td><code>id</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The id of the comment to be edited.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>DELETE &lt;baseURL&gt;/api/v1/posts/47/comments/5675
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>

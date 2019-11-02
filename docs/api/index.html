@@ -1,0 +1,1582 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/logo-100x100.png" >
+    <title>API Reference · Fider</title>
+    <meta name="description" content="Integrate your App with Fider">
+    
+    
+
+    <meta property="og:title" content="API Reference · Fider">
+    <meta property="og:image" content="https://getfider.com/images/logo-small.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://getfider.com/" />
+    <meta property="og:description" content="Integrate your App with Fider">
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-100812395-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="/font.min.a3218f4d9a6c7dff3067d261349676d5bc4b4a4be31dbdaf8a600b71e38f66bb.css" integrity="sha256-oyGPTZpsff8wZ9JhNJZ21bxLSkvjHb2vimALceOPZrs=" media="screen">  
+    
+    <link rel="stylesheet" href="/fider.min.e42cf6de0eeb0d456dd7092aea1299a503def39689ffa68d48602a22efd789b6.css" integrity="sha256-5Cz23g7rDUVt1wkq6hKZpQPe85aJ/6aNSGAqIu/XibY=" media="screen">  
+  </head>
+
+  <body>
+    
+    
+<main class="docs-single">
+  <div class="sidebar">
+    <div class="header">
+  <a href="/">
+    <img class="logo" alt="logo" src="/images/logo-100x100.png">
+  </a>
+  <h4>Fider<span class="color-primary">:docs</span></h4>
+</div>
+<div>
+  <ul class="docs-toc">
+    <li>
+      <a href="/docs">Home</a>
+    </li>
+    
+      <span class="category">How To</span>
+      
+        <li>
+          <a href="https://getfider.com/docs/configuring-oauth/">
+            &middot; Configuring OAuth
+          </a>
+        </li>
+      
+    
+      <span class="category">Self-Hosted</span>
+      
+        <li>
+          <a href="https://getfider.com/docs/hosting-on-heroku/">
+            &middot; Hosting an instance on Heroku
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://getfider.com/docs/hosting-instance/">
+            &middot; Hosting your own instance
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://getfider.com/docs/how-to-enable-ssl/">
+            &middot; How to enable SSL
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://getfider.com/docs/how-to-show-legal-pages/">
+            &middot; How to show Legal Pages
+          </a>
+        </li>
+      
+    
+    <span class="category">API Reference</span>
+    <li><a href="/docs/api#overview">&middot; Overview</a></li>
+    <li><a href="/docs/api#authentication">&middot; Authentication</a></li>
+    <li><a href="/docs/api#best-practices">&middot; Best Practices</a></li>
+    <li><a href="/docs/api#posts">&middot; Posts</a></li>
+    <li><a href="/docs/api#votes">&middot; Votes</a></li>
+    <li><a href="/docs/api#comments">&middot; Comments</a></li>
+    <li><a href="/docs/api#users">&middot; Users</a></li>
+    <li><a href="/docs/api#tags">&middot; Tags</a></li>
+    <li><a href="/docs/api#invitations">&middot; Invitations</a></li>
+  </ul>
+  <ul class="link-list">
+    <li>
+      <a href="/">
+        ← getfider.com
+      </a>
+    </li>
+  </ul>
+  <ul class="social-list">
+    <li>
+      <a href="https://github.com/getfider" target="_blank">
+        <i class="fab fa-lg fa-github"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/getfider" target="_blank">
+        <i class="fab fa-lg fa-twitter"></i>
+      </a>
+    </li>
+  </ul>
+  <span class="footer-text">
+    <span class="update-year">2018</span> Fider
+  </span>
+</div>
+  </div>
+  <div class="body">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img class="logo" alt="logo" src="/images/logo-100x100.png">
+        <h4>Fider<span class="color-primary">:docs</span></h4>
+      </a>
+  
+      <a id="sidebar-burger" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</nav>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">API Reference</h1>
+        <h2 class="subtitle">
+          Integrate your App with Fider
+        </h2>
+        <div class="content">
+          <p><h3 id="overview">Overview</h3>
+
+<p>Welcome to the Fider API documentation.</p>
+
+<p>The Fider API allows you to manage Posts and other data within your Fider instance in a simple, programmatic way using conventional HTTP requests. The endpoints are intuitive and powerful, allowing you to easily make calls to retrieve information or to execute actions.</p>
+
+<p><strong>Version</strong></p>
+
+<p>The <strong>API v1</strong> was introduced on Fider <code>v0.16.0</code>. Make sure you&rsquo;re running the latest version of Fider to leverage the API. All Cloud users on <code>fider.io</code> are already on the latest so you can start using it right now.</p>
+
+<p><strong>Request</strong></p>
+
+<p>Allowed HTTP Verbs are GET, POST, PUT and DELETE. All data must be sent as JSON.</p>
+
+<p>Requests are sent to your Fider URL using the HTTP/HTTPS protocol.</p>
+
+<table>
+  <tr>
+    <th width="90">Hosting</th>
+    <th>URL</th>
+    <th width="110">Protocol</th>
+  </tr>
+  <tr>
+    <td>Cloud</td>
+    <td><code>https://&lt;subdomain&gt;.fider.io</code> or, if configured, your custom domain name (e.g: <code>https://feedback.yourcompany.com</code>)</td>
+    <td>HTTPS only</td>
+  </tr>
+  <tr>
+    <td>Self-Hosted</td>
+    <td>The URL you have configured</td>
+    <td>HTTP or HTTPS</td>
+  </tr>
+</table>
+
+<p><strong>Response</strong></p>
+
+<p>Every response will be encoded with <code>application/json</code> and one of the following status code.</p>
+
+<table>
+  <tr>
+    <th width="150">Status Code</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>200 OK</td>
+    <td>Fider has accepted and processed your request, no error was encountered.</td>
+  </tr>
+  <tr>
+    <td>400 Bad Request</td>
+    <td>Something is incorrect with your request, it might be missing a parameter or have an invalid value. See <strong>Error Messages</strong> below.</td>
+  </tr>
+  <tr>
+    <td>403 Forbidden</td>
+    <td>API Key is not present or not allowed to perform the operation</td>
+  </tr>
+  <tr>
+    <td>404 Not Found</td>
+    <td>The resource you're looking for doesn't exist.</td>
+  </tr>
+  <tr>
+    <td>500 Internal Error</td>
+    <td>This generally indicates a server-side problem on Fider and it cannot fulfill your request currently.</td>
+  </tr>
+</table>
+
+<p><strong>Error Messages</strong></p>
+
+<p>Every <code>400 Bad Request</code> response contains a JSON payload with details of what went wrong. Each <code>error (object)</code> contains a <code>message (string)</code> describing what is incorrect and may also contain a <code>field (string)</code> property. If the error object doesn&rsquo;t contain the field, that&rsquo;s a general error message.</p>
+
+<pre><code>{
+  &quot;errors&quot;: [
+    {
+      &quot;field&quot;: &quot;color&quot;,
+      &quot;message&quot;: &quot;'dark' is an invalid color.&quot;
+    },
+    {
+      &quot;message&quot;: &quot;A tag named 'suggestion' already exists.&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="authentication">Authentication</h3>
+
+<p>Some API endpoint require authentication to work. This section explains how to make authenticated HTTP Requests to Fider.</p>
+
+<p>The first step is to generate an API Key on your user profile. Sign in on Fider and navigate to <strong>Settings -&gt; API Key</strong> and click on <strong>Regenerate API Key</strong>. An API Key will be shown. Take note of it as you won&rsquo;t be able to retrieve this key again. If your Key is lost or has been compromised, you can always repeat this process to generate a new Key.</p>
+
+<p>API Key is only available for users with <strong>Collaborator</strong> or <strong>Administrator</strong> role. <strong>Visitors</strong> are not allowed to use any authenticated API endpoint.</p>
+
+<p>With the API Key on hands, it&rsquo;s now possible to send authenticated requests the API using the <strong>Authorization</strong> HTTP Header as shown below.</p>
+
+<pre><code>Authorization: Bearer {api-key}
+</code></pre>
+
+<p><strong id="impersonation">Impersonation</strong></p>
+
+<p>Every action performed via the API is executed under the User that generated the API Key. Fider also allow <strong>Administrators</strong> to impersonate another User and execute the operations under their behalf. To do so, add the following HTTP Header to the request.</p>
+
+<pre><code>Authorization: Bearer {api-key}
+X-Fider-UserID: {target-user-id}
+</code></pre>
+
+<p><strong id="roles">Roles</strong></p>
+
+<p>Fider has 3 user roles: <code>Visitor</code>, <code>Collaborator</code> and <code>Administrator</code>. These roles are used to restrict which actions each user can perform on the platform, be it via UI or via the API. Most operations can only be executed if the authenticated user has a specific role assigned. Every operation listed below will specify which role is required.</p>
+
+<h3 id="best-practices">Best Practices</h3>
+
+<p><strong id="service-account">Service Account</strong></p>
+
+<p>A common approach when using Fider API is to sign in with a generic email address (like <code>admin@yourcompany.com</code>), then switch to an Administrator user and promote the new user to an Adminitrator as well. This allows you to use a common user account on all API operations, which having to use a personal user account.</p>
+
+<p><strong id="use-impersonation-property">How to properly use impersonation</strong></p>
+
+<p>We usually recommend the usage of impersonation in combination with the <a href="#create-user">Create User</a> API. This API will retrieve or create a new user and returns its User ID, which can then be used to impersonate that user.</p>
+
+<p>As an example, imagine that you have a Mobile App that lists all your Fider posts and you want to let the user vote on it via your App. The first step is to call Create User with the name, email and an optional (altough recommended) reference ID. The API will the return a user ID. It might be a new user ID or an existing one, it doesn&rsquo;t matter. Call the <a href="#add-vote">Add Vote</a> API with the <code>X-Fider-UserID</code> parameter to execute this action under that user account.</p>
+
+<h3 id="posts">Posts</h3>
+
+<ul>
+  <li><a href="#list-posts">List Posts</a></li>
+  <li><a href="#get-post">Get a Post</a></li>
+  <li><a href="#create-post">Create a Post</a></li>
+  <li><a href="#edit-post">Edit a Post</a></li>
+  <li><a href="#delete-post">Delete a Post</a></li>
+  <li><a href="#respond-post">Respond to a Post</a></li>
+</ul>
+
+<p>A <strong>Post</strong> is new topic created by a user on the Feedback Site, while it&rsquo;s usually a suggestion or feature request, sometimes it might also be a bug report or a complain.</p>
+
+<h4 id="list-posts">List Posts</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Optional</li>
+</ul>
+
+<pre><code>GET /api/v1/posts
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="80">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>query</code></td>
+    <td><code>string</code></td>
+    <td>The search keywords</td>
+  </tr>
+  <tr>
+    <td><code>view</code></td>
+    <td><code>string</code></td>
+    <td>
+      The filter and order to apply. Possible values are <code>all</code>, <code>recent</code>, <code>my-votes</code>, <code>most-wanted</code>, <code>most-discussed</code>, <code>planned</code>, <code>started</code>, <code>completed</code>, <code>declined</code> and <code>trending</code>. Default: <code>all</code>
+    </td>
+  </tr>
+  <tr>
+    <td><code>limit</code></td>
+    <td><code>integer</code></td>
+    <td>The number of entries to return. Default: <code>30</code></td>
+  </tr>
+  <tr>
+    <td><code>tags</code></td>
+    <td><code>string</code></td>
+    <td>The list of tags to filter by. Separate multiple tags by <code>,</code></td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/posts?view=completed&amp;query=open+links&amp;limit=50
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+[
+  {
+    &quot;id&quot;: 4315,
+    &quot;number&quot;: 65,
+    &quot;title&quot;: &quot;Open links in new tab&quot;,
+    &quot;slug&quot;: &quot;open-links-in-new-tab&quot;,
+    &quot;description&quot;: &quot;When somebody pastes a link in the description of an item, it has to open link in a new tab so you don't lose focus in the app&quot;,
+    &quot;createdAt&quot;: &quot;2018-05-16T13:50:34.579281Z&quot;,
+    &quot;user&quot;: {
+      &quot;id&quot;: 45642,
+      &quot;name&quot;: &quot;Jon Snow&quot;,
+      &quot;role&quot;: &quot;visitor&quot;
+    },
+    &quot;hasVoted&quot;: true,
+    &quot;votesCount&quot;: 34,
+    &quot;commentsCount&quot;: 0,
+    &quot;status&quot;: &quot;completed&quot;,
+    &quot;response&quot;: {
+      &quot;text&quot;: &quot;This is now available on `v0.14`. Links from any markdown text will open in a new tab.&quot;,
+      &quot;respondedAt&quot;: &quot;2018-06-13T17:48:27.073178Z&quot;,
+      &quot;user&quot;: {
+        &quot;id&quot;: 8,
+        &quot;name&quot;: &quot;Arya Stark&quot;,
+        &quot;role&quot;: &quot;administrator&quot;
+      },
+      &quot;original&quot;: null
+    },
+    &quot;tags&quot;: [&quot;hard&quot;,&quot;critical&quot;]
+  },
+  {
+    ...
+  }
+]
+</code></pre>
+
+<h4 id="get-post">Get a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Optional</li>
+</ul>
+
+<pre><code>GET /api/v1/posts/{number}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="80">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to retrieve.</td>
+  </tr>
+  <tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/posts/65
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;: 4315,
+  &quot;number&quot;: 65,
+  &quot;title&quot;: &quot;Open links in new tab&quot;,
+  &quot;slug&quot;: &quot;open-links-in-new-tab&quot;,
+  &quot;description&quot;: &quot;When somebody pastes a link in the description of an item, it has to open link in a new tab so you don't lose focus in the app&quot;,
+  &quot;createdAt&quot;: &quot;2018-05-16T13:50:34.579281Z&quot;,
+  &quot;user&quot;: {
+    &quot;id&quot;: 45642,
+    &quot;name&quot;: &quot;Jon Snow&quot;,
+    &quot;role&quot;: &quot;visitor&quot;
+  },
+  &quot;hasVoted&quot;: true,
+  &quot;votesCount&quot;: 34,
+  &quot;commentsCount&quot;: 0,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;response&quot;: {
+    &quot;text&quot;: &quot;This is now available on `v0.14`. Links from any markdown text will open in a new tab.&quot;,
+    &quot;respondedAt&quot;: &quot;2018-06-13T17:48:27.073178Z&quot;,
+    &quot;user&quot;: {
+      &quot;id&quot;: 8,
+      &quot;name&quot;: &quot;Arya Stark&quot;,
+      &quot;role&quot;: &quot;administrator&quot;
+    },
+    &quot;original&quot;: null
+  },
+  &quot;tags&quot;: [&quot;hard&quot;,&quot;critical&quot;]
+}
+</code></pre>
+
+<h4 id="create-post">Create a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+</ul>
+
+<pre><code>POST /api/v1/posts
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>title</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The title of the post.</td>
+  </tr>
+  <tr>
+    <td><code>description</code></td>
+    <td><code>string</code></td>
+    <td>The description of the post.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts
+---
+{
+  &quot;title&quot;: &quot;Allow users to edit any comment&quot;,
+  &quot;description&quot;: &quot;This is useful to fix some minor typos or introduce more details&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;: 6848,
+  &quot;number&quot;: 47,
+  &quot;title&quot;: &quot;Allow users to edit any comment&quot;,
+  &quot;slug&quot;: &quot;allow-users-to-edit-any-comment&quot;
+}
+</code></pre>
+
+<h4 id="edit-post">Edit a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>PUT /api/v1/posts/{number}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to be edited.</td>
+  </tr>
+  <tr>
+    <td><code>title</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The title of the post.</td>
+  </tr>
+  <tr>
+    <td><code>description</code></td>
+    <td><code>string</code></td>
+    <td>The description of the post.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts/47
+---
+{
+  &quot;title&quot;: &quot;Allow users to edit their own comments&quot;,
+  &quot;description&quot;: &quot;This is useful to fix some minor typos or introduce more details&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="delete-post">Delete a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Administrator</li>
+</ul>
+
+<pre><code>DELETE /api/v1/posts/{number}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to be deleted.</td>
+  </tr>
+  <tr>
+    <td><code>text</code></td>
+    <td><code>string</code></td>
+    <td>The reason why this post is being deleted.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>DELETE &lt;baseURL&gt;/api/v1/posts/47
+---
+{
+  &quot;text&quot;: &quot;this is spam!&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="respond-post">Respond to a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>PUT /api/v1/posts/{number}/status
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to add a response.</td>
+  </tr>
+  <tr>
+    <td><code>status</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong>The new status of the post. Possible values are <code>open</code>, <code>planned</code>, <code>started</code>, <code>completed</code>, <code>declined</code> and <code>duplicate</code></td>
+  </tr>
+  <tr>
+    <td><code>text</code></td>
+    <td><code>string</code></td>
+    <td>An optional description of what is the status on this post. This is made visible to all visitors on the website.</td>
+  </tr>
+  <tr>
+    <td><code>originalNumber</code></td>
+    <td><code>number</code></td>
+    <td>The number of the post to merge this into. This parameter <strong>Required</strong> when status is <code>duplicate</code>.</td>
+  </tr>
+</table>
+
+<p><strong>Example #1</strong></p>
+
+<pre><code>PUT &lt;baseURL&gt;/api/v1/posts/47/status
+---
+{
+  &quot;status&quot;: &quot;declined&quot;,
+  &quot;text&quot;: &quot;this is spam!&quot;
+}
+</code></pre>
+
+<p><strong>Example #2</strong></p>
+
+<pre><code>PUT &lt;baseURL&gt;/api/v1/posts/47/status
+---
+{
+  &quot;status&quot;: &quot;duplicate&quot;,
+  &quot;originalNumber&quot;: 84
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h3 id="votes">Votes</h3>
+
+<ul>
+  <li><a href="#add-vote">Vote on a Post</a></li>
+  <li><a href="#remove-vote">Remove Vote from on a Post</a></li>
+  <li><a href="#list-post-votes">List Votes of a Post</a></li>
+</ul>
+
+<h4 id="add-vote">Vote on a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+</ul>
+
+<p>When casting a vote upon a post, the vote is registered under the current authenticated user. Impersonate another user to vote on behalf of them.</p>
+
+<pre><code>POST /api/v1/posts/{number}/votes
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to vote on.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts/47/votes
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="remove-vote">Remove Vote from on a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+</ul>
+
+<p>When removing the vote from a post, the vote is removed from the current authenticated user. Impersonate another user to remove votes on behalf of them.</p>
+
+<pre><code>DELETE /api/v1/posts/{number}/votes
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to have the vote removed.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>DELETE &lt;baseURL&gt;/api/v1/posts/47/votes
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="list-post-votes">List Votes of a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>GET /api/v1/posts/{number}/votes
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to list the votes.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/posts/47/votes
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+[
+  {
+    &quot;createdAt&quot;:&quot;2018-11-28T12:18:26.95415Z&quot;,
+    &quot;user&quot;:{
+      &quot;id&quot;:1234,
+      &quot;name&quot;:&quot;Jon Snow&quot;,
+      &quot;email&quot;:&quot;jon.snow@got.com&quot;
+    }
+  },
+  {
+    &quot;createdAt&quot;:&quot;2018-11-28T15:45:45.612288Z&quot;,
+    &quot;user&quot;:{
+      &quot;id&quot;:5678,
+      &quot;name&quot;:&quot;Arya Stark&quot;,
+      &quot;email&quot;:&quot;arya.stark@got.com&quot;
+    }
+  }
+]
+</code></pre>
+
+<h3 id="comments">Comments</h3>
+
+<ul>
+  <li><a href="#list-comments">List Comments</a></li>
+  <li><a href="#get-comment">Get a Comment</a></li>
+  <li><a href="#add-comment">Add a Comment</a></li>
+  <li><a href="#edit-comment">Edit a Comment</a></li>
+  <li><a href="#delete-comment">Delete a Comment</a></li>
+</ul>
+
+<h4 id="list-comments">List Comments</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Optional</li>
+</ul>
+
+<pre><code>GET /api/v1/posts/{number}/comments
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="80">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to get comments from.</td>
+  </tr>
+  <tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/posts/47/comments
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>[
+  {
+    &quot;id&quot;:67,
+    &quot;content&quot;:&quot;Sounds good, right?&quot;,
+    &quot;createdAt&quot;:&quot;2017-07-26T04:15:22.72261Z&quot;,
+    &quot;user&quot;:{
+      &quot;id&quot;:54,
+      &quot;name&quot;:&quot;Michael Jackson&quot;,
+      &quot;role&quot;:&quot;visitor&quot;
+    }
+  },
+  {
+    &quot;id&quot;:68,
+    &quot;content&quot;:&quot;Definitely. Just do it!&quot;,
+    &quot;createdAt&quot;:&quot;2017-07-26T06:49:03.951383Z&quot;,
+    &quot;user&quot;:{
+      &quot;id&quot;:23,
+      &quot;name&quot;:&quot;Darth Vader&quot;,
+      &quot;role&quot;:&quot;visitor&quot;
+    },
+    &quot;editedAt&quot;:&quot;2018-09-29T17:37:59.516909Z&quot;,
+    &quot;editedBy&quot;:{
+      &quot;id&quot;:1,
+      &quot;name&quot;:&quot;Jon Snow&quot;,
+      &quot;role&quot;:&quot;administrator&quot;
+    }
+  }
+]
+</code></pre>
+
+<h4 id="get-comment">Get a Comment</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Optional</li>
+</ul>
+
+<pre><code>GET /api/v1/posts/{number}/comments/{id}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="80">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to retrieve.</td>
+  </tr>
+  <tr>
+    <td><code>id</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The id of the comment to be retrieved.</td>
+  </tr>
+  <tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/posts/47/comments/68
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;:68,
+  &quot;content&quot;:&quot;Definitely. Just do it!&quot;,
+  &quot;createdAt&quot;:&quot;2017-07-26T06:49:03.951383Z&quot;,
+  &quot;user&quot;:{
+    &quot;id&quot;:23,
+    &quot;name&quot;:&quot;Darth Vader&quot;,
+    &quot;role&quot;:&quot;visitor&quot;
+  },
+  &quot;editedAt&quot;:&quot;2018-09-29T17:37:59.516909Z&quot;,
+  &quot;editedBy&quot;:{
+    &quot;id&quot;:1,
+    &quot;name&quot;:&quot;Jon Snow&quot;,
+    &quot;role&quot;:&quot;administrator&quot;
+  }
+}
+</code></pre>
+
+<h4 id="add-comment">Add a Comment</h4>
+
+<pre><code>POST /api/v1/posts/{number}/comments
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to add the comment.</td>
+  </tr>
+  <tr>
+    <td><code>content</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The content of the comment.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts/47/comments
+---
+{
+  &quot;content&quot;: &quot;Agreed, we'll soon need to act on this&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;:5675
+}
+</code></pre>
+
+<h4 id="edit-comment">Edit a Comment</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator.</li>
+</ul>
+
+<pre><code>PUT /api/v1/posts/{number}/comments/{id}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post that has given comment.</td>
+  </tr>
+  <tr>
+    <td><code>id</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The id of the comment to be edited.</td>
+  </tr>
+  <tr>
+    <td><code>content</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The new content of the comment.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts/47/comments/5675
+---
+{
+  &quot;content&quot;: &quot;Agreed, we need to act on this as soon as possible&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="delete-comment">Delete a Comment</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator.</li>
+</ul>
+
+<pre><code>DELETE /api/v1/posts/{number}/comments/{id}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post that has given comment.</td>
+  </tr>
+  <tr>
+    <td><code>id</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The id of the comment to be edited.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>DELETE &lt;baseURL&gt;/api/v1/posts/47/comments/5675
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h3 id="users">Users</h3>
+
+<ul>
+  <li><a href="#list-users">List Users</a></li>
+  <li><a href="#create-user">Create a User</a></li>
+</ul>
+
+<h4 id="list-users">List Users</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>GET /api/v1/users
+</code></pre>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/users
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+[
+  {
+    &quot;id&quot;: 3,
+    &quot;name&quot;: &quot;Arya Stark&quot;,
+    &quot;role&quot;: &quot;administrator&quot;,
+    &quot;status&quot;: &quot;active&quot;,
+  },
+  {
+    &quot;id&quot;: 5,
+    &quot;name&quot;: &quot;Jon Snow&quot;,
+    &quot;role&quot;: &quot;visitor&quot;,
+    &quot;status&quot;: &quot;active&quot;
+  },
+  {
+    &quot;id&quot;: 24,
+    &quot;name&quot;: &quot;The Queen&quot;,
+    &quot;role&quot;: &quot;collaborator&quot;,
+    &quot;status&quot;: &quot;blocked&quot;
+  },
+  {
+    ...
+  }
+]
+</code></pre>
+
+<h4 id="create-user">Create a User</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Administrator</li>
+</ul>
+
+<pre><code>POST /api/v1/users
+</code></pre>
+
+<p>The Create User API will only create a new user if it cannot find an existing user with given email or reference ID. If the user already exists on Fider, the ID of the existing user is returned instead of creating a new user.</p>
+
+<p>The ID returned by this API can be used to impersonate that user. Read more about <a href="#impersonation">impersonation</a>.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>name</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The name of the user.</td>
+  </tr>
+  <tr>
+    <td><code>email</code></td>
+    <td><code>string</code></td>
+    <td>The email of the user.</td>
+  </tr>
+  <tr>
+    <td><code>reference</code></td>
+    <td><code>string</code></td>
+    <td>A unique ID for the user in another system.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/users
+---
+{
+  &quot;name&quot;: &quot;Jon Snow&quot;,
+  &quot;email&quot;: &quot;jon.snow@got.com&quot;,
+  &quot;reference&quot;: &quot;CRM-817453&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;: 6332
+}
+</code></pre>
+
+<h3 id="tags">Tags</h3>
+
+<ul>
+  <li><a href="#list-tags">List Tags</a></li>
+  <li><a href="#create-tag">Create a Tag</a></li>
+  <li><a href="#edit-tag">Edit a Tag</a></li>
+  <li><a href="#delete-tag">Delete a Tag</a></li>
+  <li><a href="#tag-post">Tag a Post</a></li>
+  <li><a href="#untag-vote">Untag a Post</a></li>
+</ul>
+
+<h4 id="list-tags">List Tags</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Optional</li>
+</ul>
+
+<pre><code>GET /api/v1/tags
+</code></pre>
+
+<p>The list of tags returned by this endpoint depends on the role of the authenticated user. Private Tags are only returned for users with either <code>administrator</code> or <code>collaborator</code> role.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/tags
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+[
+  {
+    &quot;id&quot;: 8,
+    &quot;name&quot;: &quot;Under Consideration&quot;,
+    &quot;slug&quot;: &quot;under-consideration&quot;,
+    &quot;color&quot;: &quot;87BE1F&quot;,
+    &quot;isPublic&quot;: true
+  },
+  {
+    &quot;id&quot;: 86,
+    &quot;name&quot;: &quot;Hard&quot;,
+    &quot;slug&quot;: &quot;hard&quot;,
+    &quot;color&quot;: &quot;E60737&quot;,
+    &quot;isPublic&quot;: false
+  }
+]
+</code></pre>
+
+<h4 id="create-tag">Create a Tag</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Administrator</li>
+</ul>
+
+<pre><code>POST /api/v1/tags
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>name</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The display name of the tag.</td>
+  </tr>
+  <tr>
+    <td><code>color</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The Hex color of the tag (without #).</td>
+  </tr>
+  <tr>
+    <td><code>isPublic</code></td>
+    <td><code>boolean</code></td>
+    <td><strong>Required.</strong> <code>true</code> for public tags or <code>false</code> for private tags.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/tags
+---
+{
+  &quot;name&quot;: &quot;impact: big&quot;, 
+  &quot;color&quot;: &quot;FE422D&quot;, 
+  &quot;isPublic&quot;: true
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;: 1003,
+  &quot;name&quot;: &quot;impact: big&quot;,
+  &quot;slug&quot;: &quot;impact-big&quot;,
+  &quot;color&quot;: &quot;FE422D&quot;,
+  &quot;isPublic&quot;: true
+}
+</code></pre>
+
+<h4 id="edit-tag">Edit a Tag</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Administrator</li>
+</ul>
+
+<pre><code>PUT /api/v1/tags/{slug}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>slug</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The slug of the tag to be edited.</td>
+  </tr>
+  <tr>
+    <td><code>name</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The display name of the tag.</td>
+  </tr>
+  <tr>
+    <td><code>color</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The Hex color of the tag (without #).</td>
+  </tr>
+  <tr>
+    <td><code>isPublic</code></td>
+    <td><code>boolean</code></td>
+    <td><strong>Required.</strong> <code>true</code> for public tags or <code>false</code> for private tags.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>PUT &lt;baseURL&gt;/api/v1/tags/impact-big
+---
+{
+  &quot;name&quot;: &quot;impact: small&quot;, 
+  &quot;color&quot;: &quot;063589&quot;, 
+  &quot;isPublic&quot;: true
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;: 1003,
+  &quot;name&quot;: &quot;impact: small&quot;,
+  &quot;slug&quot;: &quot;impact-small&quot;,
+  &quot;color&quot;: &quot;063589&quot;,
+  &quot;isPublic&quot;: false
+}
+</code></pre>
+
+<h4 id="delete-tag">Delete a Tag</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Administrator</li>
+</ul>
+
+<pre><code>DELETE /api/v1/tags/{slug}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>slug</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The slug of the tag to be deleted.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>DELETE &lt;baseURL&gt;/api/v1/tags/impact-small
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="tag-post">Tag a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>POST /api/v1/posts/{number}/tags/{slug}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to add the tag.</td>
+  </tr>
+  <tr>
+    <td><code>slug</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The slug of the tag to be added.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts/47/tags/impact-big
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="untag-vote">Untag a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>DELETE /api/v1/posts/{number}/tags/{slug}
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to remove the tag.</td>
+  </tr>
+  <tr>
+    <td><code>slug</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The slug of the tag to be removed.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>DELETE &lt;baseURL&gt;/api/v1/posts/47/tags/impact-big
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h3 id="invitations">Invitations</h3>
+
+<ul>
+  <li><a href="#send-sample">Send a Sample</a></li>
+  <li><a href="#send-invite">Send an Invite</a></li>
+</ul>
+
+<h4 id="send-sample">Send a Sample</h4>
+
+<p>Sample invitations are example of invitations emails that are sent to current authenticated user&rsquo;s email. Use it to see how the email looks like before sending to other users.</p>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>POST /api/v1/invitations/sample
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>subject</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The subject of the email to be sent.</td>
+  </tr>
+  <tr>
+    <td><code>message</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The content of the email to be sent. The message must include the <code>%invite%</code> placeholder, which will be replaced a secure invitation link.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/invitations/sample
+---
+{
+  &quot;subject&quot;: &quot;Share your ideas and thoughts about Fider&quot;,
+  &quot;message&quot;: &quot;Hi,\n\nAt **Fider** we take feedback very seriously, which is why we've launched a space where you can vote, discuss and share your ideas and thoughts about our products and services.\n\nWe'd like to extend an invite for you to join this community and raise awareness on topics you care about!\n\nTo join, click on the link below.\n\n%invite%\n\nRegards,\nFider&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="send-invite">Send an Invite</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>POST /api/v1/invitations/send
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="150">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>recipients</code></td>
+    <td><code>array of strings</code></td>
+    <td><strong>Required.</strong> The list of email addresses to send an invite.</td>
+  </tr>
+  <tr>
+    <td><code>subject</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The subject of the email to be sent.</td>
+  </tr>
+  <tr>
+    <td><code>message</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The content of the email to be sent. The message must include the <code>%invite%</code> placeholder, which will be replaced a secure invitation link.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/invitations/send
+---
+{
+  &quot;recipients&quot;:[&quot;jon.snow@got.com&quot;,&quot;arya.stark@got.com&quot;],
+  &quot;subject&quot;: &quot;Share your ideas and thoughts about Fider&quot;,
+  &quot;message&quot;: &quot;Hi,\n\nAt **Fider** we take feedback very seriously, which is why we've launched a space where you can vote, discuss and share your ideas and thoughts about our products and services.\n\nWe'd like to extend an invite for you to join this community and raise awareness on topics you care about!\n\nTo join, click on the link below.\n\n%invite%\n\nRegards,\nFider&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+</p>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+    
+<a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+    <i class="stack-interface stack-up-open-big"></i>
+</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <script src="/fider.min.5169ae553693713a5134ba40ebb710dd78a6c317bb62bcd975627aaedc17fedc.js" integrity="sha256-UWmuVTaTcTpRNLpA67cQ3Ximwxe7YrzZdWJ6rtwX/tw="></script>
+  </body>
+</html>

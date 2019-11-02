@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/logo-100x100.png" >
+    <title>Fider 0.11 released with option to edit and delete ideas · Fider</title>
+    <meta name="description" content="In this month’s release of Fider, we’ve been working mostly on internal changes, but managed to add option edit and delete ideas">
+    
+    
+
+    <meta property="og:title" content="Fider 0.11 released with option to edit and delete ideas · Fider">
+    <meta property="og:image" content="https://getfider.com/images/logo-small.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://getfider.com/" />
+    <meta property="og:description" content="In this month’s release of Fider, we’ve been working mostly on internal changes, but managed to add option edit and delete ideas">
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-100812395-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="/font.min.a3218f4d9a6c7dff3067d261349676d5bc4b4a4be31dbdaf8a600b71e38f66bb.css" integrity="sha256-oyGPTZpsff8wZ9JhNJZ21bxLSkvjHb2vimALceOPZrs=" media="screen">  
+    
+    <link rel="stylesheet" href="/fider.min.e42cf6de0eeb0d456dd7092aea1299a503def39689ffa68d48602a22efd789b6.css" integrity="sha256-5Cz23g7rDUVt1wkq6hKZpQPe85aJ/6aNSGAqIu/XibY=" media="screen">  
+  </head>
+
+  <body>
+    
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img class="logo" alt="logo" src="/images/logo-100x100.png">
+          <span class="logo-title">Fider</span>
+        </a>
+    
+        <a id="site-burger" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+    
+        <div class="navbar-end">
+          <a class="navbar-item" href="/blog">Blog</a>
+          <a class="navbar-item" href="/docs">Documentation</a>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href="#start" class="button is-primary">
+                <strong>Get Started</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    
+<main class="blog-single">
+  <section class="section">
+    <div class="container">
+      <div class="header">
+        <h1 class="title">Fider 0.11 released with option to edit and delete ideas</h1>
+        <h2 class="subtitle">
+          In this month’s release of Fider, we’ve been working mostly on internal changes, but managed to add option edit and delete ideas
+        </h2>
+        <time datetime="2018-03-25T00:00:00&#43;00:00">Mar 25, 2018</time>
+        <hr />
+      </div>
+      <div class="content">
+        
+
+<h3 id="introduction">Introduction</h3>
+
+<p>It&rsquo;s very well known that as the size of the codebase grows, so does the complexity and time needed to maintain it. This is a common characteristic of most software programs and thus, not different for Fider.</p>
+
+<p>As we evolve one version a month we need to always look back and improve older code, even those small pieces that are still working sometimes needs some love. Refactoring older code to make it easier to read, maintain and change is something we&rsquo;ll be doing more often moving forward. We want Fider to be a place where anyone with any skill level can join, change, extend and improve it.</p>
+
+<p>Starting today on all new release blog posts, we&rsquo;ll list some (or even all) other activities that have been done, which usually relates to refactoring, tooling changes, bug fixes and enhancements.</p>
+
+<h3 id="1-delete-ideas">#1: Delete Ideas</h3>
+
+<figure style="float:right;margin-left:20px;">
+  <img src="/images/blog/delete-idea-button.png" />
+</figure>
+
+<p>Administrators are now able to delete ideas that are not yet closed yet. This is specifically useful to remove spam / off-topic ideas. Although it can be used to remove duplicate ideas, we recommend the usage of <code>Duplicate</code> status as transfers vote to the original idea.</p>
+
+<p><div style="clear:both;" /></p>
+
+<h3 id="2-edit-comments">#2: Edit Comments</h3>
+
+<p>Comment authors can now edit their own comments to fix typos or include any missing information. Administrators are also able to edit all comments on their site. Once a comment has been edited, a small comment is show beside the original comment date.</p>
+
+<figure>
+  <img src="/images/blog/edit-comments.png" />
+</figure>
+
+<h3 id="other-changes-on-fider-0-11">Other Changes on Fider 0.11</h3>
+
+<ul>
+<li>enhancement: tie up all tables with tenant_id (<a href="https://github.com/getfider/fider/issues/279">#279</a>)</li>
+<li>refactoring: removed jQuery (<a href="https://github.com/getfider/fider/issues/171">#171</a>)</li>
+<li>refactoring: react naming convention and folder structure (<a href="https://github.com/getfider/fider/issues/276">#276</a>)</li>
+<li>refactoring: internal changes that requires less SQL queries to run (<a href="https://github.com/getfider/fider/issues/281">#281</a>, <a href="https://github.com/getfider/fider/issues/277">#277</a>, <a href="https://github.com/getfider/fider/issues/280">#280</a>)</li>
+<li>tooling: add Prettier (<a href="https://github.com/getfider/fider/issues/309">#309</a>) thanks to <a href="https://github.com/LukeSheard">@LukeSheard</a></li>
+<li>tooling: update JS &amp; Go dependencies (<a href="https://github.com/getfider/fider/issues/273">#273</a>)</li>
+<li>fix: goroutine Leak (<a href="https://github.com/getfider/fider/issues/286">#286</a>)</li>
+<li>fix: race condition on worker process (<a href="https://github.com/getfider/fider/issues/313">#313</a>)</li>
+<li>docs: Review Fider contributing process, files, templates (<a href="https://github.com/getfider/fider/issues/278">#278</a>)</li>
+</ul>
+
+<h3 id="what-s-next">What&rsquo;s next?</h3>
+
+<p>Help us shape the future of Fider. Visit our <a href="https://feedback.fider.io/">feedback forum</a> and raise your voice. Tell us what to do next.</p>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+    
+<footer class="footer">
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-start">
+        <a href="/" class="navbar-item"><strong>Fider</strong></a>
+        <a href="/blog" class="navbar-item">Blog</a>
+        <a href="/docs" class="navbar-item">Documentation</a>
+        <a href="https://status.fider.io/" class="navbar-item">Status</a>
+        <a href="https://feedback.fider.io/" class="navbar-item">Feedback</a>
+      </div>
+  
+      <div class="navbar-end">
+        <a href="https://github.com/getfider" class="navbar-item"><i class="fab fa-github"></i>GitHub</a>
+        <a href="https://twitter.com/getfider" class="navbar-item"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="mailto:contact@fider.io" class="navbar-item"><i class="fas fa-at"></i>contact@fider.io</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <script src="/fider.min.5169ae553693713a5134ba40ebb710dd78a6c317bb62bcd975627aaedc17fedc.js" integrity="sha256-UWmuVTaTcTpRNLpA67cQ3Ximwxe7YrzZdWJ6rtwX/tw="></script>
+  </body>
+</html>

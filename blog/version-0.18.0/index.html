@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/logo-100x100.png" >
+    <title>Fider 0.18 has been released with attachments and better SEO · Fider</title>
+    <meta name="description" content="In this next Fider release, we have released features like attachments and better SEO">
+    
+    
+
+    <meta property="og:title" content="Fider 0.18 has been released with attachments and better SEO · Fider">
+    <meta property="og:image" content="https://getfider.com/images/logo-small.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://getfider.com/" />
+    <meta property="og:description" content="In this next Fider release, we have released features like attachments and better SEO">
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-100812395-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="/font.min.a3218f4d9a6c7dff3067d261349676d5bc4b4a4be31dbdaf8a600b71e38f66bb.css" integrity="sha256-oyGPTZpsff8wZ9JhNJZ21bxLSkvjHb2vimALceOPZrs=" media="screen">  
+    
+    <link rel="stylesheet" href="/fider.min.e42cf6de0eeb0d456dd7092aea1299a503def39689ffa68d48602a22efd789b6.css" integrity="sha256-5Cz23g7rDUVt1wkq6hKZpQPe85aJ/6aNSGAqIu/XibY=" media="screen">  
+  </head>
+
+  <body>
+    
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img class="logo" alt="logo" src="/images/logo-100x100.png">
+          <span class="logo-title">Fider</span>
+        </a>
+    
+        <a id="site-burger" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+    
+        <div class="navbar-end">
+          <a class="navbar-item" href="/blog">Blog</a>
+          <a class="navbar-item" href="/docs">Documentation</a>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href="#start" class="button is-primary">
+                <strong>Get Started</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    
+<main class="blog-single">
+  <section class="section">
+    <div class="container">
+      <div class="header">
+        <h1 class="title">Fider 0.18 has been released with attachments and better SEO</h1>
+        <h2 class="subtitle">
+          In this next Fider release, we have released features like attachments and better SEO
+        </h2>
+        <time datetime="2019-03-16T00:00:00&#43;00:00">Mar 16, 2019</time>
+        <hr />
+      </div>
+      <div class="content">
+        
+
+<h3 id="1-image-attachments">#1: Image Attachments</h3>
+
+<p>This is the third version in a row that we have delivered our most wanted feature, which in this version was <a href="https://feedback.fider.io/posts/85/attach-images-on-posts-and-comments">Image Attachments on Posts and Comments</a> 🎉</p>
+
+<p>This new feature that allows users to upload up to 3 images when submitting a new post or comment.</p>
+
+<p>Staff members still have full control over the post/comment and can delete or replace any uploaded image.</p>
+
+<figure>
+  <img src="/images/blog/v0.18-attach-image.png" style="height:500px;" />
+</figure>
+
+<h3 id="2-better-seo-experimental">#2: Better SEO (experimental)</h3>
+
+<p>For those who are new to Fider, it&rsquo;s important to know that Fider is a client-side rendered application built with React. When a Search Engine like Google or Bing fetches a page served by Fider, they get minimal HTML content, some JSON metadata and some JavaScript files that render the page based on the metadata.</p>
+
+<p>Some engines have a lower priority when indexing pages that are client-side rendered, which can affect the SEO ranking.</p>
+
+<p>Dynamic rendering is a process of serving different contents based on request. The idea is that a SEO crawler would get receive a server-side rendered result because that&rsquo;s what they prefer, while an end user browser would still perform the rendering client-side. For more details on Dynamic rendering, visit <a href="https://developers.google.com/search/docs/guides/dynamic-rendering">https://developers.google.com/search/docs/guides/dynamic-rendering</a></p>
+
+<p>Because SEO is an important aspect for Fider, we&rsquo;ve decided to improve this area by creating an open source prerender service called <a href="https://github.com/goenning/rendergun">Rendergun</a>. This new release of Fider has a native integration with Rendergun, but is not yet documented. We&rsquo;ll update our documtation page once this has been tested and is stable enough.</p>
+
+<p>If you&rsquo;re self-hosting a Fider instance and would like to experiment this as well, please get in touch with us <a href="mailto:contact@fider.io">contact@fider.io</a>.</p>
+
+<h3 id="other-changes-on-fider-0-18">Other Changes on Fider 0.18</h3>
+
+<ul>
+<li>feature: pretender crawler requests if rendergun is configured (<a href="https://github.com/getfider/fider/pull/">#724</a>)</li>
+<li>feature: add attachments to comments (<a href="https://github.com/getfider/fider/pull/734">#734</a>)</li>
+<li>feature: image attachments on Posts (<a href="https://github.com/getfider/fider/pull/719">#719</a>)</li>
+<li>feature: upload custom avatar (<a href="https://github.com/getfider/fider/pull/699">#699</a>)</li>
+<li>feature: user can choose between Letter and Gravatar (<a href="https://github.com/getfider/fider/pull/697">#697</a>)</li>
+<li>feature: S3, SQL and File System as blob storage (<a href="https://github.com/getfider/fider/pull/681">#681</a>)</li>
+<li>feature: option to set site under maintenance (<a href="https://github.com/getfider/fider/pull/679">#679</a>)</li>
+<li>enhancement: make show more a link (SEO) (<a href="https://github.com/getfider/fider/pull/667">#667</a>)</li>
+<li>enhancement: set canonical link on HTML (<a href="https://github.com/getfider/fider/pull/675">#675</a>)</li>
+<li>enhancement: improve Post query performance (<a href="https://github.com/getfider/fider/pull/686">#686</a>)</li>
+<li>enhancement: configurable max/idle database connections (<a href="https://github.com/getfider/fider/pull/676">#676</a>)</li>
+<li>enhancement: implement touch icons (<a href="https://github.com/getfider/fider/pull/677">#677</a>)</li>
+<li>enhancement: health check should ping database (<a href="https://github.com/getfider/fider/pull/680">#680</a>)</li>
+<li>enhancement: cache gravatar response (<a href="https://github.com/getfider/fider/pull/564">#564</a>)</li>
+<li>enhancement: replace googleplus (deprecated) with google api (<a href="https://github.com/getfider/fider/pull/">#693</a>)</li>
+<li>design: minor UI fixes (<a href="https://github.com/getfider/fider/pull/682">#682</a>)</li>
+<li>tooling: update all NPM packages (<a href="https://github.com/getfider/fider/pull/729">#729</a>)</li>
+<li>fix: use rendergun on React pages only and block ads (<a href="https://github.com/getfider/fider/pull/728">#728</a>)</li>
+<li>fix: write logs on a separate goroutine (<a href="https://github.com/getfider/fider/pull/725">#725</a>)</li>
+<li>fix: sanitize input before parsing markdown (<a href="https://github.com/getfider/fider/pull/727">#727</a>)</li>
+<li>fix: allow duplicate ID when post is deleted (<a href="https://github.com/getfider/fider/pull/715">#715</a>)</li>
+<li>fix: use double quotes (<a href="https://github.com/getfider/fider/pull/712">#712</a>)</li>
+<li>fix: increase custom CSS priority (<a href="https://github.com/getfider/fider/pull/706">#706</a>)</li>
+<li>fix: force min/max size values (<a href="https://github.com/getfider/fider/pull/698">#698</a>)</li>
+<li>fix: handle invalid ServerNames during SSL handshake (<a href="https://github.com/getfider/fider/pull/689">#689</a>)</li>
+<li>fix: don&rsquo;t set cookies on cached content (<a href="https://github.com/getfider/fider/pull/674">#674</a>)</li>
+<li>fix: don&rsquo;t cache the assets base url (<a href="https://github.com/getfider/fider/pull/669">#669</a>)</li>
+<li>fix: incorrect order of parameters (<a href="https://github.com/getfider/fider/pull/668">#668</a>)</li>
+<li>docs: windows dev environment common issues (<a href="https://github.com/getfider/fider/pull/605">#605</a>)</li>
+</ul>
+
+<h3 id="what-s-next">What&rsquo;s next?</h3>
+
+<p>Help us shape the future of Fider. Visit our <a href="https://feedback.fider.io/">feedback forum</a> and raise your voice. Tell us what to do next.</p>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+    
+<footer class="footer">
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-start">
+        <a href="/" class="navbar-item"><strong>Fider</strong></a>
+        <a href="/blog" class="navbar-item">Blog</a>
+        <a href="/docs" class="navbar-item">Documentation</a>
+        <a href="https://status.fider.io/" class="navbar-item">Status</a>
+        <a href="https://feedback.fider.io/" class="navbar-item">Feedback</a>
+      </div>
+  
+      <div class="navbar-end">
+        <a href="https://github.com/getfider" class="navbar-item"><i class="fab fa-github"></i>GitHub</a>
+        <a href="https://twitter.com/getfider" class="navbar-item"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="mailto:contact@fider.io" class="navbar-item"><i class="fas fa-at"></i>contact@fider.io</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <script src="/fider.min.5169ae553693713a5134ba40ebb710dd78a6c317bb62bcd975627aaedc17fedc.js" integrity="sha256-UWmuVTaTcTpRNLpA67cQ3Ximwxe7YrzZdWJ6rtwX/tw="></script>
+  </body>
+</html>

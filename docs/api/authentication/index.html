@@ -1,0 +1,24 @@
+<h3 id="authentication">Authentication</h3>
+
+<p>Some API endpoint require authentication to work. This section explains how to make authenticated HTTP Requests to Fider.</p>
+
+<p>The first step is to generate an API Key on your user profile. Sign in on Fider and navigate to <strong>Settings -&gt; API Key</strong> and click on <strong>Regenerate API Key</strong>. An API Key will be shown. Take note of it as you won&rsquo;t be able to retrieve this key again. If your Key is lost or has been compromised, you can always repeat this process to generate a new Key.</p>
+
+<p>API Key is only available for users with <strong>Collaborator</strong> or <strong>Administrator</strong> role. <strong>Visitors</strong> are not allowed to use any authenticated API endpoint.</p>
+
+<p>With the API Key on hands, it&rsquo;s now possible to send authenticated requests the API using the <strong>Authorization</strong> HTTP Header as shown below.</p>
+
+<pre><code>Authorization: Bearer {api-key}
+</code></pre>
+
+<p><strong id="impersonation">Impersonation</strong></p>
+
+<p>Every action performed via the API is executed under the User that generated the API Key. Fider also allow <strong>Administrators</strong> to impersonate another User and execute the operations under their behalf. To do so, add the following HTTP Header to the request.</p>
+
+<pre><code>Authorization: Bearer {api-key}
+X-Fider-UserID: {target-user-id}
+</code></pre>
+
+<p><strong id="roles">Roles</strong></p>
+
+<p>Fider has 3 user roles: <code>Visitor</code>, <code>Collaborator</code> and <code>Administrator</code>. These roles are used to restrict which actions each user can perform on the platform, be it via UI or via the API. Most operations can only be executed if the authenticated user has a specific role assigned. Every operation listed below will specify which role is required.</p>

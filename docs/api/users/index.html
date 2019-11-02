@@ -1,0 +1,109 @@
+<h3 id="users">Users</h3>
+
+<ul>
+  <li><a href="#list-users">List Users</a></li>
+  <li><a href="#create-user">Create a User</a></li>
+</ul>
+
+<h4 id="list-users">List Users</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>GET /api/v1/users
+</code></pre>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/users
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+[
+  {
+    &quot;id&quot;: 3,
+    &quot;name&quot;: &quot;Arya Stark&quot;,
+    &quot;role&quot;: &quot;administrator&quot;,
+    &quot;status&quot;: &quot;active&quot;,
+  },
+  {
+    &quot;id&quot;: 5,
+    &quot;name&quot;: &quot;Jon Snow&quot;,
+    &quot;role&quot;: &quot;visitor&quot;,
+    &quot;status&quot;: &quot;active&quot;
+  },
+  {
+    &quot;id&quot;: 24,
+    &quot;name&quot;: &quot;The Queen&quot;,
+    &quot;role&quot;: &quot;collaborator&quot;,
+    &quot;status&quot;: &quot;blocked&quot;
+  },
+  {
+    ...
+  }
+]
+</code></pre>
+
+<h4 id="create-user">Create a User</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Administrator</li>
+</ul>
+
+<pre><code>POST /api/v1/users
+</code></pre>
+
+<p>The Create User API will only create a new user if it cannot find an existing user with given email or reference ID. If the user already exists on Fider, the ID of the existing user is returned instead of creating a new user.</p>
+
+<p>The ID returned by this API can be used to impersonate that user. Read more about <a href="#impersonation">impersonation</a>.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>name</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The name of the user.</td>
+  </tr>
+  <tr>
+    <td><code>email</code></td>
+    <td><code>string</code></td>
+    <td>The email of the user.</td>
+  </tr>
+  <tr>
+    <td><code>reference</code></td>
+    <td><code>string</code></td>
+    <td>A unique ID for the user in another system.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/users
+---
+{
+  &quot;name&quot;: &quot;Jon Snow&quot;,
+  &quot;email&quot;: &quot;jon.snow@got.com&quot;,
+  &quot;reference&quot;: &quot;CRM-817453&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{
+  &quot;id&quot;: 6332
+}
+</code></pre>

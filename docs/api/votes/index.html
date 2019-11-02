@@ -1,0 +1,137 @@
+<h3 id="votes">Votes</h3>
+
+<ul>
+  <li><a href="#add-vote">Vote on a Post</a></li>
+  <li><a href="#remove-vote">Remove Vote from on a Post</a></li>
+  <li><a href="#list-post-votes">List Votes of a Post</a></li>
+</ul>
+
+<h4 id="add-vote">Vote on a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+</ul>
+
+<p>When casting a vote upon a post, the vote is registered under the current authenticated user. Impersonate another user to vote on behalf of them.</p>
+
+<pre><code>POST /api/v1/posts/{number}/votes
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to vote on.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/posts/47/votes
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="remove-vote">Remove Vote from on a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+</ul>
+
+<p>When removing the vote from a post, the vote is removed from the current authenticated user. Impersonate another user to remove votes on behalf of them.</p>
+
+<pre><code>DELETE /api/v1/posts/{number}/votes
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to have the vote removed.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>DELETE &lt;baseURL&gt;/api/v1/posts/47/votes
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="list-post-votes">List Votes of a Post</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>GET /api/v1/posts/{number}/votes
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="140">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>number</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The number of the post to list the votes.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>GET &lt;baseURL&gt;/api/v1/posts/47/votes
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+[
+  {
+    &quot;createdAt&quot;:&quot;2018-11-28T12:18:26.95415Z&quot;,
+    &quot;user&quot;:{
+      &quot;id&quot;:1234,
+      &quot;name&quot;:&quot;Jon Snow&quot;,
+      &quot;email&quot;:&quot;jon.snow@got.com&quot;
+    }
+  },
+  {
+    &quot;createdAt&quot;:&quot;2018-11-28T15:45:45.612288Z&quot;,
+    &quot;user&quot;:{
+      &quot;id&quot;:5678,
+      &quot;name&quot;:&quot;Arya Stark&quot;,
+      &quot;email&quot;:&quot;arya.stark@got.com&quot;
+    }
+  }
+]
+</code></pre>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.18.0/</loc>
+    <lastmod>2019-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.17.0/</loc>
+    <lastmod>2018-12-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/how-we-reduced-initial-jscss-size/</loc>
+    <lastmod>2018-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.16.0/</loc>
+    <lastmod>2018-10-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.15.0/</loc>
+    <lastmod>2018-08-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.14.0/</loc>
+    <lastmod>2018-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.13.0/</loc>
+    <lastmod>2018-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.12.0/</loc>
+    <lastmod>2018-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.11.0/</loc>
+    <lastmod>2018-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.10.0/</loc>
+    <lastmod>2018-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.9.0/</loc>
+    <lastmod>2018-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.8.0/</loc>
+    <lastmod>2017-11-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.7.0/</loc>
+    <lastmod>2017-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.6.0/</loc>
+    <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.5.0/</loc>
+    <lastmod>2017-08-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.4.0/</loc>
+    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/version-0.3.0/</loc>
+    <lastmod>2017-07-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/api/authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/api/best-practices/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/api/comments/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/api/invitations/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/api/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/api/posts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/api/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/api/users/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/api/votes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/</loc>
+    <lastmod>2019-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/configuring-oauth/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/hosting-on-heroku/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/hosting-instance/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/how-to-enable-ssl/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/docs/how-to-show-legal-pages/</loc>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/categories/releases/</loc>
+    <lastmod>2019-03-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getfider.com/blog/</loc>
+    <lastmod>2019-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>

@@ -1,0 +1,108 @@
+<h3 id="invitations">Invitations</h3>
+
+<ul>
+  <li><a href="#send-sample">Send a Sample</a></li>
+  <li><a href="#send-invite">Send an Invite</a></li>
+</ul>
+
+<h4 id="send-sample">Send a Sample</h4>
+
+<p>Sample invitations are example of invitations emails that are sent to current authenticated user&rsquo;s email. Use it to see how the email looks like before sending to other users.</p>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>POST /api/v1/invitations/sample
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="90">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>subject</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The subject of the email to be sent.</td>
+  </tr>
+  <tr>
+    <td><code>message</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The content of the email to be sent. The message must include the <code>%invite%</code> placeholder, which will be replaced a secure invitation link.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/invitations/sample
+---
+{
+  &quot;subject&quot;: &quot;Share your ideas and thoughts about Fider&quot;,
+  &quot;message&quot;: &quot;Hi,\n\nAt **Fider** we take feedback very seriously, which is why we've launched a space where you can vote, discuss and share your ideas and thoughts about our products and services.\n\nWe'd like to extend an invite for you to join this community and raise awareness on topics you care about!\n\nTo join, click on the link below.\n\n%invite%\n\nRegards,\nFider&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>
+
+<h4 id="send-invite">Send an Invite</h4>
+
+<ul>
+<li><strong>Authentication:</strong> Required</li>
+<li><strong>Required Role:</strong> Collaborator or Administrator</li>
+</ul>
+
+<pre><code>POST /api/v1/invitations/send
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+
+<table>
+  <tr>
+    <th width="120">Name</th>
+    <th width="150">Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>recipients</code></td>
+    <td><code>array of strings</code></td>
+    <td><strong>Required.</strong> The list of email addresses to send an invite.</td>
+  </tr>
+  <tr>
+    <td><code>subject</code></td>
+    <td><code>number</code></td>
+    <td><strong>Required.</strong> The subject of the email to be sent.</td>
+  </tr>
+  <tr>
+    <td><code>message</code></td>
+    <td><code>string</code></td>
+    <td><strong>Required.</strong> The content of the email to be sent. The message must include the <code>%invite%</code> placeholder, which will be replaced a secure invitation link.</td>
+  </tr>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>POST &lt;baseURL&gt;/api/v1/invitations/send
+---
+{
+  &quot;recipients&quot;:[&quot;jon.snow@got.com&quot;,&quot;arya.stark@got.com&quot;],
+  &quot;subject&quot;: &quot;Share your ideas and thoughts about Fider&quot;,
+  &quot;message&quot;: &quot;Hi,\n\nAt **Fider** we take feedback very seriously, which is why we've launched a space where you can vote, discuss and share your ideas and thoughts about our products and services.\n\nWe'd like to extend an invite for you to join this community and raise awareness on topics you care about!\n\nTo join, click on the link below.\n\n%invite%\n\nRegards,\nFider&quot;
+}
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code>200 OK
+---
+{}
+</code></pre>

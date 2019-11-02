@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/logo-100x100.png" >
+    <title>Fider 0.12 released with features for privacy and export data · Fider</title>
+    <meta name="description" content="In this month’s release of Fider, we’ve been working on two highly requested features: Private Site and Export Data">
+    
+    
+
+    <meta property="og:title" content="Fider 0.12 released with features for privacy and export data · Fider">
+    <meta property="og:image" content="https://getfider.com/images/logo-small.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://getfider.com/" />
+    <meta property="og:description" content="In this month’s release of Fider, we’ve been working on two highly requested features: Private Site and Export Data">
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-100812395-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="/font.min.a3218f4d9a6c7dff3067d261349676d5bc4b4a4be31dbdaf8a600b71e38f66bb.css" integrity="sha256-oyGPTZpsff8wZ9JhNJZ21bxLSkvjHb2vimALceOPZrs=" media="screen">  
+    
+    <link rel="stylesheet" href="/fider.min.e42cf6de0eeb0d456dd7092aea1299a503def39689ffa68d48602a22efd789b6.css" integrity="sha256-5Cz23g7rDUVt1wkq6hKZpQPe85aJ/6aNSGAqIu/XibY=" media="screen">  
+  </head>
+
+  <body>
+    
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img class="logo" alt="logo" src="/images/logo-100x100.png">
+          <span class="logo-title">Fider</span>
+        </a>
+    
+        <a id="site-burger" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+    
+        <div class="navbar-end">
+          <a class="navbar-item" href="/blog">Blog</a>
+          <a class="navbar-item" href="/docs">Documentation</a>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href="#start" class="button is-primary">
+                <strong>Get Started</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    
+<main class="blog-single">
+  <section class="section">
+    <div class="container">
+      <div class="header">
+        <h1 class="title">Fider 0.12 released with features for privacy and export data</h1>
+        <h2 class="subtitle">
+          In this month’s release of Fider, we’ve been working on two highly requested features: Private Site and Export Data
+        </h2>
+        <time datetime="2018-04-28T00:00:00&#43;00:00">Apr 28, 2018</time>
+        <hr />
+      </div>
+      <div class="content">
+        
+
+<h3 id="introduction">Introduction</h3>
+
+<p>We&rsquo;re super excited about this release! Private site was a highly requested feature that brings a lot of value in some particular situations. This feature open a range of possibilities on how people can leverage Fider on their projects and organizations.</p>
+
+<p>Aside from that, we&rsquo;re also shipping a built-in option to export all your ideas to a CSV. This can be particularly useful if you want to do some analysis on an external tool like Excel or any of your favorite Business Intelligence tool.</p>
+
+<p>Just like previous release, we&rsquo;re including on this post a list of other activities and changes that have been done.</p>
+
+<h3 id="1-private-site">#1: Private Site</h3>
+
+<p>This release adds the &ldquo;Privacy&rdquo; menu item under the Site Settings. Administrators can turn on the &ldquo;Private Site&rdquo; option. Once turned on, visitors won&rsquo;t be able to see or submit any idea unless the sign in. The registration is also close, which means that only already registered users will be able to sign in.</p>
+
+<figure>
+  <img src="/images/blog/private-site.png" />
+</figure>
+
+<p>To allow people to join the site, we&rsquo;ve also add the &ldquo;Invitations&rdquo; menu item. This page is used to invite people to your site by sending an email with a custom message that you can write directly on the platform. Once the invited person clicks on email link, they&rsquo;ll be registered to your site and will be able to sign in and participate in it.</p>
+
+<h3 id="2-export-data">#2: Export Data</h3>
+
+<p>Being able to export the data has been one of the most requested feature. Jon Ward explained really well on the <a href="https://feedback.fider.io/ideas/59/need-assurance-that-our-data-can-be-exported-and-archived">feature request</a> why such feature is important: &ldquo;This would be handy in case we need to change platforms (jump ship) or need to analyse the data further&rdquo;.</p>
+
+<p>We&rsquo;re super happy to ship it on this release! Starting from <code>Fider 0.12</code>, there&rsquo;s a new menu item &ldquo;Export&rdquo; where you can export all your ideas to a CSV file. We&rsquo;ve created a completely new menu item only for this as we believe this option will be enhanced as the project grows.</p>
+
+<figure>
+  <img src="/images/blog/export-example.png" />
+</figure>
+
+<h3 id="other-changes-on-fider-0-12">Other Changes on Fider 0.12</h3>
+
+<ul>
+<li>enhancement: Implement security recommendations from mozilla.org (<a href="https://github.com/getfider/fider/issues/293">#293</a>)</li>
+<li>enhancement: Add canonical url when available (<a href="https://github.com/getfider/fider/issues/274">#274</a>)</li>
+<li>enhancement: Add tags to Mailgun emails (<a href="https://github.com/getfider/fider/issues/336">#336</a>)</li>
+<li>fix: Gravatar is not being correctly displayed on IE11 (<a href="https://github.com/getfider/fider/issues/338">#338</a>)</li>
+<li>enhancement: create page for expired/invalid sign in links instead of redirecting to home (<a href="https://github.com/getfider/fider/issues/170">#170</a>)</li>
+<li>tooling: update to Go 1.10.1, React 16.3 and other npm dev (<a href="https://github.com/getfider/fider/issues/337">#337</a>)</li>
+<li>tooling: extend Prettier to match E2E tests (<a href="https://github.com/getfider/fider/issues/328">#328</a>)</li>
+<li>enhancement: Add more details to all errors  (<a href="https://github.com/getfider/fider/issues/164">#164</a>)</li>
+</ul>
+
+<h3 id="fider-joined-the-open-collective">Fider joined the Open Collective</h3>
+
+<p><a href="https://opencollective.com/fider">
+  <img src="/images/blog/opencollectivelogo.png" />
+</a></p>
+
+<p>We&rsquo;re now part of the open source movement that allows people all over the world to donate money for the projects they love and support. It&rsquo;s transparent, open and fluid!</p>
+
+<p>So if you&rsquo;re using Fider and would like to help us continue our activities, please consider donating any amount. Visit <a href="https://opencollective.com/fider">https://opencollective.com/fider</a> for more information.</p>
+
+<h3 id="what-s-next">What&rsquo;s next?</h3>
+
+<p>Help us shape the future of Fider. Visit our <a href="https://feedback.fider.io/">feedback forum</a> and raise your voice. Tell us what to do next.</p>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+    
+<footer class="footer">
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-start">
+        <a href="/" class="navbar-item"><strong>Fider</strong></a>
+        <a href="/blog" class="navbar-item">Blog</a>
+        <a href="/docs" class="navbar-item">Documentation</a>
+        <a href="https://status.fider.io/" class="navbar-item">Status</a>
+        <a href="https://feedback.fider.io/" class="navbar-item">Feedback</a>
+      </div>
+  
+      <div class="navbar-end">
+        <a href="https://github.com/getfider" class="navbar-item"><i class="fab fa-github"></i>GitHub</a>
+        <a href="https://twitter.com/getfider" class="navbar-item"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="mailto:contact@fider.io" class="navbar-item"><i class="fas fa-at"></i>contact@fider.io</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <script src="/fider.min.5169ae553693713a5134ba40ebb710dd78a6c317bb62bcd975627aaedc17fedc.js" integrity="sha256-UWmuVTaTcTpRNLpA67cQ3Ximwxe7YrzZdWJ6rtwX/tw="></script>
+  </body>
+</html>
