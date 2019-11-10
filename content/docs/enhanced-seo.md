@@ -1,7 +1,7 @@
 +++
 title = "Enhanced SEO on Fider"
 description = "Get better ranks on search results"
-category = "How To"
+category = "Self-Hosted"
 bref = "Learn how to configure your own Fider instance for better ranks on search results"
 +++
 
