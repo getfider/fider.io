@@ -13,7 +13,7 @@ To learn more about [rendergun](https://github.com/goenning/rendergun), read thi
 
 To configure rendergun, add another service to your docker-compose.yml and link it on your fider app service, just like the following.
 
-<pre>
+```yaml
 version: '2'
 services:
   rendergun:
@@ -28,7 +28,7 @@ services:
     depends_on:
       - db
       - rendergun
-</pre>
+```
 
 To test that everything is working as it should, using your favorite HTTP client tool (like Postman or cURL), send a request to `http://localhost:9999` with a `User-Agent: Googlebot/2.1` header value. The response from Fider should be a HTML without links to JavaScript files. When removing the User-Agent header, the response is then a few empty div elements and links to JavaScript files.
 
