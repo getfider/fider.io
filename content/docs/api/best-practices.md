@@ -2,7 +2,7 @@
 
 <strong id="service-account">Service Account</strong>
 
-A common approach when using Fider API is to sign in with a generic email address (like `admin@yourcompany.com`), then switch to an Administrator user and promote the new user to an Adminitrator as well. This allows you to use a common user account on all API operations, which having to use a personal user account.
+A common approach when using Fider API is to sign in with a generic email address (like `admin@yourcompany.com`), then switch to an Administrator user and promote the new user to an Administrator as well. This allows you to use a common user account on all API operations, whithout having to use a personal user account.
 
 <strong id="use-impersonation-property">How to properly use impersonation</strong>
 
