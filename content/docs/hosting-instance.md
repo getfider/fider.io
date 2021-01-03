@@ -58,6 +58,9 @@ services:
       # Use production for best performance
       # Use development for verbose logs
       GO_ENV: production
+
+      # Public host address (required)
+      HOST_DOMAIN: feedback.yoursite.com
       
       # Connection string to the PostgreSQL database. 
       # This example uses the Docker service defined above
