@@ -15,4 +15,4 @@ You will need both documents written in a markdown format, they **need** to be n
 
 Fider's Docker image expects both file to be available on `/app/etc`. You can copy these files anywhere you want on your server and share them with your Docker container by using [volumes](https://docs.docker.com/storage/volumes/).
 
-E.g.: if both files are on `/home/me/fider`, you can map it to the container with `-v /home/me/fider:/app/etc`.
+For example, if your files are inside `/home/me/fider`, you can map it to the container with `-v /home/me/fider:/app/etc`.

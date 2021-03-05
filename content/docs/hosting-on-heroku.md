@@ -72,7 +72,7 @@ for the Fider instance to work properly:
   <code>JWT_SECRET</code>
   <p>It's a secret key used for authentication tokens, you can generate a good secret using an online tool like 
   <a href="https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx">this one</a> (take at least
-  1024-bit for security).</p>
+  512-bit for security).</p>
 </li>
 <li>
   <code>EMAIL_NOREPLY</code>
