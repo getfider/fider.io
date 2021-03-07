@@ -130,7 +130,7 @@ Before enabling any provider on Fider, we highly recommend that you keep it disa
 <h4>Twitch</h4>
 
 <ol>
-  <li>Navigate to <a href="https://glass.twitch.tv/console/apps/create">https://glass.twitch.tv/console/apps/create</a> and register your new Twitch App</li>
+  <li>Navigate to <a href="https://dev.twitch.tv/console/apps">https://dev.twitch.tv/console/apps</a> and register your new Twitch App</li>
   <li>Twitch requires you to input the OAuth Redirect URL upon registration. For now, just type any valid URL like http://example.org, we'll change this later</li>
   <li>Find your app on the list and click Manage</li>
   <li>Take note of the <strong>Client ID</strong> that is shown</li>
@@ -143,11 +143,11 @@ Before enabling any provider on Fider, we highly recommend that you keep it disa
       <li><strong>Client Secret:</strong> <code>use the Client Secret given by Twitch</code></li>
       <li><strong>Authorize URL:</strong> https://id.twitch.tv/oauth2/authorize</li>
       <li><strong>Token URL:</strong> https://id.twitch.tv/oauth2/token</li>
-      <li><strong>Profile API URL:</strong> https://api.twitch.tv/helix/users</li>
-      <li><strong>Scope:</strong> user:read:email</li>
-      <li><strong>JSON Path ID:</strong> data[0].id</li>
-      <li><strong>JSON Path Name:</strong> data[0].display_name</li>
-      <li><strong>JSON Path Email:</strong> data[0].email</li>
+      <li><strong>Profile API URL:</strong> https://id.twitch.tv/oauth2/userinfo</li>
+      <li><strong>Scope:</strong> user:read:email openid</li>
+      <li><strong>JSON Path ID:</strong> sub</li>
+      <li><strong>JSON Path Name:</strong> preferred_username</li>
+      <li><strong>JSON Path Email:</strong> email</li>
       <li><strong>Status:</strong> Disabled</li>
     </ul>
   </li>
