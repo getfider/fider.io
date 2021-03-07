@@ -1,0 +1,17 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "_base";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.bg-dotted {
+  background: radial-gradient(rgba(156,163,175,0.5) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+#__next {
+  @apply flex flex-col min-h-screen
+}

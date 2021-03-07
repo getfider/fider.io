@@ -1,0 +1,19 @@
+@layer base {
+  h1 {
+    @apply text-4xl tracking-tight font-extrabold text-gray-900;
+    @apply sm:text-5xl;
+    @apply md:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl font-medium text-gray-900;
+  }
+
+  h3 {
+    @apply font-medium text-gray-900 text-2xl;
+  }
+
+  h4 {
+    @apply font-medium text-gray-900 text-xl;
+  }
+}

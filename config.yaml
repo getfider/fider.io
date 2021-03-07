@@ -1,5 +1,0 @@
-baseURL: https://getfider.com/
-title: Fider
-publishDir: public
-googleAnalytics: UA-100812395-1
-disableKinds: ['taxonomy', 'taxonomyTerm']

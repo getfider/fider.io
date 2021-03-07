@@ -1,0 +1,17 @@
+{
+  "github": {
+    "silent": true
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; object-src 'none'; font-src 'self'; img-src 'self' https://www.google-analytics.com data:; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'sha256-aresHaHju/DqRehVYXbOaDdwtyG2aRDLI6NLIbg1aWs='; style-src 'self'; connect-src 'self'",
+        "X-Xss-Protection": "1; mode=block",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Content-Type-Options": "nosniff"
+      }
+    }
+  ]
+}
