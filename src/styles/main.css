@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities';
 @import '_base';
 @import '_browserframe';
+@import '_article';
 
 html {
   scroll-behavior: smooth;

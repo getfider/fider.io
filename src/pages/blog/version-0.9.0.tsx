@@ -1,17 +1,10 @@
 import { BlogArticle } from '@app/components'
 import MDXDocument from '@content/blog/version-0.9.0.mdx'
-
-export const metadata = {
-  title: 'Fider 0.9 released with features to merge duplicate ideas, sort by trending ideas and more',
-  publishedOn: new Date('2018-01-29T00:00:00Z'),
-  slug: 'version-0.9.0',
-  cover: 'version-0.9.0.jpg',
-  excerpt: "We're happy to announce that Fider 0.9 is now available",
-}
+import posts from '@content/blog/all-posts'
 
 export default function BlogPost(): JSX.Element {
   return (
-    <BlogArticle {...metadata}>
+    <BlogArticle {...posts['version-0.9.0']}>
       <MDXDocument />
     </BlogArticle>
   )

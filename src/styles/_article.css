@@ -1,0 +1,74 @@
+article p,
+article blockquote,
+article pre,
+article li:last-child,
+article figure {
+  @apply mb-5 leading-7;
+}
+
+article h1 {
+  @apply mb-8;
+}
+
+article h1:after {
+  @apply block pb-2 w-1/3 border-b-8 border-blue-300;
+  content: '';
+}
+
+article h2,
+article h3 {
+  @apply mt-12 mb-4;
+}
+
+article a {
+  @apply text-blue-500 hover:text-blue-700 hover:underline;
+}
+
+article blockquote {
+  @apply p-4 bg-white border border-gray-200;
+}
+
+article blockquote > :last-child {
+  @apply mb-0;
+}
+
+article code {
+  @apply font-mono text-sm inline;
+}
+
+article p code {
+  @apply text-pink-700 px-1;
+}
+
+article p code:before,
+article p code:after {
+  content: '\`';
+}
+
+article pre {
+  @apply block bg-gray-900 p-4 rounded text-white overflow-x-scroll;
+}
+
+article pre code .code-highlight {
+  @apply text-green-400 bg-green-600 bg-opacity-25 rounded-md px-1;
+}
+
+article figure {
+  @apply m-4;
+}
+
+article figure figcaption {
+  @apply text-xs text-gray-400 text-center;
+}
+
+article figure img {
+  @apply shadow-xl;
+}
+
+article ul {
+  @apply ml-5 mt-4;
+}
+
+article li {
+  @apply list-disc mb-1 leading-7;
+}

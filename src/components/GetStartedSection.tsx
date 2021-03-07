@@ -19,10 +19,7 @@ export function GetStartedSection(): JSX.Element {
                 </a>
               </Link>
             </div>
-            <div
-              className="w-full hidden mt-4 lg:mt-8 md:block md:w-4/12 px-4 mr-auto ml-auto relative"
-              style={{ transform: 'scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)' }}
-            >
+            <div className="w-full hidden mt-4 lg:mt-8 md:block md:w-4/12 px-4 mr-auto ml-auto relative">
               <GitHubLogo className="w-2/4 text-gray-500" />
             </div>
           </div>

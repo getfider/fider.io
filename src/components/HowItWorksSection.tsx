@@ -7,7 +7,7 @@ interface StepProps {
 export function Step(props: StepProps): JSX.Element {
   return (
     <div className="p-4 w-full md:w-1/3 flex">
-      <div className="flex-shrink-0 w-12 h-12 text-xl inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-800">{props.number}</div>
+      <div className="flex-shrink-0 w-12 h-12 text-xl inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-800">{props.number}</div>
       <div className="flex-grow pl-6">
         <h2 className="text-gray-900 text-lg font-medium mb-2">{props.title}</h2>
         <p className="leading-relaxed text-base">{props.description}</p>

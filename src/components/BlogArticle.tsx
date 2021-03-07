@@ -18,7 +18,7 @@ export function BlogArticle(props: BlogArticleProps): JSX.Element {
 
       <section>
         <div className="container pb-24 max-w-5xl mx-auto">
-          <article className="mt-3">
+          <article className="mt-10">
             <span className="block text-gray-500 mb-2">{formatDate(props.publishedOn, 'full')}</span>
             <h1>{props.title}</h1>
             <MDXWrapper>{props.children}</MDXWrapper>
