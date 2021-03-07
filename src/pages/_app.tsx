@@ -21,7 +21,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Header />
-      <main className="flex-grow mt-20">
+      <main className="flex-grow">
         <Component {...pageProps} />
       </main>
       <Footer />

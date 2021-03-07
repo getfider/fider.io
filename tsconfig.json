@@ -23,10 +23,10 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "@assets/*": ["public/assets/*"],
       "@content/*": ["content/*"],
       "@content/blog/*": ["content/blog/*"],
       "@content/docs/*": ["content/docs/*"],
-      "@assets/*": ["public/assets/*"],
       "@app/fns": ["src/fns/index"],
       "@app/fns/*": ["src/fns/*"],
       "@app/components": ["src/components/index"],
