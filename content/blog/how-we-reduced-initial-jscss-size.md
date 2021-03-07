@@ -3,7 +3,6 @@ date = "2018-10-24"
 title = "How we reduced our initial JS/CSS size by 67%"
 description = "We have been working on reducing the amount of bytes that we send to all Fider users. Being a web application built with React, we have focused on JS and CSS. On this post we share our learnings, some concepts and suggestions on how you can do the same with your web application."
 author = "goenning"
-canonicalUrl = "https://goenning.net/2018/11/26/how-we-reduced-initial-jscss-size/"
 +++
 
 <figure>
@@ -18,7 +17,7 @@ Fider is built with React and Webpack on the frontend, so the topics below will 
 - <a href="#long-term-caching-with-content-hash">Long term caching with content hash</a>
 - <a href="#the-common-bundle">The common bundle</a>
 - <a href="#code-splitting-on-route-level">Code Splitting on route level</a>
-- <a href="#loading-external-dependencies-on-demand">Loading external dependencies on demand
+- <a href="#loading-external-dependencies-on-demand">Loading external dependencies on demand</a>
 - <a href="#font-awesome-and-tree-shaking">Font Awesome and Tree Shaking</a>
 - <a href="#switching-from-big-to-small-npm-packages">Switching from big to small NPM packages</a>
 - <a href="#optimising-the-main-bundle-is-crucial">Optimising the main bundle is crucial</a>
