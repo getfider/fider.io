@@ -1,0 +1,37 @@
+### 1. Assign tag to posts
+
+Our recent <a href="https://feedback.fider.io/ideas/21/allow-creation-of-tags-categories">most wanted feature</a> has been implemented.
+Starting from this release, administrators are able to create tags and assign tags to posts.
+
+<figure>
+  <img src="/images/blog/manage-tags.png" />
+</figure>
+
+Tags can be either `Public` or `Private`. Private tags are especially helpful for administrators to organize their posts without leaking any information publicly.
+
+Tags can also be used to filter posts, alongside with the new free text search box.
+
+<figure>
+  <img src="/images/blog/assign-tags.gif" />
+</figure>
+
+### 2. Edit posts
+
+Site members now have the option to edit an existing post, both Title and Description. This can be very useful to fix typos, formatting issues and also to add more context to the post.
+
+We'll evaluate in the future the possibility to allow post creators to edit their own content.
+
+### 3. Other small improvements
+
+- When writing a new post, if the user refresh the page or navigate away from it, the Title and Description are saved for the duration of that session. We expect this to provide a safe way for users to not lose what they've written so far;
+- We now show only the 20 first posts by default. If the site has more posts than this amount of posts, a link is provided to load the next 10 posts;
+
+### How to update
+
+Running an old Fider version? Don't worry, the upgrade process is just a matter of updating your Docker container to the latest stable image on Docker Hub. Use <code>getfider/fider:stable</code> to make sure you're always running the stable version.
+
+### What's next?
+
+It's up to you!
+
+Visit our [feedback forum](https://feedback.fider.io/) and raise your voice. Tell us what to do next!

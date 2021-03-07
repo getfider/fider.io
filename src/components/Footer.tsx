@@ -4,7 +4,7 @@ import TwitterLogo from '@assets/icons/iconmonstr-twitter.svg'
 
 export function Footer(): JSX.Element {
   return (
-    <footer className="bg-gray-200 text-gray-600 body-font">
+    <footer className="bg-gray-200 text-gray-600">
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
           <a className="flex font-medium items-center md:justify-start justify-center text-gray-900">
@@ -67,7 +67,7 @@ export function Footer(): JSX.Element {
           </div>
         </div>
       </div>
-      <div className="bg-white shadow-md">
+      <div className="bg-white shadow-lg">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-gray-500 text-sm text-center sm:text-left">© {new Date().getFullYear()} Fider</p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">

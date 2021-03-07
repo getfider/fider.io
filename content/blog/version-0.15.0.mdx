@@ -1,0 +1,27 @@
+In this release we've focused on authentication improvements for Fider. For a long time we have enabled visitors to sign in via Facebook, Google, GitHub and email, but that's not enough. Custom providers was a highly requested feature so that we could have authentication via Twitch, Discord, Spotify, Azure AD, Strava and many many others.
+
+### #1: Custom OAuth
+
+From the `Site Settings -> Authentication`, Administrators are now able to configure authentication with any provider that supports OAuth2. We have enhanced our documentation <a href="/docs/configuring-oauth">on how to configure OAuth</a>, so if you're looking into integrating other providers into your Fider instance, have a look on it to learn how to do that.
+
+### #2: An API is coming soon!
+
+Release 0.15 was supposed to include a Public API, but that has been postponed to 0.16 due to unforeseen events. But we've made a good progress on it and this release actually includes a bunch of changes that are not yet visible. So sit back and relax, the API is coming soon!
+
+### Other Changes on Fider 0.15
+
+- enhancement: Show warning message when cookies are disabled ([#461](https://github.com/getfider/fider/issues/461))
+- enhancement: enhance logs with UserAgent header enhancement ([#458](https://github.com/getfider/fider/issues/458))
+- enhancement: Force secure cookies when running on HTTPS ([#454](https://github.com/getfider/fider/issues/454))
+- fix: Privacy Policy and Terms of Service pages have "Fider" in the title on Self-Hosted instance. ([#498](https://github.com/getfider/fider/issues/498))
+- fix: concurrency issue on Logger ([#457](https://github.com/getfider/fider/issues/457))
+- fix: Can't use 'Enter' key when completing profile bug ([#451](https://github.com/getfider/fider/issues/451))
+- enhancement: add robots.txt ([#470](https://github.com/getfider/fider/pull/470))
+- refactoring: rename Ideas to Posts ([#476](https://github.com/getfider/fider/pull/476))
+- design: some UI improvements ([#471](https://github.com/getfider/fider/pull/471))
+- refactor: use new Google OAuth API ([#453](https://github.com/getfider/fider/pull/453))
+- enhancement: correct use of OAuth state ([#450](https://github.com/getfider/fider/pull/450))
+
+### What's next?
+
+Help us shape the future of Fider. Visit our [feedback forum](https://feedback.fider.io/) and raise your voice. Tell us what to do next.

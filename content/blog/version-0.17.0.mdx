@@ -1,0 +1,61 @@
+### #1: List of Voters
+
+Our [most wanted feature](https://feedback.fider.io/posts/33/list-who-voted) has been implemented! 🎉
+
+It's now possible to see the list of everyone who voted on a given post. We've added another sidebar panel to the post, like the following:
+
+<figure>
+  <img src="/images/blog/v0.17-voters-panel.png" style="height:50px;" />
+</figure>
+
+Staff members can drill down and see more information about everyone who voted on that post by clicking on **+x more**. Visitors doesn't have this access because this includes private information.
+
+### #2: Better User Management
+
+The Members page has been redesigned to include features such as **list of all registered users** and **block user**.
+
+<figure>
+  <img src="/images/blog/v0.17-members-page.png" style="height:400px;" />
+</figure>
+
+Just like previous release where we released the **delete comment** feature, blocking a user allows site administrators to prevent spam by blocking spammers so they cannot access the Fider site anymore. This is a small feature, but very important to keep the house clean and fight spam and trolls.
+
+<figure>
+  <img src="/images/blog/v0.17-block-user.png" style="height:200px;" />
+</figure>
+
+### #3: Office 365 as a SMTP Service
+
+Thanks to [@oxynux](https://github.com/oxynux), Fider can now use Office 365 to send e-mails. Up until now, Fider would only be compatible with SMTP services that implemented **PLAIN** authentication. oxynux implemented **LOGIN** and **CRAM-MD5** authentication mechanism, which is supported by Office 365 and many other services. Thank you for your contribution! 🥳
+
+### #4: Fider on a Diet (part 2)
+
+Last release we mentioned that we'd be improving performance and recuding the bundle size of Fider even more. And we did it! 😄
+
+To know more about it, we wrote a in depth article on **how we reduced the bundle size by 67%**, you [can read it here](https://getfider.com/blog/how-we-reduced-initial-jscss-size/). Special thanks to [@cfilby](https://github.com/cfilby) for your help on implementing Code Splitting!
+
+### Other Changes on Fider 0.17
+
+- feature: allow support of Office 365 SMTP ([#584](https://github.com/getfider/fider/pull/584))
+- feature: add API to return list of voters ([#654](https://github.com/getfider/fider/pull/654))
+- feature: Add Code Splitting ([#596](https://github.com/getfider/fider/pull/596))
+- enhancement: show more details when tenant is on pending status ([#611](https://github.com/getfider/fider/pull/611))
+- enhancement: add Date and Message-ID to mail messages ([#573](https://github.com/getfider/fider/pull/573))
+- enhancement: browser not supported page ([#620](https://github.com/getfider/fider/pull/620))
+- enhancement: better ui errors, catch unhandledrejection and ignore noisy errors ([#622](https://github.com/getfider/fider/pull/622))
+- enhancement: notify subscribers about posts being deleted ([#625](https://github.com/getfider/fider/pull/625))
+- enhancement: replace semantic-ui with react icons ([#631](https://github.com/getfider/fider/pull/631))
+- enhancement: increase tenants cache to 30 days ([#634](https://github.com/getfider/fider/pull/634))
+- enhancement: show response for open status ([#638](https://github.com/getfider/fider/pull/638))
+- tooling: check for missing dependencies when building Fider ([#593](https://github.com/getfider/fider/pull/593))
+- tooling: update to Go 1.11.2 ([#617](https://github.com/getfider/fider/pull/617))
+- fix: change from UTC to local time on unit tests ([#602](https://github.com/getfider/fider/pull/602))
+- fix: ignore OAuth when session is already authenticated ([#615](https://github.com/getfider/fider/pull/615))
+- fix: OAuth Echo was redirecting to home page ([#628](https://github.com/getfider/fider/pull/628))
+- fix: allow page to connect to CDN ([#629](https://github.com/getfider/fider/pull/629))
+- fix: remove title validation to support Chinese and Japanese ([#614](https://github.com/getfider/fider/pull/614))
+- fix: use console logger for migration ([#657](https://github.com/getfider/fider/pull/657))
+
+### What's next?
+
+Help us shape the future of Fider. Visit our [feedback forum](https://feedback.fider.io/) and raise your voice. Tell us what to do next.
