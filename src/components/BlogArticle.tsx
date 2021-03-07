@@ -1,4 +1,4 @@
-import { MDXWrapper, SEO } from '@app/components'
+import { MainLayout, MDXWrapper, SEO } from '@app/components'
 import { ReactNode } from 'react'
 import { formatDate } from '@app/fns/date'
 
@@ -13,7 +13,7 @@ interface BlogArticleProps {
 
 export function BlogArticle(props: BlogArticleProps): JSX.Element {
   return (
-    <>
+    <MainLayout>
       <SEO title={`${props.title} - Blog - Fider`} description={props.excerpt} imageUrl={`/images/cover/${props.cover}`} />
 
       <section>
@@ -25,6 +25,6 @@ export function BlogArticle(props: BlogArticleProps): JSX.Element {
           </article>
         </div>
       </section>
-    </>
+    </MainLayout>
   )
 }

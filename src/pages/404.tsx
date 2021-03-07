@@ -1,9 +1,10 @@
+import { MainLayout } from '@app/components'
 import Head from 'next/head'
 import Link from 'next/link'
 
 export default function PageNotFound(): JSX.Element {
   return (
-    <>
+    <MainLayout>
       <Head>
         <title>Page not found - getfider.com</title>
         <meta name="robots" content="noindex" />
@@ -22,6 +23,6 @@ export default function PageNotFound(): JSX.Element {
           </div>
         </div>
       </section>
-    </>
+    </MainLayout>
   )
 }

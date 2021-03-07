@@ -2,6 +2,7 @@ import Head from 'next/head'
 import posts, { PostMetadata } from '@content/blog/all-posts'
 import { formatDate } from '@app/fns/date'
 import Link from 'next/link'
+import { MainLayout } from '@app/components'
 
 export function Post(props: PostMetadata): JSX.Element {
   return (
@@ -29,7 +30,7 @@ export function Post(props: PostMetadata): JSX.Element {
 
 export default function PageNotFound(): JSX.Element {
   return (
-    <>
+    <MainLayout>
       <Head>
         <title>Blog - getfider.com</title>
         <meta name="robots" content="noindex" />
@@ -45,7 +46,7 @@ export default function PageNotFound(): JSX.Element {
           <div className="container px-5 py-24 mx-auto">
             <div className="-my-8 divide-y-2 divide-gray-100">
               {Object.values(posts)
-                .sort((a, b) => b - a)
+                .sort((a, b) => b.publishedOn.getTime() - a.publishedOn.getTime())
                 .map((p) => (
                   <Post key={p.slug} {...p} />
                 ))}
@@ -53,6 +54,6 @@ export default function PageNotFound(): JSX.Element {
           </div>
         </div>
       </section>
-    </>
+    </MainLayout>
   )
 }

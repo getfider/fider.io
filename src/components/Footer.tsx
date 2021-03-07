@@ -5,7 +5,8 @@ import posts from '@content/blog/all-posts'
 import Link from 'next/link'
 
 export function Footer(): JSX.Element {
-  const orderedPosts = Object.values(posts).sort((a, b) => b - a)
+  const orderedPosts = Object.values(posts).sort((a, b) => b.publishedOn.getTime() - a.publishedOn.getTime())
+
   return (
     <footer className="bg-gray-200 text-gray-600">
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
