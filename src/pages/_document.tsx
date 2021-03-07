@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
           <meta name="application-name" content="Fider" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
-        <body className="bg-gray-50 text-gray-700">
+        <body className="text-gray-700">
           <Main />
           <NextScript />
         </body>
