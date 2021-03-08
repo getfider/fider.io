@@ -14,7 +14,7 @@
 
 <h4 id="add-vote">Vote on a Post</h4>
 
-- <strong>Authentication:</strong> Required
+- **Authentication:** Required
 
 When casting a vote upon a post, the vote is registered under the current authenticated user. Impersonate another user to vote on behalf of them.
 
@@ -22,7 +22,7 @@ When casting a vote upon a post, the vote is registered under the current authen
 POST /api/v1/posts/{number}/votes
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -37,19 +37,17 @@ POST /api/v1/posts/{number}/votes
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to vote on.
-    </td>
+    <td>**Required.** The number of the post to vote on.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 POST <baseURL>/api/v1/posts/47/votes
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -59,7 +57,7 @@ POST <baseURL>/api/v1/posts/47/votes
 
 <h4 id="remove-vote">Remove Vote from on a Post</h4>
 
-- <strong>Authentication:</strong> Required
+- **Authentication:** Required
 
 When removing the vote from a post, the vote is removed from the current authenticated user. Impersonate another user to remove votes on behalf of them.
 
@@ -67,7 +65,7 @@ When removing the vote from a post, the vote is removed from the current authent
 DELETE /api/v1/posts/{number}/votes
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -82,19 +80,17 @@ DELETE /api/v1/posts/{number}/votes
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to have the vote removed.
-    </td>
+    <td>**Required.** The number of the post to have the vote removed.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 DELETE <baseURL>/api/v1/posts/47/votes
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -104,14 +100,14 @@ DELETE <baseURL>/api/v1/posts/47/votes
 
 <h4 id="list-post-votes">List Votes of a Post</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Collaborator or Administrator
+- **Authentication:** Required
+- **Required Role:** Collaborator or Administrator
 
 ```
 GET /api/v1/posts/{number}/votes
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -126,19 +122,17 @@ GET /api/v1/posts/{number}/votes
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to list the votes.
-    </td>
+    <td>**Required.** The number of the post to list the votes.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 GET <baseURL>/api/v1/posts/47/votes
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK

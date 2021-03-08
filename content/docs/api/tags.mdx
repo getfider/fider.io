@@ -23,7 +23,7 @@
 
 <h4 id="list-tags">List Tags</h4>
 
-- <strong>Authentication:</strong> Optional
+- **Authentication:** Optional
 
 ```
 GET /api/v1/tags
@@ -31,13 +31,13 @@ GET /api/v1/tags
 
 The list of tags returned by this endpoint depends on the role of the authenticated user. Private Tags are only returned for users with either `administrator` or `collaborator` role.
 
-<strong>Example</strong>
+**Example**
 
 ```
 GET <baseURL>/api/v1/tags
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -62,14 +62,14 @@ GET <baseURL>/api/v1/tags
 
 <h4 id="create-tag">Create a Tag</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Administrator
+- **Authentication:** Required
+- **Required Role:** Administrator
 
 ```
 POST /api/v1/tags
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -84,9 +84,7 @@ POST /api/v1/tags
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The display name of the tag.
-    </td>
+    <td>**Required.** The display name of the tag.</td>
   </tr>
   <tr>
     <td>
@@ -95,9 +93,7 @@ POST /api/v1/tags
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The Hex color of the tag (without #).
-    </td>
+    <td>**Required.** The Hex color of the tag (without #).</td>
   </tr>
   <tr>
     <td>
@@ -107,12 +103,12 @@ POST /api/v1/tags
       <code>boolean</code>
     </td>
     <td>
-      <strong>Required.</strong> <code>true</code> for public tags or <code>false</code> for private tags.
+      **Required.** <code>true</code> for public tags or <code>false</code> for private tags.
     </td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 POST <baseURL>/api/v1/tags
@@ -124,7 +120,7 @@ POST <baseURL>/api/v1/tags
 }
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -140,14 +136,14 @@ POST <baseURL>/api/v1/tags
 
 <h4 id="edit-tag">Edit a Tag</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Administrator
+- **Authentication:** Required
+- **Required Role:** Administrator
 
 ```
 PUT /api/v1/tags/{slug}
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -162,9 +158,7 @@ PUT /api/v1/tags/{slug}
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The slug of the tag to be edited.
-    </td>
+    <td>**Required.** The slug of the tag to be edited.</td>
   </tr>
   <tr>
     <td>
@@ -173,9 +167,7 @@ PUT /api/v1/tags/{slug}
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The display name of the tag.
-    </td>
+    <td>**Required.** The display name of the tag.</td>
   </tr>
   <tr>
     <td>
@@ -184,9 +176,7 @@ PUT /api/v1/tags/{slug}
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The Hex color of the tag (without #).
-    </td>
+    <td>**Required.** The Hex color of the tag (without #).</td>
   </tr>
   <tr>
     <td>
@@ -196,12 +186,12 @@ PUT /api/v1/tags/{slug}
       <code>boolean</code>
     </td>
     <td>
-      <strong>Required.</strong> <code>true</code> for public tags or <code>false</code> for private tags.
+      **Required.** <code>true</code> for public tags or <code>false</code> for private tags.
     </td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 PUT <baseURL>/api/v1/tags/impact-big
@@ -213,7 +203,7 @@ PUT <baseURL>/api/v1/tags/impact-big
 }
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -229,14 +219,14 @@ PUT <baseURL>/api/v1/tags/impact-big
 
 <h4 id="delete-tag">Delete a Tag</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Administrator
+- **Authentication:** Required
+- **Required Role:** Administrator
 
 ```
 DELETE /api/v1/tags/{slug}
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -251,19 +241,17 @@ DELETE /api/v1/tags/{slug}
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The slug of the tag to be deleted.
-    </td>
+    <td>**Required.** The slug of the tag to be deleted.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 DELETE <baseURL>/api/v1/tags/impact-small
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -273,14 +261,14 @@ DELETE <baseURL>/api/v1/tags/impact-small
 
 <h4 id="tag-post">Tag a Post</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Collaborator or Administrator
+- **Authentication:** Required
+- **Required Role:** Collaborator or Administrator
 
 ```
 POST /api/v1/posts/{number}/tags/{slug}
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -295,9 +283,7 @@ POST /api/v1/posts/{number}/tags/{slug}
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to add the tag.
-    </td>
+    <td>**Required.** The number of the post to add the tag.</td>
   </tr>
   <tr>
     <td>
@@ -306,19 +292,17 @@ POST /api/v1/posts/{number}/tags/{slug}
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The slug of the tag to be added.
-    </td>
+    <td>**Required.** The slug of the tag to be added.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 POST <baseURL>/api/v1/posts/47/tags/impact-big
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -328,14 +312,14 @@ POST <baseURL>/api/v1/posts/47/tags/impact-big
 
 <h4 id="untag-vote">Untag a Post</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Collaborator or Administrator
+- **Authentication:** Required
+- **Required Role:** Collaborator or Administrator
 
 ```
 DELETE /api/v1/posts/{number}/tags/{slug}
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -350,9 +334,7 @@ DELETE /api/v1/posts/{number}/tags/{slug}
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to remove the tag.
-    </td>
+    <td>**Required.** The number of the post to remove the tag.</td>
   </tr>
   <tr>
     <td>
@@ -361,19 +343,17 @@ DELETE /api/v1/posts/{number}/tags/{slug}
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The slug of the tag to be removed.
-    </td>
+    <td>**Required.** The slug of the tag to be removed.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 DELETE <baseURL>/api/v1/posts/47/tags/impact-big
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK

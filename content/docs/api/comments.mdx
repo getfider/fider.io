@@ -20,13 +20,13 @@
 
 <h4 id="list-comments">List Comments</h4>
 
-- <strong>Authentication:</strong> Optional
+- **Authentication:** Optional
 
 ```
 GET /api/v1/posts/{number}/comments
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -41,19 +41,17 @@ GET /api/v1/posts/{number}/comments
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to get comments from.
-    </td>
+    <td>**Required.** The number of the post to get comments from.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 GET <baseURL>/api/v1/posts/47/comments
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 [
@@ -88,13 +86,13 @@ GET <baseURL>/api/v1/posts/47/comments
 
 <h4 id="get-comment">Get a Comment</h4>
 
-- <strong>Authentication:</strong> Optional
+- **Authentication:** Optional
 
 ```
 GET /api/v1/posts/{number}/comments/{id}
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -109,9 +107,7 @@ GET /api/v1/posts/{number}/comments/{id}
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to retrieve.
-    </td>
+    <td>**Required.** The number of the post to retrieve.</td>
   </tr>
   <tr>
     <td>
@@ -120,19 +116,17 @@ GET /api/v1/posts/{number}/comments/{id}
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The id of the comment to be retrieved.
-    </td>
+    <td>**Required.** The id of the comment to be retrieved.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 GET <baseURL>/api/v1/posts/47/comments/68
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -161,7 +155,7 @@ GET <baseURL>/api/v1/posts/47/comments/68
 POST /api/v1/posts/{number}/comments
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -176,9 +170,7 @@ POST /api/v1/posts/{number}/comments
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to add the comment.
-    </td>
+    <td>**Required.** The number of the post to add the comment.</td>
   </tr>
   <tr>
     <td>
@@ -187,13 +179,11 @@ POST /api/v1/posts/{number}/comments
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The content of the comment.
-    </td>
+    <td>**Required.** The content of the comment.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 POST <baseURL>/api/v1/posts/47/comments
@@ -203,7 +193,7 @@ POST <baseURL>/api/v1/posts/47/comments
 }
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -215,14 +205,14 @@ POST <baseURL>/api/v1/posts/47/comments
 
 <h4 id="edit-comment">Edit a Comment</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Collaborator or Administrator.
+- **Authentication:** Required
+- **Required Role:** Collaborator or Administrator.
 
 ```
 PUT /api/v1/posts/{number}/comments/{id}
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -237,9 +227,7 @@ PUT /api/v1/posts/{number}/comments/{id}
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post that has given comment.
-    </td>
+    <td>**Required.** The number of the post that has given comment.</td>
   </tr>
   <tr>
     <td>
@@ -248,9 +236,7 @@ PUT /api/v1/posts/{number}/comments/{id}
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The id of the comment to be edited.
-    </td>
+    <td>**Required.** The id of the comment to be edited.</td>
   </tr>
   <tr>
     <td>
@@ -259,13 +245,11 @@ PUT /api/v1/posts/{number}/comments/{id}
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The new content of the comment.
-    </td>
+    <td>**Required.** The new content of the comment.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 POST <baseURL>/api/v1/posts/47/comments/5675
@@ -275,7 +259,7 @@ POST <baseURL>/api/v1/posts/47/comments/5675
 }
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -285,14 +269,14 @@ POST <baseURL>/api/v1/posts/47/comments/5675
 
 <h4 id="delete-comment">Delete a Comment</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Collaborator or Administrator.
+- **Authentication:** Required
+- **Required Role:** Collaborator or Administrator.
 
 ```
 DELETE /api/v1/posts/{number}/comments/{id}
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -307,9 +291,7 @@ DELETE /api/v1/posts/{number}/comments/{id}
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post that has given comment.
-    </td>
+    <td>**Required.** The number of the post that has given comment.</td>
   </tr>
   <tr>
     <td>
@@ -318,19 +300,17 @@ DELETE /api/v1/posts/{number}/comments/{id}
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The id of the comment to be edited.
-    </td>
+    <td>**Required.** The id of the comment to be edited.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 DELETE <baseURL>/api/v1/posts/47/comments/5675
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK

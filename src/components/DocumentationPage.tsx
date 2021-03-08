@@ -17,7 +17,7 @@ export function DocumentationPage(props: DocumentationPageProps): JSX.Element {
       <SEO title={`${props.title} - Documentation - Fider`} description={props.description} imageUrl={`/images/cover/${props.cover}`} />
 
       <section>
-        <div className="container pb-24 max-w-5xl mx-auto">
+        <div className="container pb-24 max-w-3xl mx-auto px-8">
           <article className="mt-10">
             <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">{props.category}</h2>
             <h1>{props.title}</h1>

@@ -21,17 +21,17 @@
   </li>
 </ul>
 
-A <strong>Post</strong> is new topic created by a user on the Feedback Site, while it's usually a suggestion or feature request, sometimes it might also be a bug report or a complain.
+A **Post** is new topic created by a user on the Feedback Site, while it's usually a suggestion or feature request, sometimes it might also be a bug report or a complain.
 
 <h4 id="list-posts">List Posts</h4>
 
-- <strong>Authentication:</strong> Optional
+- **Authentication:** Optional
 
 ```
 GET /api/v1/posts
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -85,13 +85,13 @@ GET /api/v1/posts
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 GET <baseURL>/api/v1/posts?view=completed&query=open+links&limit=50
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -133,13 +133,13 @@ GET <baseURL>/api/v1/posts?view=completed&query=open+links&limit=50
 
 <h4 id="get-post">Get a Post</h4>
 
-- <strong>Authentication:</strong> Optional
+- **Authentication:** Optional
 
 ```
 GET /api/v1/posts/{number}
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -154,19 +154,17 @@ GET /api/v1/posts/{number}
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to retrieve.
-    </td>
+    <td>**Required.** The number of the post to retrieve.</td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 GET <baseURL>/api/v1/posts/65
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -203,13 +201,13 @@ GET <baseURL>/api/v1/posts/65
 
 <h4 id="create-post">Create a Post</h4>
 
-- <strong>Authentication:</strong> Required
+- **Authentication:** Required
 
 ```
 POST /api/v1/posts
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -224,9 +222,7 @@ POST /api/v1/posts
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The title of the post.
-    </td>
+    <td>**Required.** The title of the post.</td>
   </tr>
   <tr>
     <td>
@@ -239,7 +235,7 @@ POST /api/v1/posts
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 POST <baseURL>/api/v1/posts
@@ -250,7 +246,7 @@ POST <baseURL>/api/v1/posts
 }
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -265,14 +261,14 @@ POST <baseURL>/api/v1/posts
 
 <h4 id="edit-post">Edit a Post</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Collaborator or Administrator
+- **Authentication:** Required
+- **Required Role:** Collaborator or Administrator
 
 ```
 PUT /api/v1/posts/{number}
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -287,9 +283,7 @@ PUT /api/v1/posts/{number}
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to be edited.
-    </td>
+    <td>**Required.** The number of the post to be edited.</td>
   </tr>
   <tr>
     <td>
@@ -298,9 +292,7 @@ PUT /api/v1/posts/{number}
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The title of the post.
-    </td>
+    <td>**Required.** The title of the post.</td>
   </tr>
   <tr>
     <td>
@@ -313,7 +305,7 @@ PUT /api/v1/posts/{number}
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 POST <baseURL>/api/v1/posts/47
@@ -324,7 +316,7 @@ POST <baseURL>/api/v1/posts/47
 }
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -334,14 +326,14 @@ POST <baseURL>/api/v1/posts/47
 
 <h4 id="delete-post">Delete a Post</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Administrator
+- **Authentication:** Required
+- **Required Role:** Administrator
 
 ```
 DELETE /api/v1/posts/{number}
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -356,9 +348,7 @@ DELETE /api/v1/posts/{number}
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to be deleted.
-    </td>
+    <td>**Required.** The number of the post to be deleted.</td>
   </tr>
   <tr>
     <td>
@@ -371,7 +361,7 @@ DELETE /api/v1/posts/{number}
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 DELETE <baseURL>/api/v1/posts/47
@@ -381,7 +371,7 @@ DELETE <baseURL>/api/v1/posts/47
 }
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -391,14 +381,14 @@ DELETE <baseURL>/api/v1/posts/47
 
 <h4 id="respond-post">Respond to a Post</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Collaborator or Administrator
+- **Authentication:** Required
+- **Required Role:** Collaborator or Administrator
 
 ```
 PUT /api/v1/posts/{number}/status
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -413,9 +403,7 @@ PUT /api/v1/posts/{number}/status
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The number of the post to add a response.
-    </td>
+    <td>**Required.** The number of the post to add a response.</td>
   </tr>
   <tr>
     <td>
@@ -425,8 +413,8 @@ PUT /api/v1/posts/{number}/status
       <code>string</code>
     </td>
     <td>
-      <strong>Required.</strong>The new status of the post. Possible values are <code>open</code>, <code>planned</code>, <code>started</code>,{' '}
-      <code>completed</code>, <code>declined</code> and <code>duplicate</code>
+      **Required.**The new status of the post. Possible values are <code>open</code>, <code>planned</code>, <code>started</code>, <code>completed</code>,{' '}
+      <code>declined</code> and <code>duplicate</code>
     </td>
   </tr>
   <tr>
@@ -446,12 +434,12 @@ PUT /api/v1/posts/{number}/status
       <code>number</code>
     </td>
     <td>
-      The number of the post to merge this into. This parameter <strong>Required</strong> when status is <code>duplicate</code>.
+      The number of the post to merge this into. This parameter **Required** when status is <code>duplicate</code>.
     </td>
   </tr>
 </table>
 
-<strong>Example #1</strong>
+**Example #1**
 
 ```
 PUT <baseURL>/api/v1/posts/47/status
@@ -462,7 +450,7 @@ PUT <baseURL>/api/v1/posts/47/status
 }
 ```
 
-<strong>Example #2</strong>
+**Example #2**
 
 ```
 PUT <baseURL>/api/v1/posts/47/status
@@ -473,7 +461,7 @@ PUT <baseURL>/api/v1/posts/47/status
 }
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK

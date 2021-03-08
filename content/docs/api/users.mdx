@@ -11,20 +11,20 @@
 
 <h4 id="list-users">List Users</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Collaborator or Administrator
+- **Authentication:** Required
+- **Required Role:** Collaborator or Administrator
 
 ```
 GET /api/v1/users
 ```
 
-<strong>Example</strong>
+**Example**
 
 ```
 GET <baseURL>/api/v1/users
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -56,8 +56,8 @@ GET <baseURL>/api/v1/users
 
 <h4 id="create-user">Create a User</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Administrator
+- **Authentication:** Required
+- **Required Role:** Administrator
 
 ```
 POST /api/v1/users
@@ -67,7 +67,7 @@ The Create User API will only create a new user if it cannot find an existing us
 
 The ID returned by this API can be used to impersonate that user. Read more about <a href="#impersonation">impersonation</a>.
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -82,9 +82,7 @@ The ID returned by this API can be used to impersonate that user. Read more abou
     <td>
       <code>string</code>
     </td>
-    <td>
-      <strong>Required.</strong> The name of the user.
-    </td>
+    <td>**Required.** The name of the user.</td>
   </tr>
   <tr>
     <td>
@@ -106,7 +104,7 @@ The ID returned by this API can be used to impersonate that user. Read more abou
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 POST <baseURL>/api/v1/users
@@ -118,7 +116,7 @@ POST <baseURL>/api/v1/users
 }
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK

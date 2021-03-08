@@ -4,11 +4,11 @@ Welcome to the Fider API documentation.
 
 The Fider API allows you to manage Posts and other data within your Fider instance in a simple, programmatic way using conventional HTTP requests. The endpoints are intuitive and powerful, allowing you to easily make calls to retrieve information or to execute actions.
 
-<strong>Version</strong>
+**Version**
 
-The <strong>API v1</strong> was introduced on Fider `v0.16.0`. Make sure you're running the latest version of Fider to leverage the API. All Cloud users on `fider.io` are already on the latest so you can start using it right now.
+The **API v1** was introduced on Fider `v0.16.0`. Make sure you're running the latest version of Fider to leverage the API. All Cloud users on `fider.io` are already on the latest so you can start using it right now.
 
-<strong>Request</strong>
+**Request**
 
 Allowed HTTP Verbs are GET, POST, PUT and DELETE. All data must be sent as JSON.
 
@@ -34,7 +34,7 @@ Requests are sent to your Fider URL using the HTTP/HTTPS protocol.
   </tr>
 </table>
 
-<strong>Response</strong>
+**Response**
 
 Every response will be encoded with `application/json` and one of the following status code.
 
@@ -49,9 +49,7 @@ Every response will be encoded with `application/json` and one of the following 
   </tr>
   <tr>
     <td>400 Bad Request</td>
-    <td>
-      Something is incorrect with your request, it might be missing a parameter or have an invalid value. See <strong>Error Messages</strong> below.
-    </td>
+    <td>Something is incorrect with your request, it might be missing a parameter or have an invalid value. See **Error Messages** below.</td>
   </tr>
   <tr>
     <td>403 Forbidden</td>
@@ -67,7 +65,7 @@ Every response will be encoded with `application/json` and one of the following 
   </tr>
 </table>
 
-<strong>Error Messages</strong>
+**Error Messages**
 
 Every `400 Bad Request` response contains a JSON payload with details of what went wrong. Each `error (object)` contains a `message (string)` describing what is incorrect and may also contain a `field (string)` property. If the error object doesn't contain the field, that's a general error message.
 

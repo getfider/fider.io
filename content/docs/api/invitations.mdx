@@ -13,14 +13,14 @@
 
 Sample invitations are example of invitations emails that are sent to current authenticated user's email. Use it to see how the email looks like before sending to other users.
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Collaborator or Administrator
+- **Authentication:** Required
+- **Required Role:** Collaborator or Administrator
 
 ```
 POST /api/v1/invitations/sample
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -35,9 +35,7 @@ POST /api/v1/invitations/sample
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The subject of the email to be sent.
-    </td>
+    <td>**Required.** The subject of the email to be sent.</td>
   </tr>
   <tr>
     <td>
@@ -47,13 +45,13 @@ POST /api/v1/invitations/sample
       <code>string</code>
     </td>
     <td>
-      <strong>Required.</strong> The content of the email to be sent. The message must include the <code>%invite%</code> placeholder, which will be replaced a
-      secure invitation link.
+      **Required.** The content of the email to be sent. The message must include the <code>%invite%</code> placeholder, which will be replaced a secure
+      invitation link.
     </td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 POST <baseURL>/api/v1/invitations/sample
@@ -64,7 +62,7 @@ POST <baseURL>/api/v1/invitations/sample
 }
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
@@ -74,14 +72,14 @@ POST <baseURL>/api/v1/invitations/sample
 
 <h4 id="send-invite">Send an Invite</h4>
 
-- <strong>Authentication:</strong> Required
-- <strong>Required Role:</strong> Collaborator or Administrator
+- **Authentication:** Required
+- **Required Role:** Collaborator or Administrator
 
 ```
 POST /api/v1/invitations/send
 ```
 
-<strong>Parameters</strong>
+**Parameters**
 
 <table>
   <tr>
@@ -96,9 +94,7 @@ POST /api/v1/invitations/send
     <td>
       <code>array of strings</code>
     </td>
-    <td>
-      <strong>Required.</strong> The list of email addresses to send an invite.
-    </td>
+    <td>**Required.** The list of email addresses to send an invite.</td>
   </tr>
   <tr>
     <td>
@@ -107,9 +103,7 @@ POST /api/v1/invitations/send
     <td>
       <code>number</code>
     </td>
-    <td>
-      <strong>Required.</strong> The subject of the email to be sent.
-    </td>
+    <td>**Required.** The subject of the email to be sent.</td>
   </tr>
   <tr>
     <td>
@@ -119,13 +113,13 @@ POST /api/v1/invitations/send
       <code>string</code>
     </td>
     <td>
-      <strong>Required.</strong> The content of the email to be sent. The message must include the <code>%invite%</code> placeholder, which will be replaced a
-      secure invitation link.
+      **Required.** The content of the email to be sent. The message must include the <code>%invite%</code> placeholder, which will be replaced a secure
+      invitation link.
     </td>
   </tr>
 </table>
 
-<strong>Example</strong>
+**Example**
 
 ```
 POST <baseURL>/api/v1/invitations/send
@@ -137,7 +131,7 @@ POST <baseURL>/api/v1/invitations/send
 }
 ```
 
-<strong>Response</strong>
+**Response**
 
 ```
 200 OK
