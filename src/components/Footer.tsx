@@ -1,4 +1,4 @@
-import Logo from '@assets/logo.svg'
+import LogoTitle from '@assets/logo-title.svg'
 import GitHubLogo from '@assets/icons/iconmonstr-github.svg'
 import TwitterLogo from '@assets/icons/iconmonstr-twitter.svg'
 import posts from '@content/blog/all-posts'
@@ -12,7 +12,7 @@ export function Footer(): JSX.Element {
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
           <a className="flex font-medium items-center md:justify-start justify-center text-gray-900">
-            <Logo className="h-10" />
+            <LogoTitle className="h-10" />
           </a>
           <p className="mt-2 text-sm text-gray-500">Customer Feedback tool for everyone.</p>
         </div>

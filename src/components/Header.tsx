@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Logo from '@assets/logo.svg'
+import LogoTitle from '@assets/logo-title.svg'
 import GitHubLogo from '@assets/icons/iconmonstr-github.svg'
 
 export function Header(): JSX.Element {
@@ -9,7 +9,7 @@ export function Header(): JSX.Element {
         <div className="flex-none pl-4 sm:pl-6 xl:pl-8 flex items-center lg:w-60 xl:w-72">
           <Link href="/">
             <a className="overflow-hidden w-10 md:w-auto">
-              <Logo className="h-12" />
+              <LogoTitle className="h-12" />
             </a>
           </Link>
         </div>
