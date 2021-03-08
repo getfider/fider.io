@@ -15,4 +15,8 @@
   h4 {
     @apply font-medium text-gray-900 text-xl;
   }
+
+  h5 {
+    @apply font-medium text-gray-900;
+  }
 }
