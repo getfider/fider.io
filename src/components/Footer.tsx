@@ -33,25 +33,20 @@ export function Footer(): JSX.Element {
           <div className="lg:w-1/3 md:w-1/2 w-full px-4">
             <h2 className="font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Documentation</h2>
             <nav className="list-none mb-10">
-              <li>
-                <a href="#" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
-                  First Link
-                </a>
+              <li className="mt-4">
+                <Link href="/docs/hosting-instance">
+                  <a className="text-gray-500 hover:text-blue-800 transition-colors duration-200">Hosting your own instance</a>
+                </Link>
               </li>
-              <li>
-                <a href="#" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
-                  Second Link
-                </a>
+              <li className="mt-4">
+                <Link href="/docs/api">
+                  <a className="text-gray-500 hover:text-blue-800 transition-colors duration-200">API Reference</a>
+                </Link>
               </li>
-              <li>
-                <a href="#" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
-                  Third Link
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
-                  Fourth Link
-                </a>
+              <li className="mt-4">
+                <Link href="/docs/configuring-oauth">
+                  <a className="text-gray-500 hover:text-blue-800 transition-colors duration-200">Configuring OAuth</a>
+                </Link>
               </li>
             </nav>
           </div>

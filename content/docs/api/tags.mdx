@@ -1,25 +1,11 @@
 <h3 id="tags">Tags</h3>
 
-<ul>
-  <li>
-    <a href="#list-tags">List Tags</a>
-  </li>
-  <li>
-    <a href="#create-tag">Create a Tag</a>
-  </li>
-  <li>
-    <a href="#edit-tag">Edit a Tag</a>
-  </li>
-  <li>
-    <a href="#delete-tag">Delete a Tag</a>
-  </li>
-  <li>
-    <a href="#tag-post">Tag a Post</a>
-  </li>
-  <li>
-    <a href="#untag-vote">Untag a Post</a>
-  </li>
-</ul>
+- <a href="#list-tags">List Tags</a>
+- <a href="#create-tag">Create a Tag</a>
+- <a href="#edit-tag">Edit a Tag</a>
+- <a href="#delete-tag">Delete a Tag</a>
+- <a href="#tag-post">Tag a Post</a>
+- <a href="#untag-vote">Untag a Post</a>
 
 <h4 id="list-tags">List Tags</h4>
 
@@ -71,42 +57,11 @@ POST /api/v1/tags
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="120">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>name</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The display name of the tag.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>color</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The Hex color of the tag (without #).</td>
-  </tr>
-  <tr>
-    <td>
-      <code>isPublic</code>
-    </td>
-    <td>
-      <code>boolean</code>
-    </td>
-    <td>
-      **Required.** <code>true</code> for public tags or <code>false</code> for private tags.
-    </td>
-  </tr>
-</table>
+| Name       | Type      | Description                                                   |
+| ---------- | --------- | ------------------------------------------------------------- |
+| `name`     | `string`  | **Required.** The display name of the tag.                    |
+| `color`    | `string`  | **Required.** The Hex color of the tag (without #).           |
+| `isPublic` | `boolean` | **Required.** true for public tags or false for private tags. |
 
 **Example**
 
@@ -145,51 +100,12 @@ PUT /api/v1/tags/{slug}
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="120">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>slug</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The slug of the tag to be edited.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>name</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The display name of the tag.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>color</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The Hex color of the tag (without #).</td>
-  </tr>
-  <tr>
-    <td>
-      <code>isPublic</code>
-    </td>
-    <td>
-      <code>boolean</code>
-    </td>
-    <td>
-      **Required.** <code>true</code> for public tags or <code>false</code> for private tags.
-    </td>
-  </tr>
-</table>
+| Name       | Type      | Description                                                   |
+| ---------- | --------- | ------------------------------------------------------------- |
+| `slug`     | `string`  | **Required.** The slug of the tag to be edited.               |
+| `name`     | `string`  | **Required.** The display name of the tag.                    |
+| `color`    | `string`  | **Required.** The Hex color of the tag (without #).           |
+| `isPublic` | `boolean` | **Required.** true for public tags or false for private tags. |
 
 **Example**
 
@@ -228,22 +144,9 @@ DELETE /api/v1/tags/{slug}
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="120">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>slug</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The slug of the tag to be deleted.</td>
-  </tr>
-</table>
+| Name   | Type     | Description                                      |
+| ------ | -------- | ------------------------------------------------ |
+| `slug` | `string` | **Required.** The slug of the tag to be deleted. |
 
 **Example**
 
@@ -270,31 +173,10 @@ POST /api/v1/posts/{number}/tags/{slug}
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="140">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The number of the post to add the tag.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>slug</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The slug of the tag to be added.</td>
-  </tr>
-</table>
+| Name     | Type     | Description                                          |
+| -------- | -------- | ---------------------------------------------------- |
+| `number` | `number` | **Required.** The number of the post to add the tag. |
+| `slug`   | `string` | **Required.** The slug of the tag to be added.       |
 
 **Example**
 
@@ -321,31 +203,10 @@ DELETE /api/v1/posts/{number}/tags/{slug}
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="140">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The number of the post to remove the tag.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>slug</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The slug of the tag to be removed.</td>
-  </tr>
-</table>
+| Name     | Type     | Description                                             |
+| -------- | -------- | ------------------------------------------------------- |
+| `number` | `number` | **Required.** The number of the post to remove the tag. |
+| `slug`   | `string` | **Required.** The slug of the tag to be removed.        |
 
 **Example**
 

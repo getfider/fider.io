@@ -3,8 +3,8 @@ export interface PostMetadata {
   category: string;
   publishedOn: Date;
   slug: string;
-  cover: string;
   excerpt: string;
+  cover?: string;
 }
 
 const posts = {
@@ -13,7 +13,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2019-03-16T00:00:00Z'),
     slug: 'version-0.18.0',
-    cover: 'version-0.18.0.jpg',
     excerpt: 'In this next Fider release, we have released features like attachments and better SEO',
   },
   "version-0.17.0": {
@@ -21,7 +20,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2018-12-02T00:00:00Z'),
     slug: 'version-0.17.0',
-    cover: 'version-0.17.0.jpg',
     excerpt: 'In this next Fider release, we have released features like list of voters, better user management and huge performance improvements',
   },
   "how-we-reduced-initial-jscss-size": {
@@ -29,7 +27,6 @@ const posts = {
     category: 'Knowledge Share',
     publishedOn: new Date('2018-10-24T00:00:00Z'),
     slug: 'how-we-reduced-initial-jscss-size',
-    cover: 'how-we-reduced-initial-jscss-size.jpg',
     excerpt:
       'We have been working on reducing the amount of bytes that we send to all Fider users. Being a web application built with React, we have focused on JS and CSS. On this post we share our learnings, some concepts and suggestions on how you can do the same with your web application.',
   },
@@ -38,7 +35,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2018-10-21T00:00:00Z'),
     slug: 'version-0.16.0',
-    cover: 'version-0.16.0.jpg',
     excerpt: 'In this next Fider release, we have released our Public API and the ability to delete comments',
   },
   "version-0.15.0": {
@@ -46,7 +42,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2018-08-23T00:00:00Z'),
     slug: 'version-0.15.0',
-    cover: 'version-0.15.0.jpg',
     excerpt: "In this next Fider release, we've enabled custom OAuth so that you can enable many other providers",
   },
   "version-0.14.0": {
@@ -54,7 +49,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2018-06-30T00:00:00Z'),
     slug: 'version-0.14.0',
-    cover: 'version-0.14.0.jpg',
     excerpt: "In this next Fider release, we've improved our foundation to support the continued growth",
   },
   "version-0.13.0": {
@@ -62,7 +56,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2018-05-29T00:00:00Z'),
     slug: 'version-0.13.0',
-    cover: 'version-0.13.0.jpg',
     excerpt: "In this month’s release of Fider, we're happy to release another highly request feature: Custom Branding",
   },
   "version-0.12.0": {
@@ -70,7 +63,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2018-04-28T00:00:00Z'),
     slug: 'version-0.12.0',
-    cover: 'version-0.12.0.jpg',
     excerpt: 'In this month’s release of Fider, we’ve been working on two highly requested features: Private Site and Export Data',
   },
   "version-0.11.0": {
@@ -78,7 +70,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2018-03-25T00:00:00Z'),
     slug: 'version-0.11.0',
-    cover: 'version-0.11.0.jpg',
     excerpt: 'In this month’s release of Fider, we’ve been working mostly on internal changes, but managed to add option edit and delete ideas',
   },
   "version-0.10.0":{
@@ -86,7 +77,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2018-02-28T00:00:00Z'),
     slug: 'version-0.10.0',
-    cover: 'version-0.10.0.jpg',
     excerpt: "We're happy to announce that Fider 0.10 is now available",
   },
   "version-0.9.0": {
@@ -94,7 +84,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2018-01-29T00:00:00Z'),
     slug: 'version-0.9.0',
-    cover: 'version-0.9.0.jpg',
     excerpt: "We're happy to announce that Fider 0.9 is now available",
   },
   "version-0.8.0": {
@@ -102,7 +91,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2017-11-29T00:00:00Z'),
     slug: 'version-0.8.0',
-    cover: 'version-0.8.0.jpg',
     excerpt: "We're happy to announce that Fider 0.8 is now available",
   },
   "version-0.7.0": {
@@ -110,7 +98,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2017-10-31T00:00:00Z'),
     slug: 'version-0.7.0',
-    cover: 'version-0.7.0.jpg',
     excerpt: "We're happy to announce that Fider 0.7 is now available",
   },
   "version-0.6.0": {
@@ -118,7 +105,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2017-09-28T00:00:00Z'),
     slug: 'version-0.6.0',
-    cover: 'version-0.6.0.jpg',
     excerpt: "We're happy to announce that Fider 0.6 is now available",
   },
   "version-0.5.0": {
@@ -126,7 +112,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2017-08-31T00:00:00Z'),
     slug: 'version-0.5.0',
-    cover: 'version-0.5.0.jpg',
     excerpt: "We're happy to announce that Fider 0.5 is now available",
   },
   "version-0.4.0": {
@@ -134,7 +119,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2017-07-29T00:00:00Z'),
     slug: 'version-0.4.0',
-    cover: 'version-0.4.0.jpg',
     excerpt: "We're happy to announce that Fider 0.4 is now available",
   },
   "version-0.3.0": {
@@ -142,7 +126,6 @@ const posts = {
     category: 'Release',
     publishedOn: new Date('2017-07-05T00:00:00Z'),
     slug: 'version-0.3.0',
-    cover: 'version-0.3.0.jpg',
     excerpt: "We're happy to announce that Fider 0.3 is now available",
   }
 }

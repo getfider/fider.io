@@ -1,22 +1,10 @@
 <h3 id="comments">Comments</h3>
 
-<ul>
-  <li>
-    <a href="#list-comments">List Comments</a>
-  </li>
-  <li>
-    <a href="#get-comment">Get a Comment</a>
-  </li>
-  <li>
-    <a href="#add-comment">Add a Comment</a>
-  </li>
-  <li>
-    <a href="#edit-comment">Edit a Comment</a>
-  </li>
-  <li>
-    <a href="#delete-comment">Delete a Comment</a>
-  </li>
-</ul>
+- <a href="#list-comments">List Comments</a>
+- <a href="#get-comment">Get a Comment</a>
+- <a href="#add-comment">Add a Comment</a>
+- <a href="#edit-comment">Edit a Comment</a>
+- <a href="#delete-comment">Delete a Comment</a>
 
 <h4 id="list-comments">List Comments</h4>
 
@@ -28,22 +16,9 @@ GET /api/v1/posts/{number}/comments
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="80">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The number of the post to get comments from.</td>
-  </tr>
-</table>
+| Name     | Type     | Description                                                |
+| -------- | -------- | ---------------------------------------------------------- |
+| `number` | `number` | **Required.** The number of the post to get comments from. |
 
 **Example**
 
@@ -94,31 +69,10 @@ GET /api/v1/posts/{number}/comments/{id}
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="80">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The number of the post to retrieve.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>id</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The id of the comment to be retrieved.</td>
-  </tr>
-</table>
+| Name     | Type     | Description                                          |
+| -------- | -------- | ---------------------------------------------------- |
+| `number` | `number` | **Required.** The number of the post to retrieve.    |
+| `id`     | `number` | **Required.** The id of the comment to be retrieved. |
 
 **Example**
 
@@ -157,31 +111,10 @@ POST /api/v1/posts/{number}/comments
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="120">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The number of the post to add the comment.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>content</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The content of the comment.</td>
-  </tr>
-</table>
+| Name      | Type     | Description                                              |
+| --------- | -------- | -------------------------------------------------------- |
+| `number`  | `number` | **Required.** The number of the post to add the comment. |
+| `content` | `string` | **Required.** The content of the comment.                |
 
 **Example**
 
@@ -214,40 +147,11 @@ PUT /api/v1/posts/{number}/comments/{id}
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="120">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The number of the post that has given comment.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>id</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The id of the comment to be edited.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>content</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The new content of the comment.</td>
-  </tr>
-</table>
+| Name      | Type     | Description                                                  |
+| --------- | -------- | ------------------------------------------------------------ |
+| `number`  | `number` | **Required.** The number of the post that has given comment. |
+| `id`      | `number` | **Required.** The id of the comment to be edited.            |
+| `content` | `string` | **Required.** The new content of the comment.                |
 
 **Example**
 
@@ -278,31 +182,10 @@ DELETE /api/v1/posts/{number}/comments/{id}
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="120">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The number of the post that has given comment.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>id</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The id of the comment to be edited.</td>
-  </tr>
-</table>
+| Name     | Type     | Description                                                  |
+| -------- | -------- | ------------------------------------------------------------ |
+| `number` | `number` | **Required.** The number of the post that has given comment. |
+| `id`     | `number` | **Required.** The id of the comment to be edited.            |
 
 **Example**
 

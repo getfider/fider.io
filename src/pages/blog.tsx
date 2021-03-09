@@ -1,8 +1,8 @@
-import Head from 'next/head'
+import React from 'react'
+import Link from 'next/link'
 import posts, { PostMetadata } from '@content/blog/all-posts'
 import { formatDate } from '@app/fns/date'
-import Link from 'next/link'
-import { MainLayout } from '@app/components'
+import { MainLayout, SEO } from '@app/components'
 
 export function Post(props: PostMetadata): JSX.Element {
   return (
@@ -28,13 +28,14 @@ export function Post(props: PostMetadata): JSX.Element {
   )
 }
 
-export default function PageNotFound(): JSX.Element {
+export default function Blog(): JSX.Element {
   return (
     <MainLayout>
-      <Head>
-        <title>Blog - getfider.com</title>
-        <meta name="robots" content="noindex" />
-      </Head>
+      <SEO
+        title="Blog · Fider"
+        description="Our vision, news, ideas and whatever feels important, directly from Fider developers"
+        imageUrl="/images/cover/blog.jpg"
+      />
 
       <section>
         <div className="text-center mt-20 mb-10">

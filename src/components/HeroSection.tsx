@@ -4,7 +4,7 @@ export function HeroSection(): JSX.Element {
   return (
     <section id="hero">
       <div className="bg-gray-100">
-        <main className="px-4 sm:px-6 lg:px-8 mx-auto pt-40 pb-40 max-w-7xl flex flex-col lg:flex-row space-y-10 lg:space-y-0 space-x-4">
+        <main className="px-4 sm:px-6 lg:px-8 mx-auto pt-20 lg:pt-40 pb-40 max-w-7xl flex flex-col lg:flex-row space-y-10 lg:space-y-0 space-x-4">
           <div className="flex-1 sm:text-center lg:text-left">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
               <span className="block xl:inline">Customer Feedback</span>

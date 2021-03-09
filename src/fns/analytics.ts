@@ -3,17 +3,11 @@ import { MouseEvent } from 'react'
 const trackingId = process.env.NEXT_PUBLIC_GA_TRACKING_ID
 
 enum Category {
-  Pricing = 'Pricing',
-  Newsletter = 'Newsletter',
-  SiteChecker = 'SiteChecker',
   Outbound = 'Outbound',
-  CSPHasher = 'CSPHasher',
 }
 
 enum Action {
   PriceCheck = 'PriceCheck',
-  Subscribe = 'Subscribe',
-  SiteCheck = 'SiteCheck',
   Click = 'Click',
 }
 

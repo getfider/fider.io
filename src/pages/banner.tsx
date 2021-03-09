@@ -1,4 +1,4 @@
-import LogoTitle from '@assets/logo-title-light.svg'
+import LogoTitle from '@assets/logo-title.svg'
 import { useEffect } from 'react'
 import Head from 'next/head'
 
@@ -25,7 +25,7 @@ export default function BannerGenerator(): JSX.Element {
             <LogoTitle className="block mx-auto h-24 mt-24 mb-40 bg-white p-2" />
           </div>
           <div className="text-center">
-            <h1 className="text-6xl">Documentation</h1>
+            <h1 className="text-6xl">Blog</h1>
           </div>
         </div>
       </section>

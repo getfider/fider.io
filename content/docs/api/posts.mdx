@@ -1,25 +1,11 @@
 <h3 id="posts">Posts</h3>
 
-<ul>
-  <li>
-    <a href="#list-posts">List Posts</a>
-  </li>
-  <li>
-    <a href="#get-post">Get a Post</a>
-  </li>
-  <li>
-    <a href="#create-post">Create a Post</a>
-  </li>
-  <li>
-    <a href="#edit-post">Edit a Post</a>
-  </li>
-  <li>
-    <a href="#delete-post">Delete a Post</a>
-  </li>
-  <li>
-    <a href="#respond-post">Respond to a Post</a>
-  </li>
-</ul>
+- <a href="#list-posts">List Posts</a>
+- <a href="#get-post">Get a Post</a>
+- <a href="#create-post">Create a Post</a>
+- <a href="#edit-post">Edit a Post</a>
+- <a href="#delete-post">Delete a Post</a>
+- <a href="#respond-post">Respond to a Post</a>
 
 A **Post** is new topic created by a user on the Feedback Site, while it's usually a suggestion or feature request, sometimes it might also be a bug report or a complain.
 
@@ -33,57 +19,12 @@ GET /api/v1/posts
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="80">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>query</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>The search keywords</td>
-  </tr>
-  <tr>
-    <td>
-      <code>view</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>
-      The filter and order to apply. Possible values are <code>all</code>, <code>recent</code>, <code>my-votes</code>, <code>most-wanted</code>,{' '}
-      <code>most-discussed</code>, <code>planned</code>, <code>started</code>, <code>completed</code>, <code>declined</code> and <code>trending</code>. Default:{' '}
-      <code>all</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>limit</code>
-    </td>
-    <td>
-      <code>integer</code>
-    </td>
-    <td>
-      The number of entries to return. Default: <code>30</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>tags</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>
-      The list of tags to filter by. Separate multiple tags by <code>,</code>
-    </td>
-  </tr>
-</table>
+| Name    | Type      | Description                                                                                                                                                                                   |
+| ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `query` | `string`  | The search keywords                                                                                                                                                                           |
+| `view`  | `string`  | The filter and order to apply. Possible values are `all`, `recent`, `my-votes`, `most-wanted`, `most-discussed`, `planned`, `started`, `completed`, `declined` and `trending`. Default: `all` |
+| `limit` | `integer` | The number of entries to return. Default: 30                                                                                                                                                  |
+| `tags`  | `string`  | The list of tags to filter by. Separate multiple tags by ,                                                                                                                                    |
 
 **Example**
 
@@ -141,22 +82,9 @@ GET /api/v1/posts/{number}
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="80">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The number of the post to retrieve.</td>
-  </tr>
-</table>
+| Name     | Type     | Description                                       |
+| -------- | -------- | ------------------------------------------------- |
+| `number` | `number` | **Required.** The number of the post to retrieve. |
 
 **Example**
 
@@ -209,31 +137,10 @@ POST /api/v1/posts
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="120">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>title</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The title of the post.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>description</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>The description of the post.</td>
-  </tr>
-</table>
+| Name          | Type     | Description                          |
+| ------------- | -------- | ------------------------------------ |
+| `title`       | `string` | **Required.** The title of the post. |
+| `description` | `string` | The description of the post.         |
 
 **Example**
 
@@ -270,40 +177,11 @@ PUT /api/v1/posts/{number}
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="120">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The number of the post to be edited.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>title</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>**Required.** The title of the post.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>description</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>The description of the post.</td>
-  </tr>
-</table>
+| Name          | Type     | Description                                        |
+| ------------- | -------- | -------------------------------------------------- |
+| `number`      | `number` | **Required.** The number of the post to be edited. |
+| `title`       | `string` | **Required.** The title of the post.               |
+| `description` | `string` | The description of the post.                       |
 
 **Example**
 
@@ -335,31 +213,10 @@ DELETE /api/v1/posts/{number}
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="120">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The number of the post to be deleted.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>text</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>The reason why this post is being deleted.</td>
-  </tr>
-</table>
+| Name     | Type     | Description                                         |
+| -------- | -------- | --------------------------------------------------- |
+| `number` | `number` | **Required.** The number of the post to be deleted. |
+| `text`   | `string` | The reason why this post is being deleted.          |
 
 **Example**
 
@@ -390,54 +247,12 @@ PUT /api/v1/posts/{number}/status
 
 **Parameters**
 
-<table>
-  <tr>
-    <th width="140">Name</th>
-    <th width="90">Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>**Required.** The number of the post to add a response.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>status</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>
-      **Required.**The new status of the post. Possible values are <code>open</code>, <code>planned</code>, <code>started</code>, <code>completed</code>,{' '}
-      <code>declined</code> and <code>duplicate</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>text</code>
-    </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>An optional description of what is the status on this post. This is made visible to all visitors on the website.</td>
-  </tr>
-  <tr>
-    <td>
-      <code>originalNumber</code>
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      The number of the post to merge this into. This parameter **Required** when status is <code>duplicate</code>.
-    </td>
-  </tr>
-</table>
+| Name             | Type     | Description                                                                                                                        |
+| ---------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `number`         | `number` | **Required.** The number of the post to add a response.                                                                            |
+| `status`         | `string` | **Required.**The new status of the post. Possible values are `open`, `planned`, `started`, `completed`, `declined` and `duplicate` |
+| `text`           | `string` | An optional description of what is the status on this post. This is made visible to all visitors on the website.                   |
+| `originalNumber` | `number` | The number of the post to merge this into. This parameter **Required** when status is duplicate.                                   |
 
 **Example #1**
 

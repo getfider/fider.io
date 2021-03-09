@@ -1,6 +1,7 @@
 article p,
 article blockquote,
 article pre,
+article table,
 article li:last-child,
 article figure {
   @apply mb-5 leading-7;
@@ -32,6 +33,7 @@ article code {
   @apply font-mono text-sm inline;
 }
 
+article td code,
 article li code,
 article p code {
   @apply text-pink-700 px-1;
