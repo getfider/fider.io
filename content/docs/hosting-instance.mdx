@@ -35,25 +35,24 @@ services:
   app:
     restart: always
     image: getfider/fider:stable
-    ports: - "3000:3000"
-    environment: ### # REQUIRED # # All these settings are required ###
-
-      # Public host address (required)
+    ports:
+      - "3000:3000"
+    environment:
+      # Public host address
       HOST_DOMAIN: feedback.yoursite.com
 
-      # Connection string to the PostgreSQL database.
+      # Connection string to the PostgreSQL database
       # This example uses the Docker service defined above
       DATABASE_URL: postgres://fider:s0m3g00dp4ssw0rd@db:5432/fider?sslmode=disable
 
       # CHANGE THIS! Generate a 512-bit secret here https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx
       JWT_SECRET: tXQhvSMWMS11qZ9euEhE6lf2ferf0FR6RYGd8iMXiTxxXtJ1XDVdTXPaLtV12ZGp
 
-      # From which account e-mails will be sent (required)
+      # From which account e-mails will be sent
       EMAIL_NOREPLY: noreply@yourdomain.com
 
       ###
       # EMAIL
-      #
       # Either EMAIL_MAILGUN_* or EMAIL_SMTP_* is required
       ###
 
@@ -73,7 +72,10 @@ services:
 
 Open your favorite terminal, navigate to `/var/fider` and run following commands:
 
-<pre>$ docker-compose pull $ docker-compose up</pre>
+```
+$ docker-compose pull
+$ docker-compose up
+```
 
 **Important!** If you see messages like `Error: dial tcp <any_ip>:5432: connect: connection refused`. Don't panic, that's expected when using a docker PostgreSQL. That might happen because the application is trying to start while the database is still initializing.
 

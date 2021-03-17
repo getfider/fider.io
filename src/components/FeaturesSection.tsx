@@ -37,7 +37,7 @@ export function FeaturesSection(): JSX.Element {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center mt-20 mb-20">
           <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Features</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">What's in the box?</p>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">What&apos;s in the box?</p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Feature-packed solution for all your needs.</p>
         </div>
 

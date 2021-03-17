@@ -83,10 +83,10 @@ export function DocsSidebar(): JSX.Element {
             </Link>
           </div>
           <div className="flex p-4">
-            <a className="text-gray-500 hover:text-white" href="https://github.com/getfider/fider" target="_blank" rel="noopener">
+            <a className="text-gray-500 hover:text-white" href="https://github.com/getfider/fider" target="_blank" rel="noreferrer noopener">
               <GitHubLogo className="w-6" />
             </a>
-            <a className="ml-6 text-gray-500 hover:text-blue-400" href="https://twitter.com/getfider" target="_blank" rel="noopener">
+            <a className="ml-6 text-gray-500 hover:text-blue-400" href="https://twitter.com/getfider" target="_blank" rel="noreferrer noopener">
               <TwitterLogo className="w-6" />
             </a>
           </div>

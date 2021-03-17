@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
 const colors = require('tailwindcss/colors')
 const isProduction = process.env.NODE_ENV === 'production'
