@@ -26,13 +26,6 @@ const docs: { [key: string]: DocsMetadata } = {
     subtitle: 'Deploy your Fider public instance for free',
     description: 'A five minutes guide to deploy a Fider instance on Heroku',
   },
-  'hosting-on-gcp': {
-    title: 'Deploy on Google Cloud',
-    category: 'Self-Hosted',
-    slug: 'hosting-on-gcp',
-    subtitle: 'Deploy your serverless Fider public instance on Google Cloud',
-    description: 'A five minutes guide to deploy a serverless Fider instance on Google Cloud Platform using Cloud Run',
-  },
   'hosting-on-azure': {
     title: 'Deploy on Azure',
     category: 'Self-Hosted',

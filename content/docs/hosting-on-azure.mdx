@@ -22,7 +22,7 @@ Using Azure portal, crease a new instance of `Azure Database for PostgreSQL serv
 The guide above also explains how to configure Firewall and create a Database using psql. Follow that process and create a database named `fider`.
 
 ```
-postgres=> CREATE DATABASE fider;
+CREATE DATABASE fider;
 ```
 
 Alternatively, you can also install PostgreSQL on a Virtual Machine.
@@ -47,8 +47,8 @@ We recommend using Linux and `Basic B1` at a minimum, but if you're expecting hi
 
 Select **Configuration** on your App Service blade and add the following Application Settings:
 
-- `DATABASE_URL`: postgresql://{your_postgres_server}.postgres.database.azure.com:5432/fider?user={your_username}@{your_postgres_server}&password={your_password}&sslmode=require
-- `HOST_DOMAIN`: {your_appname}.azurewebsites.net
+- `DATABASE_URL`: postgresql://{POSTGRES_SERVER}.postgres.database.azure.com:5432/fider?user={DB_USERNAME}@{POSTGRES_SERVER}&password={DB_PASSWORD}&sslmode=require
+- `HOST_DOMAIN`: {APPNAME}.azurewebsites.net
 - `JWT_SECRET`: It's a secret key used for authentication tokens, you can generate a good secret using an online tool like [this one](https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx) (take at least 512-bit for security).
 - `EMAIL_NOREPLY`: Set this variable to a no-reply address associated to your instance.
 - `EMAIL_MAILGUN_API`: Your Mailgun API key.

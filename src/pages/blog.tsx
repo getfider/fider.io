@@ -44,7 +44,7 @@ export default function Blog(): JSX.Element {
         </div>
 
         <div className="max-w-4xl container mx-auto text-gray-600 overflow-hidden">
-          <div className="container px-5 py-24 mx-auto">
+          <div className="container px-5 py-12 md:py-24 mx-auto">
             <div className="-my-8 divide-y-2 divide-gray-100">
               {Object.values(posts)
                 .sort((a, b) => b.publishedOn.getTime() - a.publishedOn.getTime())
