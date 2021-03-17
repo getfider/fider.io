@@ -1,8 +1,12 @@
 ### Prerequisites
 
-##### A Heroku account: [https://www.heroku.com](https://www.heroku.com)
+##### A [Heroku](https://www.heroku.com) account
 
 It's totally free to sign up, and will allow you to deploy your application for free on a small instance.
+
+##### E-mail Sender
+
+You can choose to use either a **SMTP Server** or **[Mailgun](https://www.mailgun.com)**.
 
 ### Deploying your instance
 
@@ -11,7 +15,7 @@ It's totally free to sign up, and will allow you to deploy your application for 
 Click the upper left button to create a new application. You will be prompted for an app name, you can choose anything you want. You also need to choose the hosting region, choose the one closest to you or your users.
 
 <figure>
-  <img src="/images/docs/heroku-create-new-app.png" />
+  <img src="/images/docs/heroku/heroku-create-new-app.png" />
   <figcaption>Creating a new app on Heroku</figcaption>
 </figure>
 
@@ -20,7 +24,7 @@ Click the upper left button to create a new application. You will be prompted fo
 Under the **Resources** tab, in the **Add-ons** section, search and add the **Heroku Postgres** add-on to provide a database for your instance. When prompted for the Plan Name, you can leave the default **Hobby Dev - Free** selected and click **Provision**.
 
 <figure>
-  <img src="/images/docs/heroku-postgres-add-on.png" />
+  <img src="/images/docs/heroku/heroku-postgres-add-on.png" />
   <figcaption>Provisioning the Postgresql database</figcaption>
 </figure>
 
@@ -29,7 +33,7 @@ Under the **Resources** tab, in the **Add-ons** section, search and add the **He
 Buildpacks are Heroku's scripts that are run when an app is deployed, they are used to "build" your app, usually install dependencies and compile code. For Fider you need two buildpacks: go and nodejs. Under the **Settings** tab, in the **Buildpacks** section, click on **Add buildpack**, click on the **go** button and then on **Save changes** on the dialog.
 
 <figure>
-  <img src="/images/docs/heroku-go-buildpack.png" />
+  <img src="/images/docs/heroku/heroku-go-buildpack.png" />
   <figcaption>Adding the Go buildpack</figcaption>
 </figure>
 
@@ -39,15 +43,14 @@ Repeat the operation with the **nodejs** buildpack. You should now have two buil
 
 In the **Config Vars** section of the **Settings** tab, click on **Reveal Config Vars** to display the current environment variables set on your application. You should already have one `DATABASE_URL` variable set. Don't touch it, it was automatically set by Heroku when you provisioned your database. You need to add some values for the Fider instance to work properly:
 
-- `HOST_DOMAIN`: myapp.herokuapp.com
+- `HOST_DOMAIN`: {your_appname}.herokuapp.com
 - `JWT_SECRET`: It's a secret key used for authentication tokens, you can generate a good secret using an online tool like [this one](https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx) (take at least 512-bit for security).
 - `EMAIL_NOREPLY`: Set this variable to a no-reply address associated to your instance.
 - `EMAIL_MAILGUN_API`: Your Mailgun API key.
 - `EMAIL_MAILGUN_DOMAIN`: Set this variable to your Mailgun domain.
-- `EMAIL_MAILGUN_REGION`: Set this variable to your Mailgun region.
 
 <figure>
-  <img src="/images/docs/heroku-env-variables.png" />
+  <img src="/images/docs/heroku/heroku-env-variables.png" />
   <figcaption>Application environment variables.</figcaption>
 </figure>
 
@@ -58,15 +61,17 @@ In the **Config Vars** section of the **Settings** tab, click on **Reveal Config
 The easiest way to deploy your application to Heroku is to connect your application to a github repository. Fork the [Fider official repository](https://github.com/getfider/fider) and connect this fork to your Heroku application under the **Deploy** tab in the **Deployment method**.
 
 <figure>
-  <img src="/images/docs/heroku-github-connection.png" />
+  <img src="/images/docs/heroku/heroku-github-connection.png" />
   <figcaption>Connecting your Github repository for deployment.</figcaption>
 </figure>
 
 You can now deploy your application by clicking on the **Deploy Branch** button. Once your app is deployed successfully, you can access the app online by clicking the **View** button.
 
 <figure>
-  <img src="/images/docs/heroku-app-deployment.png" />
+  <img src="/images/docs/heroku/heroku-app-deployment.png" />
   <figcaption>Successfull deployment of your application.</figcaption>
 </figure>
 
 That's it! You should see the signup screen to create your Administrator account, and you can enjoy your free Fider instance and share it with your users.
+
+**Reminder:** To keep your instance always up to date with latest features and fixes, update your fork every once in a while.

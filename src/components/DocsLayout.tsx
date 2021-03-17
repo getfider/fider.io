@@ -73,8 +73,8 @@ export function DocsSidebar(): JSX.Element {
         <ul>
           <MenuItem title="Home" href="/docs" />
         </ul>
-        <MenuHeader title="How To" />
         <MenuHeader title="Self-Hosted" />
+        <MenuHeader title="How To" />
         <MenuHeader title="API Reference" />
         <div className="mt-20">
           <div className="text-truegray-400 hover:text-white">
@@ -140,7 +140,7 @@ export function DocsLayout(props: DocsLayoutProps): JSX.Element {
           <div className={`${sidebarClasses} flex-col w-full max-w-xs bg-truegray-800 overflow-y-scroll p-4 h-screen`}>
             <DocsSidebar />
           </div>
-          <div className="flex-1 bg-white">{props.children}</div>
+          <div className="flex-1 bg-white overflow-auto">{props.children}</div>
         </div>
       </div>
     </>
