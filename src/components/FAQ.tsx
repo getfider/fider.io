@@ -9,20 +9,20 @@ function Item(props: ItemProps): JSX.Element {
   return (
     <div className="my-6">
       <div className="font-semibold py-2 px-4 bg-gray-600 rounded-sm">{props.title}</div>
-      <p className="mt-2">{props.children}</p>
+      <div className="mt-2">{props.children}</div>
     </div>
   )
 }
 
 export function FAQ(): JSX.Element {
   return (
-    <div className="container mx-auto pb-20">
+    <div className="container mx-auto pb-20 px-4 max-w-4xl">
       <div className="flex flex-wrap justify-center">
         <div className="w-full ml-auto mr-auto mt-8 lg:mt-16">
           <h3 className="text-3xl font-semibold leading-normal text-white">Frequently Asked Questions</h3>
           <div className="text-white mt-4">
             <Item title="I'm interested on the Cloud option, what's the process to sponsor the project?">
-              <p className="mb-3 leading-7">
+              <p className="mt-2 leading-7">
                 <a className="text-blue-300" href="https://login.fider.io/signup" target="_blank" rel="noopener noreferrer">
                   Sign up
                 </a>{' '}
@@ -30,7 +30,10 @@ export function FAQ(): JSX.Element {
                 <a className="text-blue-300" href="https://opencollective.com/fider" target="_blank" rel="noopener noreferrer">
                   https://opencollective.com/fider
                 </a>{' '}
-                to select one of pre-defined monthly tiers or the pay as you can option. After subscribing, send us an email{' '}
+                to select one of monthly tiers or the pay as you can option.
+              </p>
+              <p className="mt-2 leading-7">
+                After subscribing, send us an email{' '}
                 <a className="text-blue-300" href="mailto:opensource@fider.io">
                   opensource@fider.io
                 </a>{' '}

@@ -6,6 +6,7 @@ import MenuIcon from '@assets/icons/heroicons-menu.svg'
 import Link from 'next/link'
 import GitHubLogo from '@assets/icons/iconmonstr-github.svg'
 import TwitterLogo from '@assets/icons/iconmonstr-twitter.svg'
+import EmailLogo from '@assets/icons/iconmonstr-email.svg'
 import docs from '@content/docs/all-docs'
 import { useToggle } from '@app/hooks'
 import analytics from '@app/fns/analytics'
@@ -88,6 +89,9 @@ export function DocsSidebar(): JSX.Element {
             </a>
             <a className="ml-6 text-gray-500 hover:text-blue-400" href="https://twitter.com/getfider" target="_blank" rel="noreferrer noopener">
               <TwitterLogo className="w-6" />
+            </a>
+            <a className="ml-6 text-gray-500 hover:text-white" href="mailto:contact@fider.io" target="_blank" rel="noreferrer noopener">
+              <EmailLogo className="w-6" />
             </a>
           </div>
         </div>

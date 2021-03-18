@@ -1,6 +1,7 @@
 import LogoTitle from '@assets/logo-title.svg'
 import GitHubLogo from '@assets/icons/iconmonstr-github.svg'
 import TwitterLogo from '@assets/icons/iconmonstr-twitter.svg'
+import EmailLogo from '@assets/icons/iconmonstr-email.svg'
 import posts from '@content/blog/all-posts'
 import Link from 'next/link'
 
@@ -61,6 +62,9 @@ export function Footer(): JSX.Element {
             </a>
             <a className="ml-6 text-gray-500 hover:text-blue-500" href="https://twitter.com/getfider" target="_blank" rel="noreferrer noopener">
               <TwitterLogo className="w-6" />
+            </a>
+            <a className="ml-6 text-gray-500 hover:text-black" href="mailto:contact@fider.io" target="_blank" rel="noreferrer noopener">
+              <EmailLogo className="w-6" />
             </a>
           </span>
         </div>

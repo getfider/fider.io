@@ -23,7 +23,7 @@ export function GetStartedSection(): JSX.Element {
   return (
     <>
       <section id="get-started">
-        <div className="px-4 md:px-20 xl:px-40 bg-gray-700 overflow-hidden">
+        <div className="bg-gray-700 overflow-hidden">
           <div className="container mx-auto">
             <div className="flex flex-wrap justify-center">
               <div className="w-full md:w-1/2 px-12 md:px-4 ml-auto mr-auto mt-8 lg:mt-16">
@@ -35,7 +35,7 @@ export function GetStartedSection(): JSX.Element {
               </div>
             </div>
           </div>
-          <div className="relative block md:flex items-center">
+          <div className="relative block md:flex items-center container mx-auto px-4">
             <div className="w-full md:w-1/2 relative z-1 bg-gray-100 rounded shadow-lg overflow-hidden">
               <div className="text-lg font-medium text-blue-500 uppercase p-8 text-center border-b border-gray-200 tracking-wide">Self Hosted</div>
               <div className="block sm:flex md:block lg:flex items-center justify-center">
