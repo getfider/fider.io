@@ -34,7 +34,7 @@ const docs: { [key: string]: DocsMetadata } = {
     description: 'A five minutes guide to deploy a Fider instance on Azure',
   },
   'how-to-enable-ssl': {
-    title: 'How to enable SSL',
+    title: 'How to configure SSL/TLS',
     category: 'Self-Hosted',
     slug: 'how-to-enable-ssl',
     subtitle: 'Host your instance under the HTTPS protocol',

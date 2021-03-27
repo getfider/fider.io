@@ -1,12 +1,16 @@
 ### Prerequisites
 
-##### Docker
+##### Docker [https://docs.docker.com/engine/install](https://docs.docker.com/engine/install)
 
-As we don't distribute Linux or Windows specific binaries, Docker is a must to host Fider. It provides a consistent runtime environment and is widely supported by many cloud providers. You can run it standalone or in your favorite container orchestration system.
+As we don't distribute Linux or Windows specific binaries, Docker is a must to host Fider. It provides a consistent runtime environment and is widely supported by many cloud providers. You can run it standalone or in a container orchestration.
+
+##### Docker Compose [https://docs.docker.com/compose/install](https://docs.docker.com/compose/install)
+
+This installation guide uses Docker Compose to simplify the setup of containers.
 
 ##### PostgreSQL 12+ Database
 
-Although Fider works on PostgreSQL 9.6, we recommend using PostgreSQL 12+.
+Although Fider works on PostgreSQL 9.6, we recommend using PostgreSQL 12+. This guide uses Postgres inside a container for simplicity, but it's possible to install it on the host virtual machine or a different machine.
 
 ##### E-mail Sender
 
@@ -21,19 +25,27 @@ Create a `/var/fider` folder and copy content below into a file `/var/fider/dock
 ```
 version: '2'
 services:
+  db:
+    restart: always
+    image: postgres:12
+    volumes:
+      - /var/fider/pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: fider
+      POSTGRES_PASSWORD: s0m3g00dp4ssw0rd
   app:
     restart: always
     image: getfider/fider:stable
     ports:
-      - "3000:3000"
+      - "80:3000"
     environment:
-      # Public host address
-      HOST_DOMAIN: feedback.yoursite.com
+      # Public Host name or IP Address
+      HOST_DOMAIN: feedback.yoursite.com or 188.166.41.145
 
       # Connection string to the PostgreSQL database
-      DATABASE_URL: postgres://username:password@hostname:5432/fider?sslmode=disable
+      DATABASE_URL: postgres://fider:s0m3g00dp4ssw0rd@db:5432/fider?sslmode=disable
 
-      # CHANGE THIS! Generate a 512-bit secret here https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx
+      # Generate a 512-bit secret here https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx
       JWT_SECRET: VERY_STRONG_SECRET_SHOULD_BE_USED_HERE
 
       # From which account e-mails will be sent
@@ -53,22 +65,31 @@ services:
       # EMAIL_SMTP_PASSWORD: s0m3p4ssw0rd
 ```
 
+The Docker Compose file above defines two services: `db` and `app`. In case you're using an external Postgres database, remove the db service and replace DATABASE_URL environment variable with your connection string.
+
 ##### Step 2: Pull the images and run it
 
-Open your favorite terminal, navigate to `/var/fider` and run `docker-compose up -d`.
+Open your favorite terminal, navigate to `/var/fider` and run
 
-You can find the logs by using `docker logs fider`. The message `http server started on :3000` means everything is ok and you're ready to go.
+```
+docker-compose pull
+docker-compose up -d
+```
 
-Just open your favorite browser and navigate to [http://localhost:3000](http://localhost:3000). You should see a page like the following.
+> **Important!** If you see messages like `Error: dial tcp <ip-address>:5432: connect: connection refused`. Don't panic, that's expected when using PostgreSQL in Docker. That happens when the application starts before the database is still ready.
+
+You can find the logs by using `docker-compose logs app`. The message `http server started on :3000` means everything is ok and you're ready to go.
+
+Just open your favorite browser and navigate to [http://188.166.41.145](http://188.166.41.145). You should see a page like the following.
 
 <figure>
   <img src="/images/docs/fider-clean-install.png" />
   <figcaption>Installation page of a clean Fider instance</figcaption>
 </figure>
 
-### TLS/SSL
+### Secure Fider with HTTPS
 
-If you choose to expose Fider to the internet, enable SSL. Take a look at [How to enable TLS/SSL](/docs/how-to-enable-ssl) or use a Reverse Proxy, like NGINX or Caddy.
+When exposing Fider to the internet, it's strongly recommended to setup HTTPS. Take a look at [How to enable TLS/SSL](/docs/how-to-enable-ssl) to learn multiple ways on how to do that.
 
 ### F.A.Q.
 
