@@ -1,0 +1,36 @@
+### 2 years later...
+
+It's been exactly 2 years since the last stable release, so we had to do some catch-up on package updates. The main goal of this release was to get Fider up to date with all of its dependencies, but we've been able to sneak in some small improvements as well.
+
+### #1: Experimental Server Side Rendering
+
+On 0.18.0 we've integrated Fider with [Rendergun](https://github.com/goenning/rendergun) to provide Server Sider Rendering (SSR) for Crawlers. There is no argue that SSR provides much better SEO results, not only for Google, but any other search crawler or social bot.
+
+On the other hand, one of the challenges with Rendergun integration is the excessive resource consumption on the server due to its internal Headless Chrome browser, which is used to turn React Components (JavaScript) into HTML.
+
+With the release of 0.18.1, we've shifted to a similar, but much more effective solution. Instead of using Chrome to execute JavaScript, we use v8 directly, which is the engine behind Chrome.
+
+To turn this feature on, simply set `EXPERIMENTAL_SSR_SEO` to `true` on your environment variables. The goal is to one day turn have this feature enabled by default and remove Rendergun integration.
+
+SSR is only used for requests coming from bots or crawlers, it **does not** modify the behaviour of Fider when running on a client browser, which still requires JavaScript.
+
+### Breaking Changes on Fider 0.18.1
+
+To protect Fider against a Host attack, the `HOST_DOMAIN` environment variable is now mandatory. If your instance is hosted on `https://feedback.yoursite.com`, then set this environment variable to `feedback.yoursite.com`.
+
+### Other relevant changes on Fider 0.18.1
+
+- experimental: support for Server Side Rendering ([#921](https://github.com/getfider/fider/pull/921))
+- enhancement: drop IE11 support ([#919](https://github.com/getfider/fider/pull/919))
+- fix: support twitch new oauth ([#913](https://github.com/getfider/fider/pull/913))
+- fix: remove insecure ciphers ([#d40acb5](https://github.com/getfider/fider/commit/d40acb56a08737af4f61c9319bdc537ad7f6e645))
+- fix: Allow SMTP without StartTLS ([#926](https://github.com/getfider/fider/pull/926))
+- security: bump npm and fix host attack ([#895](https://github.com/getfider/fider/pull/895))
+- security: replace math/rand with crypto/rand to generate secret strings ([#898](https://github.com/getfider/fider/pull/898))
+- chore: upgrade to postgres 12 ([#958d788](https://github.com/getfider/fider/commit/958d7887a6eb0c55b2feda8317de7c453bf98244))
+- tooling: Update to Go 1.16 ([#911](https://github.com/getfider/fider/pull/911))
+- tooling: update Node and Go packages ([#912](https://github.com/getfider/fider/pull/912))
+
+### What's next?
+
+Help us shape the future of Fider. Visit our [feedback forum](https://feedback.fider.io/) and raise your voice. Tell us what to do next.

@@ -8,6 +8,13 @@ export interface PostMetadata {
 }
 
 const posts = {
+  'version-0.18.1': {
+    title: 'Fider 0.18.1 has been released with experimental server side rendering, security and bug fixes',
+    category: 'Release',
+    publishedOn: new Date('2021-03-27T00:00:00Z'),
+    slug: 'version-0.18.1',
+    excerpt: 'Experimental server side rendering, security and bug fixes',
+  },
   'version-0.18.0': {
     title: 'Fider 0.18 has been released with attachments and better SEO',
     category: 'Release',
