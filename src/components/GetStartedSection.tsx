@@ -70,7 +70,7 @@ export function GetStartedSection(): JSX.Element {
                     Become a monthly financial sponsor of our open source project and we&apos;ll host a fully managed Fider for instance for you so you
                     don&apos;t have to worry about maintainance or updates.
                   </p>
-                  <p className="py-2">We do&apos;t set a price. Support us with what you feel the software and service is worth.</p>
+                  <p className="py-2">We don&apos;t set a price. Support us with what you feel the software and service is worth.</p>
                   <p className="py-2">Read the FAQ below for full details.</p>
                 </div>
                 <a
