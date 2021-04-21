@@ -63,6 +63,7 @@ services:
       # EMAIL_SMTP_PORT: 587
       # EMAIL_SMTP_USERNAME: user@yourdomain.com
       # EMAIL_SMTP_PASSWORD: s0m3p4ssw0rd
+      # EMAIL_SMTP_ENABLE_STARTTLS: 'true'
 ```
 
 The Docker Compose file above defines two services: `db` and `app`. In case you're using an external Postgres database, remove the db service and replace DATABASE_URL environment variable with your connection string.
