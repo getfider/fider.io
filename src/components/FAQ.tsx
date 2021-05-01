@@ -19,7 +19,7 @@ export function FAQ(): JSX.Element {
     <div className="container mx-auto pb-20 px-4 max-w-4xl">
       <div className="flex flex-wrap justify-center">
         <div className="w-full ml-auto mr-auto mt-8 lg:mt-16">
-          <h3 id="#faq" className="text-3xl font-semibold leading-normal text-white">
+          <h3 id="faq" className="text-3xl font-semibold leading-normal text-white">
             Frequently Asked Questions
           </h3>
           <div className="text-white mt-4">
