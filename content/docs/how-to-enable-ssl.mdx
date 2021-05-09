@@ -23,6 +23,8 @@ services:
 
 It can take a few seconds on the initial request to generate a certificate, but after visiting `https://feedback.yoursite.com` you'll should see the green lock and the certificate generated for you.
 
+**NOTE**: You must enable firewall access on port 80 and 443. Fider will redirect all traffic from HTTP to HTTPS.
+
 ### 2. HTTPS with your own certificate
 
 You can also buy (or generate) a certificate and use it on Fider. Copy your `.crt` and `.key` files into `/var/fider/etc/`, add the following to your docker-compose.yml and restart your application.

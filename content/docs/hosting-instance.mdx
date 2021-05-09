@@ -14,13 +14,13 @@ Although Fider works on PostgreSQL 9.6, we recommend using PostgreSQL 12+. This 
 
 ##### E-mail Sender
 
-You can choose to use either a **SMTP Server** or **[Mailgun](https://www.mailgun.com)**.
+You can choose between a **SMTP Server** or a **[Mailgun](https://www.mailgun.com)** account.
 
 ### Installing and Running
 
 ##### Step 1: Create a docker compose file
 
-Create a `/var/fider` folder and copy content below into a file `/var/fider/docker-compose.yml`. Read the inline comments to know what each setting is used for.
+Create a `/var/fider` folder and copy content below into a file `/var/fider/docker-compose.yml`. Read the inline comments to know what each setting is used for and modify them appropriately.
 
 ```
 version: '2'
@@ -39,8 +39,8 @@ services:
     ports:
       - "80:3000"
     environment:
-      # Public Host name or IP Address
-      HOST_DOMAIN: feedback.yoursite.com or 188.166.41.145
+      # Public Host Name
+      HOST_DOMAIN: feedback.yoursite.com
 
       # Connection string to the PostgreSQL database
       DATABASE_URL: postgres://fider:s0m3g00dp4ssw0rd@db:5432/fider?sslmode=disable
@@ -66,7 +66,7 @@ services:
       # EMAIL_SMTP_ENABLE_STARTTLS: 'true'
 ```
 
-The Docker Compose file above defines two services: `db` and `app`. In case you're using an external Postgres database, remove the db service and replace DATABASE_URL environment variable with your connection string.
+The Docker Compose file above defines two services: `db` and `app`. In case you're using an external Postgres database, remove the db service and replace `DATABASE_URL` environment variable with your connection string.
 
 ##### Step 2: Pull the images and run it
 
