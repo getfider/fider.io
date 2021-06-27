@@ -15,7 +15,7 @@ export function Footer(): JSX.Element {
           <a className="flex font-medium items-center md:justify-start justify-center text-gray-900">
             <LogoTitle className="h-10" />
           </a>
-          <p className="mt-2 text-sm text-gray-500">Customer Feedback tool for everyone.</p>
+          <p className="mt-2 text-sm text-gray-500">Product Feedback tool for everyone.</p>
         </div>
         <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
           <div className="lg:w-1/3 lg:block md:hidden w-full px-4"></div>

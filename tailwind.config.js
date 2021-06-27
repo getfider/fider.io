@@ -4,6 +4,7 @@ const colors = require('tailwindcss/colors')
 const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
+  mode: 'jit',
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,

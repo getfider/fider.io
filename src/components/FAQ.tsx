@@ -48,7 +48,7 @@ export function FAQ(): JSX.Element {
               OpenCollective.
             </Item>
             <Item title="Is there a free trial period?">
-              Yes. We give everyone 14 days to try the cloud option. After this period, you&apos;ll be asked to moved to a Self-Hosted or sponsor the project.
+              Yes. We give everyone 30 days to try for free. After this period, you&apos;ll be asked to moved to a Self-Hosted or sponsor the project.
             </Item>
             <Item title="What if I don't want to use Fider Cloud anymore?">
               You can simply cancel your OpenCollective subscription and delete your Fider account.
