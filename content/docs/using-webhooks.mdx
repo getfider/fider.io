@@ -1,0 +1,112 @@
+Webhooks are a powerful integration feature that allow you to propagate events from Fider to other applications.
+
+Events happens when users interact on Fider. Four types of events currently exists, but more of them could be created in the future.
+
+You can create as many Webhooks as you want and you have a very high customization available for each of them.
+
+### Create a new Webhook
+
+While logged in as an Administrator, navigate to **Site Settings -> Webhooks**.
+
+This page list all created Webhooks, either Enabled or Disabled. To create a new one, click **Add New** and fill the form with all the required information.
+If you never used a Webhook before, we recommand that you read <a href="#webhook-customization">this section about Webhook customization</a>.
+
+<h3 id="webhook-testing">Testing</h3>
+
+Before enabling any your Webhook on Fider, we highly recommend that you keep it disabled and use the **Trigger button** to confirm it's working properly.
+
+**Trigger button** becomes available after creating a new Webhook. Whenever clicked, an event of the appropriate type is simulated,
+triggered only this Webhook. A notification in the upper-right corner of the screen indicate the result of the trigger. Once you're happy with the configuration,
+you can enable it and it will be triggered automatically with real properties every time the selected event occurs.
+
+The result can be either a success: everything was good and the HTTP request was executed successfully; or a failure: something went wrong during the process.
+In case of a success, check your targeted application to confirm everyhing is OK, then you can enable your Webhook.
+However, if it was a failure, a report will be available beside your Webhook's name, by clicking on this information icon.
+Read more about [Webhook trigger failure reports](#webhook-trigger-failure-report) here.
+
+<h3 id="webhook-customization">Webhook customization</h3>
+
+The power of this feature reside in it's customization. Each Webhook has a name to quickly recognize it, a type defining it's trigger event, a status
+so you can enable or disable it, an URL and a content both formattable using Go templates, an HTTP method used to perform the request and even a set of
+additional HTTP headers if you need to put some in order for the request to work.
+
+The name is used in the admin control panel to identify the Webhook. You may give the name you want, it'll never get shown to users or sent in the request.
+It do not needs to be unique: a unique ID display with a `#` symbol is always included with the name so you can distinguish two Webhooks with the same name.
+
+The type define which event will trigger this Webhook. It's also used to categorize them on the admin control panel. As new events could come in the future,
+this attribute is subject to modification. However, we guarantee the current Webhooks will never break due to this kind of evolution.
+
+The status define whether the Webhook could be triggered by events of it's type or not. We highly recommend you to [test](#webhook-testing) your Webhook before
+you enable it. When the execution of a Webhook fails, it automatically get disabled until you edit it to fix it.
+
+The URL is one of the most important thing in the Webhook. Indeed, it is part of the definition of the HTTP request that this Webhook perform.
+This is usually defined by your targeted application, and you must refer to it documentation to know how to get one.
+See the list of [common Webhook targets](#comment-webhook-targets) that you probably want to integrate with below to get some help with them.
+
+_Write in progress..._
+
+<h4 id="writing-go-templates">Writing Go templates</h4>
+
+_Write in progress..._
+
+<h3 id="webhook-trigger-failure-report">Webhook trigger failure report</h3>
+
+This report is shown when a manual trigger of a Webhook goes wrong. It means your configuration is incorrect and you should not enable this Webhook now.
+A failed Webhook is automatically disabled until you edit it. It is a good practice to always test it after each edition to ensure nothing was broken.
+
+#### Understanding the report
+
+There is a lot of informations included in the report and it may be disconcerting the first time you see it.
+
+First, the **Message** indicates where the process was interrupted, and why. Then, the **Error** shows what went wrong and caused the trigger process to stop.
+**URL** and **Content** are the parsed templates replaced with properties' values, helping you to understand the performed request.
+The **Status code** is the [HTTP response status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) returned by the request.
+**Properties** are every variables you can use in templates associated with their resolved values.
+
+#### Analyzing the message and error
+
+Four error **messages** are possible:
+1. _Could not parse webhook URL template_
+2. _Could not parse webhook content template_
+3. _Could not execute webhook HTTP request_
+4. _Webhook HTTP request returned an error response code_
+
+For each of these messages, the **error** field will bring more precise information about:
+1. What was malformated in the **URL** template
+2. What was malformated in the **Content** template
+3. What prevented the HTTP request from being executed
+4. What did the server respond to the request
+
+#### Solving problems
+
+In case of **1.** or **2.**, you should verify your templates and do not hesitate to take advantage of the **Preview** area in the Webhook edition form.
+See [Writing Go templates](#writing-go-templates) for more information.
+
+Regarding the **3.**, it become more subtle. If anything, from the request sending, to the response reading, fails, it will be this error.
+First of all, verify manually the URL to check if you didn't made a spelling mistake in your app's domain name.
+Also, try pasting this URL in your browser to see if the targeted application is alive.
+On your application, be sure to reply and properly close the HTTP connection after Webhook handling.
+If you're trying to reach the Internet from an internal network, ensure your server can emit request to your application.
+
+Finally, concerning the **4.**, the request was correctly sent to your application, but it was invalid. This can be caused by an invalid **URL**,
+an inappropriate **content**, or even a missing **HTTP header**. Please refer to your application's official documentation and try to start with
+basic example (sending `Hello World` seems to be a good idea to begin your debugging session).
+
+A special case of failing could be the malformation of the result produced by templates with some values.
+Here are some recommendations about this:
+* Properties passed as GET parameters in the URL query (i.e. after the `?`) should always be encoded using `urlquery`.
+  <pre>
+  {`https://example.org/webhook/fider?author={{ urlquery .author_name }}`}
+  </pre>
+* When using a structured text format such as JSON, or any other format asking you to enquote an element, you should using the `quote` function.
+  <pre>
+  {`{
+    "title": {{ quote .post_title }}
+  }`}
+  </pre>
+
+When you think your problem has been solved, don't forget to [test](#webhook-testing) your Webhook before enabling it!
+
+<h3 id="common-webhook-targets">Common Webhook targets</h3>
+
+_Write in progress..._
