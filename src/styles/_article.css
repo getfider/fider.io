@@ -50,6 +50,16 @@ article pre {
   @apply block bg-gray-900 p-4 rounded text-white overflow-x-scroll;
 }
 
+article pre code {
+  color: inherit;
+  padding: 0;
+}
+
+article pre code:before,
+article pre code:after {
+  content: none;
+}
+
 article pre code .code-highlight {
   @apply text-green-400 bg-green-600 bg-opacity-25 rounded-md px-1;
 }
@@ -83,8 +93,12 @@ article ul li {
   @apply list-disc mb-1 leading-7;
 }
 
-article table th {
+article table th:not([align]) {
   @apply text-left;
+}
+
+article table hr {
+  @apply m-1;
 }
 
 article table th,
