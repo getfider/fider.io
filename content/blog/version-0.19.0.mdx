@@ -1,0 +1,53 @@
+### #1: Translations
+
+We're excited to announce that Fider has support for multiple languages and thanks to community support, it's now translated to English 🇺🇸, Brazilian Portuguese 🇧🇷, German 🇩🇪 and French 🇫🇷!
+
+To change the language of your site, visit your site settings and select a different locale.
+
+For this first release, only the public pages and e-mails are translated, all admin pages remain in English.
+
+<figure>
+  <img src="/images/blog/v0.19-translations.png" className="h-96" />
+</figure>
+
+All Fider translations are managed by Crowdin, which means that anyone can participate by submitting better translations or even translate Fider to another language. Visit our [Crowdin](https://crowdin.com/project/fider), create an account and start collaborating!
+
+### #2: Design Refresh
+
+There's been a significant effort put into Fider to make its interface consistent throughout all pages. A design system (inspired by Tailwind) has been created to accelerate and standardise the front end development. You can see it live here https://feedback.fider.io/_design.
+
+<figure>
+  <img src="/images/blog/v0.19-home.png" className="h-96" />
+</figure>
+
+### #3: Grace period to edit posts
+
+This was a popular feature request for a long time and we're happy to announce that users now have 1 hour to edit their posts. This should allow users to enter additional information or reformat their post after seeing it live.
+
+### #4: Server Sider Rendering
+
+On the previous release we announced an experimental support for a better Server Side Rendering support which would improve SEO rankings because it's a lot faster and reliable than using Rendergun.
+
+Starting from v0.19.0, Rendergun has been removed and the new SSR feature is enabled by default, there is nothing to configure, it just works.
+
+### #5: Disable e-mail authentication
+
+Another popular request on Fider was the ability to remove e-mail login. This is particularly useful for private, self-hosted Fider installations where there is only one OAuth option, which is usually the corporate sign-in method, so that only authorized employees can login.
+
+<figure>
+  <img src="/images/blog/v0.19-email.png" className="h-24" />
+</figure>
+
+### Other relevant changes on Fider 0.19.0
+
+- enhancement: crop long post on initial page ([#f799392](https://github.com/getfider/fider/commit/f7993929848c1d60657ab0132b138756b95664e8))
+- enhancement: remove GA cookie ([#1cda857](https://github.com/getfider/fider/commit/1cda857a1b586661e9716d696e6f1c4e4c8d71d6))
+- perf: create indexes for home page ([#5d129c9](https://github.com/getfider/fider/commit/5d129c96194eb0dfee332bbf5f7bcceb894d9b1b))
+- enhancement: remove clientip from log ([#ca6e8a4](https://github.com/getfider/fider/commit/ca6e8a46eca306667e6b79581c90afe679e3b97f))
+- enhancement: add structured logging to output ([#8da8785](https://github.com/getfider/fider/commit/8da878507cd603606e32b6920eaa685b0232e577))
+- feature: added file logger and env var to enable / disable loggers ([#8a4057b](https://github.com/getfider/fider/commit/8a4057bbc8f1ced0095da0ac90c7cb05ff5ff8aa))
+- feature: add prometheus metrics ([#a37a915](https://github.com/getfider/fider/commit/a37a9159f9f6b0997859580f5e14915537ce7c7a))
+
+### What's next?
+
+Help us shape the future of Fider. Visit our [feedback forum](https://feedback.fider.io/) and raise your voice. Tell us what to do next.

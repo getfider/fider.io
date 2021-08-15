@@ -8,6 +8,13 @@ export interface PostMetadata {
 }
 
 const posts = {
+  'version-0.19.0': {
+    title: 'Fider 0.19.0 has been released with a design refresh, multi-language support and other great additions',
+    category: 'Release',
+    publishedOn: new Date('2021-08-15T00:00:00Z'),
+    slug: 'version-0.19.0',
+    excerpt: 'Consistent Design, Multi-Language Support and others',
+  },
   'version-0.18.1': {
     title: 'Fider 0.18.1 has been released with experimental server side rendering, security and bug fixes',
     category: 'Release',
