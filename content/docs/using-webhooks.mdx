@@ -9,7 +9,7 @@ You can create as many Webhooks as you want and you have a very high customizati
 While logged in as an Administrator, navigate to **Site Settings -> Webhooks**.
 
 This page list all created Webhooks, either Enabled or Disabled. To create a new one, click **Add New** and fill the form with all the required information.
-If you never used a Webhook before, we recommand that you read <a href="#webhook-configuration">this section about Webhook configuration</a>.
+If you never used a Webhook before, we recommand that you read [this section about Webhook configuration](#webhook-configuration).
 
 <figure className="flex-1">
     <img src="/images/docs/webhooks/manage-list.png" />
@@ -72,7 +72,7 @@ help section by clicking on the information icon next to it. Take a look at the 
 This is the [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) of the request triggered by the Webhook. Most of time, when sending
 data in the **Content**, it should be `POST`. If you don't send any data, you should use `GET`. Check your targeted application's documentation to be sure.
 
-#### Additional HTTP Headers
+#### HTTP Headers
 
 You can add any [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) you want here. Each header have a name and a value, and you cannot
 define the same header twice. The most common headers are:
@@ -190,7 +190,7 @@ When the template will be executed, the final result will look like:
 The targeted application may interpret the `"important": true` as a message requiring a notification and use the `from` field to set the sender. Thus, people
 will receive a notification for a message from the admin saying "Hacked!". Pretty scary.
 
-Please avoid these trouble and use the safety functions like `quote`, `urlquery`, `stripHtml`...
+Please avoid these trouble and use the safety functions like `quote`, `escape`, `urlquery`, `stripHtml`...
 
 The correct configuration would be (note the external quotes have been removed too):
 
@@ -240,14 +240,12 @@ Property name | Example value
 `post_url` | http://localhost:3000/posts/36/example-dummy-post-title
 `post_votes` | 7
 `tenant_id` | 1
-`tenant_invitation` | *&lt;empty&gt;*
 `tenant_locale` | fr
 `tenant_logo` | https://getfider.com/images/logo-100x100.png
 `tenant_name` | Testing
 `tenant_status` | active
 `tenant_subdomain` | default
 `tenant_url` | http://localhost:3000
-`tenant_welcome_message` | *&lt;empty&gt;*
 
 ##### Functions
 
@@ -260,6 +258,7 @@ Function | Description | Parameters<br /><small>Type - Description</small>
 `markdown` | Parse [Markdown](https://en.wikipedia.org/wiki/Markdown) to HTML from the input data | `string` - The input string containing Markdown to parse
 `format` | [Format][go-time-format] the given date and time | `string` - The date format according to Go specifications<hr />`time` - The time to format
 `quote` | Enquote a string and escape inner special characters | `string` - The input string to quote
+`escape` | Escape inner special characters of a string, without enquoting it | `string` - The input string to escape
 `urlquery` | Encode a string into a valid URL query element | `string` - The input string to encode as URL query value
 
 Don't forget the **Preview** field to help you experiment with these functions!
