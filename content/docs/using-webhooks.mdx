@@ -2,38 +2,24 @@ Webhooks are a powerful integration feature that allow you to propagate events f
 
 Events happens when users interact on Fider. Four types of events currently exists, but more of them could be created in the future.
 
-You can create as many Webhooks as you want and you have a very high customization available for each of them.
+Webhooks are highly customizable and you can create as many webhooks as you need for each event type.
 
 ### Create a new Webhook
 
 While logged in as an Administrator, navigate to **Site Settings -> Webhooks**.
 
-This page list all created Webhooks, either Enabled or Disabled. To create a new one, click **Add New** and fill the form with all the required information.
-If you never used a Webhook before, we recommand that you read [this section about Webhook configuration](#webhook-configuration).
+This page list all created Webhooks, either Enabled or Disabled. To create a new one, click **Add New** and fill the form with all the required information as explained on the section below.
 
 <figure className="flex-1">
-    <img src="/images/docs/webhooks/manage-list.png" />
-    <figcaption>The admin control panel to manage your Webhooks</figcaption>
+  <img src="/images/docs/webhooks/manage-list.png" />
+  <figcaption>The admin control panel to manage your Webhooks</figcaption>
 </figure>
-
-<h3 id="webhook-testing">Testing</h3>
-
-Before enabling any your Webhook on Fider, we highly recommend that you keep it disabled and use the **Trigger button** to confirm it's working properly.
-
-**Trigger button** becomes available after creating a new Webhook. Whenever clicked, an event of the appropriate type is simulated,
-triggered only this Webhook. A notification in the upper-right corner of the screen indicate the result of the trigger. Once you're happy with the configuration,
-you can enable it and it will be triggered automatically with real properties every time the selected event occurs.
-
-The result can be either a success: everything was good and the HTTP request was executed successfully; or a failure: something went wrong during the process.
-In case of a success, check your targeted application to confirm everyhing is OK, then you can enable your Webhook.
-However, if it was a failure, a report will be available beside your Webhook's name, by clicking on this information icon.
-Read more about [Webhook trigger failure reports](#webhook-trigger-failure-report) here.
 
 <h3 id="webhook-configuration">Webhook configuration</h3>
 
-The power of this feature reside in its customization. Each Webhook has a name to quickly recognize it, a type defining its trigger event, a status
+The power of this feature reside in its customization. Each Webhook has a name for you to quickly recognize it, a type defining its trigger event, a status
 so you can enable or disable it, an URL and a content both formattable using Go templates, an HTTP method used to perform the request and even a set of
-additional HTTP headers if you need to put some in order for the request to work.
+additional HTTP headers.
 
 <figure className="flex-1">
   <img src="/images/docs/webhooks/configuration.png" />
@@ -47,39 +33,39 @@ It do not needs to be unique: a unique ID display with a `#` symbol is always in
 
 #### Type
 
-The type define which event will trigger this Webhook. It's also used to categorize them on the admin control panel. As new events could come in the future,
-this attribute is subject to modification. However, we guarantee the current Webhooks will never break due to this kind of evolution.
+The type define which event will trigger this Webhook. It's also used to categorize them on the admin control panel. As new events could be added in future,
+this attribute is subject to modification.
 
 #### Status
 
-The status define whether the Webhook could be triggered by events of its type or not. We highly recommend you to [test](#webhook-testing) your Webhook before
-you enable it. When the execution of a Webhook fails, it automatically get disabled until you edit it to fix it.
+The status define whether the Webhook is active or not. We highly recommend you to [test](#webhook-testing) your Webhook before
+enabling it. When the execution of a Webhook fails, it'll automatically get disabled until you edit and fix it.
 
 #### URL
 
-The URL is one of the most important thing in the Webhook. Indeed, it is part of the definition of the HTTP request that this Webhook perform.
+The URL is one of the most important parts in the Webhook definition. Indeed, it is part of the definition of the HTTP request that this Webhook perform.
 This is usually defined by your targeted application, and you must refer to its documentation to know how to get one.
 See the list of [common Webhook targets](#common-webhook-targets-documentation) that you probably want to integrate with below to get some help with them.
 
 #### Content
 
-The content is the main element in your Webhook. You define here the data sent as HTTP request body. Most of time, this payload will include information
-about the event that just happened. Like in the URL, you can use [Go template formatting](#writing-go-templates) here. Do not hesitate to check the integrated
+The content is the main element in your Webhook. You define here the data sent as HTTP request body. In most cases, the payload will include information
+about the event that triggered it. Just like the URL, you can also use [Go template formatting](#writing-go-templates) here. Do not hesitate to check the integrated
 help section by clicking on the information icon next to it. Take a look at the **Preview** zone to see what would your request contains with example data.
 
 #### HTTP Method
 
-This is the [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) of the request triggered by the Webhook. Most of time, when sending
-data in the **Content**, it should be `POST`. If you don't send any data, you should use `GET`. Check your targeted application's documentation to be sure.
+This is the [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) of the request triggered by the Webhook. In most cases, when sending
+data in the **Content**, the HTTP method will be `POST`. Check your targeted application's documentation to be sure.
 
 #### HTTP Headers
 
 You can add any [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) you want here. Each header have a name and a value, and you cannot
 define the same header twice. The most common headers are:
 
-* `Content-Type`: use it to tell your application the MIME type of the data represented in your **Content**. Common values are: `application/json`, `text/plain`,
+- `Content-Type`: use it to tell your application the MIME type of the data represented in your **Content**. Common values are: `application/json`, `text/plain`,
   `application/x-www-form-urlencoded`, `application/xml`...
-* `Authorization`: use it to authenticate with given credentials.
+- `Authorization`: use it to authenticate with given credentials.
 
 <h3 id="writing-go-templates">Writing Go templates (for your Webhook URL and content)</h3>
 
@@ -88,14 +74,14 @@ define the same header twice. The most common headers are:
 When writing templates, a preview is available before saving you check when it'll look like. Use it as many times as you need!
 
 <figure className="flex-1">
-    <img src="/images/docs/webhooks/preview-field.png" />
-    <figcaption>An example of the preview field</figcaption>
+  <img src="/images/docs/webhooks/preview-field.png" />
+  <figcaption>An example of the preview field</figcaption>
 </figure>
 
 #### Presentation
 
 [Go templates][go-template-doc] are a way to customize a text using external values (also called here "properties"). The engine used here is the
-native `text/template` Go package. This is a powerful engine, but creating a basic templates is not so complicated. You can write text as you want and insert a
+native `text/template` Go package. This is a powerful engine, but creating a basic templates is not complicated. You can write text as you want and insert a
 property name, prefixed by a dot, enclosed in double braces with space within to place its value. For example, this is the most basic template with some values:
 
 **Template**
@@ -111,7 +97,7 @@ A new post entitled "Example dummy post title" has been created by Test.
 ```
 
 In addition to properties, you can also use "functions", which are really useful to perform operations on values before they got inserted in the text. Example:
-*(Read more about time formatting [here][go-time-format])*
+_(Read more about time formatting [here][go-time-format])_
 
 **Template**
 
@@ -162,7 +148,8 @@ to consult the [official Go documentation][go-template-doc] about templates to s
 #### Security disclaimer
 
 You should always keep in mind user content may be insecure! Posts title and description, comments or users name are free text directly from the users.
-You need to properly encode values like that when using them in JSON fields for example. Indeed, with the following **bad** configuration:
+You need to properly encode values like that when using them in JSON fields for example. The following example is a **bad** configuration:
+
 ```gotemplate
 {
   "message": "{{ .post_description }}"
@@ -206,62 +193,62 @@ You can find theses information in the integrated help by clicking on the inform
 
 ##### Properties
 
-Property name | Example value
----|---
-`author_avatar` | http://localhost:3000/static/avatars/letter/1/Test
-`author_email` | test@test.fr
-`author_id` | 1
-`author_name` | Test
-`author_role` | administrator
-`comment` | An example \*\*comment\*\* on a post.
-`post_author_avatar` | https://getfider.com/images/logo-100x100.png
-`post_author_email` | contact@fider.io
-`post_author_id` | 7
-`post_author_name` | Fider
-`post_author_role` | visitor
-`post_comments` | 3
-`post_created_at` | 2021-05-07T18:42:27Z
-`post_description` | \*Those data are fake.\*<br /><br />This is an example of a post, but don't worry, nothing was created on your Fider instance:<br />It was just a test of a webhook trigger.<br /><br />You can use \`{{ markdown .post_description }}\` to parse \_\_Markdown\_\_ to \*\*HTML\*\* in post!
-`post_id` | 36
-`post_number` | 36
-`post_old_status` | open
-`post_response` | true
-`post_response_author_avatar` | http://localhost:3000/static/avatars/letter/1/Test
-`post_response_author_email` | test@test.fr
-`post_response_author_id` | 1
-`post_response_author_name` | Test
-`post_response_author_role` | administrator
-`post_response_responded_at` | 2021-07-09T15:29:57Z
-`post_response_text` | This is a response, still in \*Markdown\*.
-`post_slug` | example-dummy-post-title
-`post_status` | started
-`post_tags` | tag1<hr />tag2
-`post_title` | Example dummy post title
-`post_url` | http://localhost:3000/posts/36/example-dummy-post-title
-`post_votes` | 7
-`tenant_id` | 1
-`tenant_locale` | fr
-`tenant_logo` | https://getfider.com/images/logo-100x100.png
-`tenant_name` | Testing
-`tenant_status` | active
-`tenant_subdomain` | default
-`tenant_url` | http://localhost:3000
+| Property name                 | Example value                                                                                                                                                                                                                                                                               |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `author_avatar`               | https://yourapp.fider.io/static/avatars/letter/1/Test                                                                                                                                                                                                                                       |
+| `author_email`                | test@test.fr                                                                                                                                                                                                                                                                                |
+| `author_id`                   | 1                                                                                                                                                                                                                                                                                           |
+| `author_name`                 | Test                                                                                                                                                                                                                                                                                        |
+| `author_role`                 | administrator                                                                                                                                                                                                                                                                               |
+| `comment`                     | An example \*\*comment\*\* on a post.                                                                                                                                                                                                                                                       |
+| `post_author_avatar`          | https://getfider.com/images/logo-100x100.png                                                                                                                                                                                                                                                |
+| `post_author_email`           | contact@fider.io                                                                                                                                                                                                                                                                            |
+| `post_author_id`              | 7                                                                                                                                                                                                                                                                                           |
+| `post_author_name`            | Fider                                                                                                                                                                                                                                                                                       |
+| `post_author_role`            | visitor                                                                                                                                                                                                                                                                                     |
+| `post_comments`               | 3                                                                                                                                                                                                                                                                                           |
+| `post_created_at`             | 2021-05-07T18:42:27Z                                                                                                                                                                                                                                                                        |
+| `post_description`            | \*Those data are fake.\*<br /><br />This is an example of a post, but don't worry, nothing was created on your Fider instance:<br />It was just a test of a webhook trigger.<br /><br />You can use \`{{ markdown .post_description }}\` to parse \_\_Markdown\_\_ to \*\*HTML\*\* in post! |
+| `post_id`                     | 36                                                                                                                                                                                                                                                                                          |
+| `post_number`                 | 36                                                                                                                                                                                                                                                                                          |
+| `post_old_status`             | open                                                                                                                                                                                                                                                                                        |
+| `post_response`               | true                                                                                                                                                                                                                                                                                        |
+| `post_response_author_avatar` | https://yourapp.fider.io/static/avatars/letter/1/Test                                                                                                                                                                                                                                       |
+| `post_response_author_email`  | test@test.fr                                                                                                                                                                                                                                                                                |
+| `post_response_author_id`     | 1                                                                                                                                                                                                                                                                                           |
+| `post_response_author_name`   | Test                                                                                                                                                                                                                                                                                        |
+| `post_response_author_role`   | administrator                                                                                                                                                                                                                                                                               |
+| `post_response_responded_at`  | 2021-07-09T15:29:57Z                                                                                                                                                                                                                                                                        |
+| `post_response_text`          | This is a response, still in \*Markdown\*.                                                                                                                                                                                                                                                  |
+| `post_slug`                   | example-dummy-post-title                                                                                                                                                                                                                                                                    |
+| `post_status`                 | started                                                                                                                                                                                                                                                                                     |
+| `post_tags`                   | tag1<hr />tag2                                                                                                                                                                                                                                                                              |
+| `post_title`                  | Example dummy post title                                                                                                                                                                                                                                                                    |
+| `post_url`                    | https://yourapp.fider.io/posts/36/example-dummy-post-title                                                                                                                                                                                                                                  |
+| `post_votes`                  | 7                                                                                                                                                                                                                                                                                           |
+| `tenant_id`                   | 1                                                                                                                                                                                                                                                                                           |
+| `tenant_locale`               | fr                                                                                                                                                                                                                                                                                          |
+| `tenant_logo`                 | https://getfider.com/images/logo-100x100.png                                                                                                                                                                                                                                                |
+| `tenant_name`                 | Testing                                                                                                                                                                                                                                                                                     |
+| `tenant_status`               | active                                                                                                                                                                                                                                                                                      |
+| `tenant_subdomain`            | yourapp                                                                                                                                                                                                                                                                                     |
+| `tenant_url`                  | https://yourapp.fider.io                                                                                                                                                                                                                                                                    |
 
 ##### Functions
 
-Function | Description | Parameters<br /><small>Type - Description</small>
----|---|---
-`stripHtml` | Strip HTML tags from the input data | `string` - The input string containing HTML to strip
-`md5` | Hash text using [MD5](https://en.wikipedia.org/wiki/MD5) algorithm | `string` - The input string to hash
-`lower` | Lowercase text | `string` - The input string to lowercase
-`upper` | Uppercase text | `string` - The input string to uppercase
-`markdown` | Parse [Markdown](https://en.wikipedia.org/wiki/Markdown) to HTML from the input data | `string` - The input string containing Markdown to parse
-`format` | [Format][go-time-format] the given date and time | `string` - The date format according to Go specifications<hr />`time` - The time to format
-`quote` | Enquote a string and escape inner special characters | `string` - The input string to quote
-`escape` | Escape inner special characters of a string, without enquoting it | `string` - The input string to escape
-`urlquery` | Encode a string into a valid URL query element | `string` - The input string to encode as URL query value
+| Function    | Description                                                                          | Parameters<br /><small>Type - Description</small>                                          |
+| ----------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `stripHtml` | Strip HTML tags from the input data                                                  | `string` - The input string containing HTML to strip                                       |
+| `md5`       | Hash text using [MD5](https://en.wikipedia.org/wiki/MD5) algorithm                   | `string` - The input string to hash                                                        |
+| `lower`     | Lowercase text                                                                       | `string` - The input string to lowercase                                                   |
+| `upper`     | Uppercase text                                                                       | `string` - The input string to uppercase                                                   |
+| `markdown`  | Parse [Markdown](https://en.wikipedia.org/wiki/Markdown) to HTML from the input data | `string` - The input string containing Markdown to parse                                   |
+| `format`    | [Format][go-time-format] the given date and time                                     | `string` - The date format according to Go specifications<hr />`time` - The time to format |
+| `quote`     | Enquote a string and escape inner special characters                                 | `string` - The input string to quote                                                       |
+| `escape`    | Escape inner special characters of a string, without enquoting it                    | `string` - The input string to escape                                                      |
+| `urlquery`  | Encode a string into a valid URL query element                                       | `string` - The input string to encode as URL query value                                   |
 
-Don't forget the **Preview** field to help you experiment with these functions!
+Don't forget to use the **Preview** field to help you experiment these functions!
 
 <h3 id="webhook-trigger-failure-report">Webhook trigger failure report</h3>
 
@@ -269,8 +256,8 @@ This report is shown when a manual trigger of a Webhook goes wrong. It means you
 A failed Webhook is automatically disabled until you edit it. It is a good practice to always test it after each edition to ensure nothing was broken.
 
 <figure className="flex-1">
-    <img src="/images/docs/webhooks/failure-report.png" />
-    <figcaption>An extract of the failure report</figcaption>
+  <img src="/images/docs/webhooks/failure-report.png" />
+  <figcaption>An extract of the failure report</figcaption>
 </figure>
 
 #### Understanding the report
@@ -282,15 +269,30 @@ First, the **Message** indicates where the process was interrupted, and why. The
 The **Status code** is the [HTTP response status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) returned by the request.
 **Properties** are every variables you can use in templates associated with their resolved values.
 
+<h3 id="webhook-testing">Testing</h3>
+
+Before enabling any your Webhook on Fider, we highly recommend that you keep it disabled and use the **Trigger button** to confirm it's working properly.
+
+**Trigger button** becomes available after creating a new Webhook. Whenever clicked, an event of the appropriate type is simulated,
+triggered only this Webhook. A notification in the upper-right corner of the screen indicate the result of the trigger. Once you're happy with the configuration,
+you can enable it and it will be triggered automatically with real properties every time the selected event occurs.
+
+The result can be either a success: everything was good and the HTTP request was executed successfully; or a failure: something went wrong during the process.
+In case of a success, check your targeted application to confirm everyhing is OK, then you can enable your Webhook.
+However, if it was a failure, a report will be available beside your Webhook's name, by clicking on this information icon.
+Read more about [Webhook trigger failure reports](#webhook-trigger-failure-report) here.
+
 #### Analyzing the message and error
 
 Four error **messages** are possible:
+
 1. _Could not parse webhook URL template_
 2. _Could not parse webhook content template_
 3. _Could not execute webhook HTTP request_
 4. _Webhook HTTP request returned an error response code_
 
 For each of these messages, the **error** field will bring more precise information about:
+
 1. What was malformated in the **URL** template
 2. What was malformated in the **Content** template
 3. What prevented the HTTP request from being executed
@@ -313,11 +315,12 @@ basic example (sending `Hello World` seems to be a good idea to begin your debug
 
 A special case of failing could be the malformation of the result produced by templates with some values.
 Here are some recommendations about this:
-* Properties passed as GET parameters in the URL query (i.e. after the `?`) should always be encoded using `urlquery`.
+
+- Properties passed as GET parameters in the URL query (i.e. after the `?`) should always be encoded using `urlquery`.
   ```gotemplate
   https://example.org/webhook/fider?author={{ urlquery .author_name }}
   ```
-* When using a structured text format such as JSON, or any other format asking you to enquote an element, you should use the `quote` function.
+- When using a structured text format such as JSON, or any other format asking you to enquote an element, you should use the `quote` function.
   ```gotemplate
   {
     "title": {{ quote .post_title }}
@@ -328,11 +331,9 @@ When you think your problem has been solved, don't forget to [test](#webhook-tes
 
 <h3 id="common-webhook-targets-documentation">Common Webhook targets documentation</h3>
 
-* Slack: [Generic Webhook documentation](https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack), [Create the Webhook](https://api.slack.com/messaging/webhooks), [Webhook messages format](https://api.slack.com/messaging/composing)
-* Discord: [Create the Webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks), [Webhook messages format](https://discord.com/developers/docs/resources/webhook)
-* Microsoft Teams: [Create the Webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook), [Webhook messages format](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/connectors-using?tabs=cURL)
-
-
+- Slack: [Generic Webhook documentation](https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack), [Create the Webhook](https://api.slack.com/messaging/webhooks), [Webhook messages format](https://api.slack.com/messaging/composing)
+- Discord: [Create the Webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks), [Webhook messages format](https://discord.com/developers/docs/resources/webhook)
+- Microsoft Teams: [Create the Webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook), [Webhook messages format](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/connectors-using?tabs=cURL)
 
 [go-template-doc]: https://pkg.go.dev/text/template
 [go-time-format]: https://yourbasic.org/golang/format-parse-string-time-date-example/#standard-time-and-date-formats
