@@ -61,6 +61,13 @@ const docs: { [key: string]: DocsMetadata } = {
     subtitle: 'One-click sign in made easy',
     description: 'Learn how to create Facebook and Google sign in apps and use it in your Fider instance',
   },
+  'using-webhooks': {
+    title: 'Using Webhooks',
+    category: 'How To',
+    slug: 'using-webhooks',
+    subtitle: "HTTP requests on Fider's events",
+    description: 'Learn how to create webhooks to integrate your apps with Fider',
+  },
   api: {
     title: 'API Reference',
     category: 'API Reference',
