@@ -54,7 +54,7 @@ POST /api/v1/invitations/send
 | Name         | Type               | Description                                                                                                                                            |
 | ------------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `recipients` | `array of strings` | **Required.** The list of email addresses to send an invite.                                                                                           |
-| `subject`    | `number`           | **Required.** The subject of the email to be sent.                                                                                                     |
+| `subject`    | `string`           | **Required.** The subject of the email to be sent.                                                                                                     |
 | `message`    | `string`           | **Required.** The content of the email to be sent. The message must include the %invite% placeholder, which will be replaced a secure invitation link. |
 
 **Example**
