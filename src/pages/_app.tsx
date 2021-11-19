@@ -15,7 +15,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return () => {
       router.events.off('routeChangeComplete', analytics.pageView)
     }
-  }, [])
+  }, [router.events])
 
   return <Component {...pageProps} />
 }

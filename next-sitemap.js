@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-undef
 module.exports = {
   siteUrl: 'https://getfider.com',
   generateRobotsTxt: true,

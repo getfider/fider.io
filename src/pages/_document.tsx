@@ -9,9 +9,10 @@ export default class MyDocument extends Document {
   render(): JSX.Element {
     const googleAnalyticsScripts = process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
       <>
-        <script src="/api/u"></script>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}></script>
+        <script defer src="/api/u"></script>
+        <script defer src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}></script>
         <script
+          defer
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());`,
           }}

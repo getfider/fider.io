@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react'
 import { ReactNode } from 'react'
 import analytics from '@app/fns/analytics'

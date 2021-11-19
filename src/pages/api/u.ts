@@ -13,7 +13,7 @@ const cyrb53 = (str: string, seed = 0): number => {
   return 4294967296 * (2097151 & h2) + (h1 >>> 0)
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
+const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const clientIP = req.socket.remoteAddress
   const validityInterval = Math.round(Date.now() / 1000 / 3600 / 24 / 4)
   const userAgent = req.headers['user-agent']
@@ -26,3 +26,5 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
   res.setHeader('Content-Type', 'text/javascript')
   res.send(`u='${clientIDHashed}'`)
 }
+
+export default handler

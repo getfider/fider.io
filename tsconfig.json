@@ -23,17 +23,38 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@assets/*": ["public/assets/*"],
-      "@content/*": ["content/*"],
-      "@content/blog/*": ["content/blog/*"],
-      "@content/docs/*": ["content/docs/*"],
-      "@app/fns": ["src/fns/index"],
-      "@app/fns/*": ["src/fns/*"],
-      "@app/hooks": ["src/hooks/index"],
-      "@app/hooks/*": ["src/hooks/*"],
-      "@app/components": ["src/components/index"],
-      "@app/components/*": ["src/components/*"]
-    }
+      "@assets/*": [
+        "public/assets/*"
+      ],
+      "@content/*": [
+        "content/*"
+      ],
+      "@content/blog/*": [
+        "content/blog/*"
+      ],
+      "@content/docs/*": [
+        "content/docs/*"
+      ],
+      "@app/fns": [
+        "src/fns/index"
+      ],
+      "@app/fns/*": [
+        "src/fns/*"
+      ],
+      "@app/hooks": [
+        "src/hooks/index"
+      ],
+      "@app/hooks/*": [
+        "src/hooks/*"
+      ],
+      "@app/components": [
+        "src/components/index"
+      ],
+      "@app/components/*": [
+        "src/components/*"
+      ]
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
