@@ -92,8 +92,8 @@ export function GetStartedSection(): JSX.Element {
             </div>
           </div>
           <div className="relative block md:flex items-center container mx-auto px-4">
-            <CloudCard />
             <SelfHostedCard />
+            <CloudCard />
           </div>
           <FAQ />
         </div>
