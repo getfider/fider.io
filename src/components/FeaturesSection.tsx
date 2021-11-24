@@ -7,6 +7,9 @@ import IconShieldCheck from '@assets/icons/heroicons-shield-check.svg'
 import IconSpeakerPhone from '@assets/icons/heroicons-speakerphone.svg'
 import IconTag from '@assets/icons/heroicons-tag.svg'
 import IconUserGroup from '@assets/icons/heroicons-user-group.svg'
+import IconPencil from '@assets/icons/heroicons-pencil.svg'
+import IconTerminal from '@assets/icons/heroicons-terminal.svg'
+import IconTranslate from '@assets/icons/heroicons-translate.svg'
 
 interface FeatureProps {
   title: string
@@ -81,13 +84,13 @@ export function FeaturesSection(): JSX.Element {
             />
             <Feature
               color={colors[6]}
-              icon={<IconTag className="w-6 h-6" />}
+              icon={<IconTerminal className="w-6 h-6" />}
               title="Integrations"
               description="Fider can integrate with any system that supports Webhook, such as Slack and Discord."
             />
             <Feature
               color={colors[0]}
-              icon={<IconTag className="w-6 h-6" />}
+              icon={<IconTranslate className="w-6 h-6" />}
               title="Multi-language"
               description="We speak your language! Fider is translated in 10+ languages, such as English, Spanish, German, French and Portuguese!"
             />
@@ -99,7 +102,7 @@ export function FeaturesSection(): JSX.Element {
             />
             <Feature
               color={colors[2]}
-              icon={<IconTag className="w-6 h-6" />}
+              icon={<IconPencil className="w-6 h-6" />}
               title="Markdown"
               description="Style your text with the popular Markdown markup language."
             />
