@@ -82,17 +82,35 @@ export function FeaturesSection(): JSX.Element {
             <Feature
               color={colors[6]}
               icon={<IconTag className="w-6 h-6" />}
+              title="Integrations"
+              description="Fider can integrate with any system that supports Webhook, such as Slack and Discord."
+            />
+            <Feature
+              color={colors[0]}
+              icon={<IconTag className="w-6 h-6" />}
+              title="Multi-language"
+              description="We speak your language! Fider is translated in 10+ languages, such as English, Spanish, German, French and Portuguese!"
+            />
+            <Feature
+              color={colors[1]}
+              icon={<IconTag className="w-6 h-6" />}
               title="Organize your content"
               description="Tag your content to make it easier to find, group and decide. Tags can be either Public or Private."
             />
             <Feature
-              color={colors[0]}
+              color={colors[2]}
+              icon={<IconTag className="w-6 h-6" />}
+              title="Markdown"
+              description="Style your text with the popular Markdown markup language."
+            />
+            <Feature
+              color={colors[3]}
               icon={<IconGlobe className="w-6 h-6" />}
               title="Your own domain"
               description="When using our hosted service, you can use your own domain and get a free TLS certificate to keep it secure."
             />
             <Feature
-              color={colors[1]}
+              color={colors[4]}
               icon={<IconGitHub className="w-6 h-6" />}
               title="Open Source"
               description="Our code is 100% Open Source. Visit getfider/fider on GitHub."
