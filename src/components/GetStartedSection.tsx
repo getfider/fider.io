@@ -1,30 +1,6 @@
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import CheckIcon from '@assets/icons/heroicons-check.svg'
-
-interface SubscriptionPrice {
-  currencySymbol: string
-  amount: number
-}
-
-const prices: { [code: string]: SubscriptionPrice } = {
-  USD: { currencySymbol: '$', amount: 30 },
-  EUR: { currencySymbol: '€', amount: 28 },
-  GBP: { currencySymbol: '£', amount: 26 },
-}
-
-export const getCurrencyCode = async (): Promise<string> => {
-  try {
-    const response = await fetch('https://myipdata.vercel.app/api')
-    if (response.status === 200) {
-      const data = await response.json()
-      return data.currencyCode
-    }
-  } catch (err) {
-    console.error(err)
-  }
-
-  return 'USD'
-}
+import { useCache, useScript } from '@app/hooks'
 
 interface ItemProps {
   children: ReactNode
@@ -42,41 +18,47 @@ const Item = (props: ItemProps): JSX.Element => {
 }
 
 const CloudCard = (): JSX.Element => {
-  const [price, setPrice] = useState<SubscriptionPrice | undefined>()
+  const status = useScript('https://cdn.paddle.com/paddle/paddle.js')
+  const [price, setPrice] = useCache('price', '$30')
 
   useEffect(() => {
-    getCurrencyCode().then((currencyCode) => {
-      setPrice(prices[currencyCode])
-    })
-  }, [])
+    if (status === 'ready') {
+      window.Paddle.Setup({ vendor: 132914 })
+      window.Paddle.Product.Prices(742576, (response) => {
+        setPrice(response.price.net.replace(/\.00/g, ''))
+      })
+    }
+  }, [status, setPrice])
 
   return (
-    <div className="w-full relative z-1 bg-gray-100 rounded shadow-lg overflow-hidden">
-      <div className="text-lg font-medium text-blue-500 uppercase p-8 text-center border-b border-gray-200 tracking-wide">Cloud Hosted</div>
-      <div className="block sm:flex md:block lg:flex items-center justify-center">
-        <div className="mt-8 sm:m-8 md:m-0 md:mt-8 lg:m-8 text-center">
-          <div className="inline-flex items-center">
-            <span className="text-3xl font-medium">{price ? `${price.currencySymbol}${price.amount}/mo` : '...'}</span>
+    <>
+      <div className="w-full relative z-1 bg-gray-100 rounded shadow-lg overflow-hidden">
+        <div className="text-lg font-medium text-blue-500 uppercase p-8 text-center border-b border-gray-200 tracking-wide">Cloud Hosted</div>
+        <div className="block sm:flex md:block lg:flex items-center justify-center">
+          <div className="mt-8 sm:m-8 md:m-0 md:mt-8 lg:m-8 text-center">
+            <div className="inline-flex items-center">
+              <span className="text-3xl font-medium">{price}/mo</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center mt-3 px-4 lg:px-8">
-        <ul>
-          <Item>All features included</Item>
-          <Item>Unlimited Users</Item>
-          <Item>Unlimited Feedback</Item>
-          <Item>Unlimited Admins</Item>
-        </ul>
-      </div>
+        <div className="flex justify-center mt-3 px-4 lg:px-8">
+          <ul>
+            <Item>All features included</Item>
+            <Item>Unlimited Users</Item>
+            <Item>Unlimited Feedback</Item>
+            <Item>Unlimited Admins</Item>
+          </ul>
+        </div>
 
-      <a
-        href="https://login.fider.io/signup"
-        className="flex items-center justify-center bg-gray-200 hover:bg-gray-300 p-8 text-md font-semibold text-gray-800 uppercase mt-16"
-      >
-        <span>Start free 15 days trial</span>
-        <span className="font-medium text-gray-700 ml-2">➔</span>
-      </a>
-    </div>
+        <a
+          href="https://login.fider.io/signup"
+          className="flex items-center justify-center bg-gray-200 hover:bg-gray-300 p-8 text-md font-semibold text-gray-800 uppercase mt-16"
+        >
+          <span>Start free 15 days trial</span>
+          <span className="font-medium text-gray-700 ml-2">➔</span>
+        </a>
+      </div>
+    </>
   )
 }
 

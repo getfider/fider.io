@@ -3,6 +3,18 @@ declare module '*.mdx' {
   export default MDXComponent
 }
 
+interface GetPriceResponse {
+  price: { net: string }
+}
+
+interface PaddleSdk {
+  Setup(params: { vendor: number })
+  Product: {
+    Prices(planId: number, callback: (resp: GetPriceResponse) => void)
+  }
+}
+
 interface Window {
-  u?: string
+  u?: SVGStringList
+  Paddle: PaddleSdk
 }
