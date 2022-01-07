@@ -39,7 +39,7 @@ export default function Blog(): JSX.Element {
 
       <section>
         <div className="text-center mt-20 mb-10">
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Voice of Fider Developers</p>
+          <h1 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Voice of Fider Developers</h1>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Our vision, news, ideas and whatever feels important.</p>
         </div>
 
