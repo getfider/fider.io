@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://getfider.com',
+  siteUrl: 'https://fider.io',
   generateRobotsTxt: true,
   exclude: ['/404', '/banner'],
   transform: (_, url) => {

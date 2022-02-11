@@ -9,8 +9,8 @@ interface SEOProps {
 
 export function SEO(props: SEOProps): JSX.Element {
   const router = useRouter()
-  const url = `https://getfider.com${router.pathname}`
-  const imageUrl = props.imageUrl ? `https://getfider.com${props.imageUrl}` : undefined
+  const url = `https://fider.io${router.pathname}`
+  const imageUrl = props.imageUrl ? `https://fider.io${props.imageUrl}` : undefined
 
   return (
     <Head>

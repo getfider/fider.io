@@ -6,7 +6,7 @@ export default function PageNotFound(): JSX.Element {
   return (
     <MainLayout>
       <Head>
-        <title>Page not found - getfider.com</title>
+        <title>Page not found - fider.io</title>
         <meta name="robots" content="noindex" />
       </Head>
 

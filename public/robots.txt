@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://getfider.com
+Host: https://fider.io
 
 # Sitemaps
-Sitemap: https://getfider.com/sitemap.xml
+Sitemap: https://fider.io/sitemap.xml

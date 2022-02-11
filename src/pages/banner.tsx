@@ -12,7 +12,7 @@ export default function BannerGenerator(): JSX.Element {
   return (
     <>
       <Head>
-        <title>Banner Generator - getfider.com</title>
+        <title>Banner Generator - fider.io</title>
         <meta name="robots" content="noindex" />
       </Head>
 

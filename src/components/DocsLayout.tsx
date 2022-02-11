@@ -80,7 +80,7 @@ export function DocsSidebar(): JSX.Element {
         <div className="mt-20">
           <div className="text-truegray-400 hover:text-white">
             <Link href="/">
-              <a>← getfider.com</a>
+              <a>← fider.io</a>
             </Link>
           </div>
           <div className="flex p-4">
