@@ -1,6 +1,5 @@
 import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react'
 import { ReactNode } from 'react'
-import analytics from '@app/fns/analytics'
 import Link from 'next/link'
 
 interface MDXWrapperProps {
@@ -12,7 +11,7 @@ const components: MDXProviderComponentsProp = {
     const href = props.href as string
     if (href.startsWith('http://') || href.startsWith('https://')) {
       return (
-        <a onClick={analytics.outbound} target="_blank" rel="noopener noreferrer" href={href} {...props}>
+        <a target="_blank" rel="noopener noreferrer" href={href} {...props}>
           {props.children}
         </a>
       )

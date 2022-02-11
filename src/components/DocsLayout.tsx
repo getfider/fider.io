@@ -9,7 +9,6 @@ import TwitterLogo from '@assets/icons/iconmonstr-twitter.svg'
 import EmailLogo from '@assets/icons/iconmonstr-email.svg'
 import docs from '@content/docs/all-docs'
 import { useToggle } from '@app/hooks'
-import analytics from '@app/fns/analytics'
 
 interface MenuHeaderProps {
   title: string
@@ -123,7 +122,6 @@ export function DocsLayout(props: DocsLayoutProps): JSX.Element {
             </div>
             <div className="hidden lg:flex items-center justify-end space-x-10">
               <a
-                onClick={analytics.outbound}
                 href="https://github.com/getfider/fider"
                 rel="noopener"
                 className="text-gray-500 hover:text-black transition-colors duration-200"

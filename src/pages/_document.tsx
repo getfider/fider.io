@@ -7,23 +7,16 @@ export default class MyDocument extends Document {
   }
 
   render(): JSX.Element {
-    const googleAnalyticsScripts = process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
+    const plausibleScript = process.env.VERCEL === '1' && (
       <>
-        <script defer src="/api/u"></script>
-        <script defer src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}></script>
-        <script
-          defer
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());`,
-          }}
-        />
+        <script defer data-domain="fider.io" data-api="/e" src="/p.js"></script>
       </>
     )
 
     return (
       <Html lang="en">
         <Head>
-          {googleAnalyticsScripts}
+          {plausibleScript}
           <meta name="referrer" content="same-origin" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

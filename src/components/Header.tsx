@@ -6,7 +6,6 @@ import MenuIcon from '@assets/icons/heroicons-menu.svg'
 import { useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
 import { useToggle } from '@app/hooks'
-import analytics from '@app/fns/analytics'
 
 const menuItems = (
   <>
@@ -61,7 +60,6 @@ export function Header(): JSX.Element {
           <div className="hidden lg:flex items-center justify-end space-x-10">
             {menuItems}
             <a
-              onClick={analytics.outbound}
               href="https://github.com/getfider/fider"
               rel="noopener"
               className="text-gray-500 hover:text-black transition-colors duration-200"
