@@ -17,7 +17,7 @@ module.exports = withMDX({
       return [
           {
               source: '/p.js',
-              destination: 'https://plausible.io/js/plausible.js'
+              destination: 'https://plausible.io/js/plausible.outbound-links.js'
           },
           {
               source: '/e',
