@@ -34,16 +34,16 @@ export function HowItWorksSection(): JSX.Element {
           </div>
         </div>
         <div className="flex max-w-7xl container mx-auto flex-wrap md:space-y-0 space-y-6 py-10">
-          <Step number={1} title="Setup" description="Create a feedback site for your product. Customize it with your own logo, colors and text." />
+          <Step number={1} title="Setup" description="Sign up to create your own feedback site. Customize it with your own logo, colors and text." />
           <Step
             number={2}
             title="Collect"
-            description="Invite people to your new Fider site. They'll be able to suggest new ideas, submit feature requests or report issues they have with your product."
+            description="Invite people to your new Fider site so they can suggest new ideas, submit feature requests or report issues they have with your product."
           />
           <Step
             number={3}
             title="Deliver"
-            description="Keep your audience in the loop by responding to their suggestions. Users will be notified of any new action on their topics of their interest."
+            description="Keep your audience in the loop by responding to their suggestions. Users will be notified of updates on their topics of interest."
           />
         </div>
       </div>

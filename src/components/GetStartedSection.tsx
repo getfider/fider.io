@@ -1,23 +1,10 @@
-import React, { ReactNode, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import CheckIcon from '@assets/icons/heroicons-check.svg'
 import { useCache, useScript } from '@app/hooks'
 
-interface ItemProps {
-  children: ReactNode
-}
+const includedFeatures = ['All Features', 'Unlimited Users', 'Unlimited Feedback', 'Unlimited Admins']
 
-const Item = (props: ItemProps): JSX.Element => {
-  return (
-    <li className="flex items-center py-2">
-      <span className={`w-5 h-5 mr-2 inline-flex items-center justify-center bg-green-500 text-white rounded-full flex-shrink-0`}>
-        <CheckIcon className="w-4 h-4" />
-      </span>
-      <span className="text-gray-700 text-lg">{props.children}</span>
-    </li>
-  )
-}
-
-const CloudCard = (): JSX.Element => {
+export function GetStartedSection(): JSX.Element {
   const status = useScript('https://cdn.paddle.com/paddle/paddle.js')
   const [price, setPrice] = useCache('price', '$30')
 
@@ -32,57 +19,68 @@ const CloudCard = (): JSX.Element => {
 
   return (
     <>
-      <div className="w-full relative z-1 bg-gray-100 rounded shadow-lg overflow-hidden">
-        <div className="text-lg font-medium text-blue-500 uppercase p-8 text-center border-b border-gray-200 tracking-wide">Cloud Hosted</div>
-        <div className="block sm:flex md:block lg:flex items-center justify-center">
-          <div className="mt-8 sm:m-8 md:m-0 md:mt-8 lg:m-8 text-center">
-            <div className="inline-flex items-center">
-              <span className="text-3xl font-medium">{price}/mo</span>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center mt-3 px-4 lg:px-8">
-          <ul>
-            <Item>All features included</Item>
-            <Item>Unlimited Users</Item>
-            <Item>Unlimited Feedback</Item>
-            <Item>Unlimited Admins</Item>
-          </ul>
-        </div>
-
-        <a
-          href="https://login.fider.io/signup"
-          className="flex items-center justify-center bg-gray-200 hover:bg-gray-300 p-8 text-md font-semibold text-gray-800 uppercase mt-16"
-        >
-          <span>Start free 15 days trial</span>
-          <span className="font-medium text-gray-700 ml-2">➔</span>
-        </a>
-      </div>
-    </>
-  )
-}
-
-export function GetStartedSection(): JSX.Element {
-  return (
-    <>
       <section id="get-started">
-        <div className="bg-gray-700 overflow-hidden">
-          <div className="container mx-auto">
-            <div className="flex flex-wrap justify-center">
-              <div className="px-12 md:px-4 ml-auto mx-auto mt-8 lg:mt-16">
-                <h3 className="text-3xl mb-2 font-semibold leading-normal text-white">Get Feedback. Get Fider.</h3>
-                <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-300">Are you ready to try it?</p>
+        <div className="w-full">
+          <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+            <polygon className="text-gray-100 fill-current" points="0,0 0,100 2560,0"></polygon>
+          </svg>
+        </div>
+        <div className="bg-white">
+          <div className="pt-12 sm:pt-16 lg:pt-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center">
+                <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">Simple no-tricks pricing</h2>
+                <p className="mt-4 text-xl text-gray-600">No credit card required. Start your free trial now!</p>
               </div>
             </div>
           </div>
-          <div className="relative block max-w-xl items-center container mx-auto mt-12">
-            <CloudCard />
+          <div className="mt-8 pb-16 sm:mt-12 sm:pb-20 lg:pb-28">
+            <div className="relative">
+              <div className="absolute inset-0 h-1/2" />
+              <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-lg mx-auto bg-gray-50 rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
+                  <div className="flex-1 px-6 py-8 lg:p-12">
+                    <h3 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">Fider Cloud Subscription</h3>
+                    <p className="mt-6 text-base text-gray-500">An affordable plan that includes all you need.</p>
+                    <div className="mt-8">
+                      <div className="flex items-center">
+                        <h4 className="flex-shrink-0 pr-4 text-sm tracking-wider font-semibold uppercase text-blue-600">What&apos;s included</h4>
+                        <div className="flex-1 border-t-2 border-gray-200" />
+                      </div>
+                      <ul role="list" className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
+                        {includedFeatures.map((feature) => (
+                          <li key={feature} className="flex items-start lg:col-span-1">
+                            <div className="flex-shrink-0">
+                              <CheckIcon className="h-5 w-5 text-green-400" aria-hidden="true" />
+                            </div>
+                            <p className="ml-3 text-sm text-gray-700">{feature}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="py-8 px-6 text-center lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
+                    <p className="text-lg leading-6 font-medium text-gray-900">15-Day Free Trial</p>
+                    <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
+                      <span>{price}</span>
+                      <span className="ml-3 text-xl font-medium text-gray-500">/mo</span>
+                    </div>
+                    <div className="mt-6">
+                      <div className="rounded-md shadow">
+                        <a
+                          href="https://login.fider.io/signup"
+                          className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900"
+                        >
+                          Sign up
+                        </a>
+                      </div>
+                    </div>
+                    <div className="mt-4 text-sm">No credit card required.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="w-full bg-gray-700">
-          <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-            <polygon className="text-gray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
-          </svg>
         </div>
       </section>
     </>

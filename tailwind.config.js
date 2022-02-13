@@ -13,6 +13,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      scale: {
+        flip: '-1',
+      },
       colors: {
         truegray: colors.trueGray,
       },

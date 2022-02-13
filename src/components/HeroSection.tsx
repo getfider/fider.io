@@ -64,11 +64,11 @@ export function HeroSection(): JSX.Element {
               <div className="flex-1 w-full bg-gray-800"></div>
             </div>
             <div className="max-w-7xl mx-auto px-4 mb-2">
-              <div className="flex">
-                <svg className="-mb-12" width="42" height="61" viewBox="0 0 42 61" fill="none">
+              <div className="flex justify-end">
+                <p className="text-base text-gray-700">We use our own product to collect feedback ☺️</p>
+                <svg className="-mb-12 scale-x-flip" width="42" height="61" viewBox="0 0 42 61" fill="none">
                   <path d="M27.147 3.228C7.794 18.443 6.296 44.021 21.7 56.675m0 0l-.081-6.964m.08 6.964l-6.2.898" stroke="#FF6A00" strokeWidth="2"></path>
                 </svg>
-                <p className="text-base text-gray-700">We use our own product to collect feedback ☺️</p>
               </div>
             </div>
             <div className="max-w-7xl mx-auto px-12">
@@ -82,19 +82,19 @@ export function HeroSection(): JSX.Element {
           <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-white sm:text-4xl">Trusted by teams all over the world</h2>
-              <p className="mt-3 text-xl text-indigo-200 sm:mt-4">You{"'"}re in good company.</p>
+              <p className="mt-3 text-xl text-blue-200 sm:mt-4">You{"'"}re in good company.</p>
             </div>
             <dl className="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">
               <div className="flex flex-col">
-                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">Ideas</dt>
+                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-blue-200">Ideas</dt>
                 <dd className="order-1 text-5xl font-bold text-white">30k+</dd>
               </div>
               <div className="flex flex-col mt-10 sm:mt-0">
-                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">Users</dt>
+                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-blue-200">Users</dt>
                 <dd className="order-1 text-5xl font-bold text-white">45k+</dd>
               </div>
               <div className="flex flex-col mt-10 sm:mt-0">
-                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">Votes</dt>
+                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-blue-200">Votes</dt>
                 <dd className="order-1 text-5xl font-bold text-white">200k+</dd>
               </div>
             </dl>
