@@ -1,7 +1,7 @@
 ![](/static/images/logo-small.png)
 
-## Welcome! 
+## Welcome!
 
-Fider is an open platform to collect and prioritize product feedback.
+Fider is an open platform to collect and prioritize customer feedback.
 
 Visit [https://fider.io](https://fider.io) for more information.

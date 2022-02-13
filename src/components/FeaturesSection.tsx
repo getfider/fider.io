@@ -116,7 +116,7 @@ export function FeaturesSection(): JSX.Element {
               color={colors[4]}
               icon={<IconGitHub className="w-6 h-6" />}
               title="Open Source"
-              description="Our code is 100% Open Source. Visit getfider/fider on GitHub."
+              description="Fider is 100% Open Source. Visit us on GitHub."
             />
           </div>
         </div>

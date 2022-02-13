@@ -16,5 +16,7 @@
   },
   "files.associations": {
     "*.css": "postcss"
-  }
+  },
+  "editor.formatOnSaveMode": "file",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
