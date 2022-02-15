@@ -47,13 +47,6 @@ const docs: { [key: string]: DocsMetadata } = {
     subtitle: 'Display your own Privacy Policy and Terms of Service',
     description: 'Follow this quick tutorial to know how to add your own Privacy Policy and Terms of Service',
   },
-  'enhanced-seo': {
-    title: 'Enhanced SEO on Fider',
-    category: 'Self-Hosted',
-    slug: 'enhanced-seo',
-    subtitle: 'Get better ranks on search results',
-    description: 'Learn how to configure your own Fider instance for better ranks on search results',
-  },
   'configuring-oauth': {
     title: 'Configuring OAuth',
     category: 'How To',

@@ -63,7 +63,7 @@ export function HeroSection(): JSX.Element {
               <div className="flex-1"></div>
               <div className="flex-1 w-full bg-gray-800"></div>
             </div>
-            <div className="max-w-7xl mx-auto px-4 mb-2">
+            <div className="max-w-7xl mx-auto px-0 md:px-4 mb-2">
               <div className="flex justify-end">
                 <p className="text-base text-gray-700">We use our own product to collect feedback ☺️</p>
                 <svg className="-mb-12 scale-x-flip" width="42" height="61" viewBox="0 0 42 61" fill="none">
@@ -71,7 +71,7 @@ export function HeroSection(): JSX.Element {
                 </svg>
               </div>
             </div>
-            <div className="max-w-7xl mx-auto px-12">
+            <div className="max-w-7xl mx-auto px-8 md:px-12">
               <a href="https://feedback.fider.io" target="_blank" rel="noreferrer">
                 <Image className="shadow-xl" width={2370} height={1586} browserFrame={true} alt="Home Screenshot" src="/images/screenshot/home2.png" />
               </a>
