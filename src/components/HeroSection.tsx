@@ -65,7 +65,7 @@ export function HeroSection(): JSX.Element {
             </div>
             <div className="max-w-7xl mx-auto px-0 md:px-4 mb-2">
               <div className="flex justify-end">
-                <p className="text-base text-gray-700">We use our own product to collect feedback ☺️</p>
+                <p className="text-xs md:text-sm text-gray-700">We use our own product as well ☺️</p>
                 <svg className="-mb-12 scale-x-flip" width="42" height="61" viewBox="0 0 42 61" fill="none">
                   <path d="M27.147 3.228C7.794 18.443 6.296 44.021 21.7 56.675m0 0l-.081-6.964m.08 6.964l-6.2.898" stroke="#FF6A00" strokeWidth="2"></path>
                 </svg>
