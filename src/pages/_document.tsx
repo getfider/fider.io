@@ -10,7 +10,11 @@ export default class MyDocument extends Document {
     const plausibleScript = process.env.VERCEL === '1' && (
       <>
         <script defer data-domain="fider.io" data-api="/e" src="/p.js"></script>
-        <script>window.plausible = window.plausible || function() {(window.plausible.q = window.plausible.q || []).push(arguments)}</script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.plausible = window.plausible || function() {(window.plausible.q = window.plausible.q || []).push(arguments)}`,
+          }}
+        ></script>
       </>
     )
 
