@@ -4,6 +4,7 @@ import { Popover, Transition } from '@headlessui/react'
 import XIcon from '@assets/icons/heroicons-x.svg'
 import MenuIcon from '@assets/icons/heroicons-menu.svg'
 import Link from 'next/link'
+import { SignUpLink } from './SignUpLink'
 
 const links = (
   <>
@@ -40,12 +41,10 @@ export function Header() {
           </div>
           <nav className="hidden md:flex space-x-10">{links}</nav>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <a
-              href="https://login.fider.io/signup"
+            <SignUpLink
+              area="header-desktop"
               className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
-            >
-              Sign up
-            </a>
+            />
           </div>
         </div>
       </div>
@@ -79,12 +78,10 @@ export function Header() {
             </div>
             <div className="py-6 px-5 space-y-6">
               <div>
-                <a
-                  href="https://login.fider.io/signup"
+                <SignUpLink
+                  area="header-mobile"
                   className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
-                >
-                  Sign up
-                </a>
+                />
               </div>
             </div>
           </div>

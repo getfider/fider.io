@@ -17,4 +17,5 @@ interface PaddleSdk {
 interface Window {
   u?: SVGStringList
   Paddle: PaddleSdk
+  plausible: any
 }

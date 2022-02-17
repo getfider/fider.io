@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import CheckIcon from '@assets/icons/heroicons-check.svg'
 import { useCache, useScript } from '@app/hooks'
+import { SignUpLink } from './SignUpLink'
 
 const includedFeatures = ['All Features', 'Unlimited Users', 'Unlimited Feedback', 'Unlimited Admins']
 
@@ -67,12 +68,10 @@ export function GetStartedSection(): JSX.Element {
                     </div>
                     <div className="mt-6">
                       <div className="rounded-md shadow">
-                        <a
-                          href="https://login.fider.io/signup"
+                        <SignUpLink
+                          area="pricing"
                           className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900"
-                        >
-                          Sign up
-                        </a>
+                        />
                       </div>
                     </div>
                     <div className="mt-4 text-sm">No credit card required.</div>
