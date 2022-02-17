@@ -47,7 +47,7 @@ interface MenuItemProps {
 
 export function MenuItem(props: MenuItemProps): JSX.Element {
   return (
-    <li className="text-truegray-400 hover:text-white mt-1">
+    <li className="text-neutral-400 hover:text-white mt-1">
       <Link href={props.href}>
         <a>{props.title}</a>
       </Link>
@@ -58,7 +58,7 @@ export function MenuItem(props: MenuItemProps): JSX.Element {
 export function DocsSidebar(): JSX.Element {
   return (
     <>
-      <div className="pb-4 border-b border-truegray-700 self-center w-3/4">
+      <div className="pb-4 border-b border-neutral-700 self-center w-3/4">
         <Link href="/docs">
           <a className="flex flex-col">
             <Logo className="w-10 mb-2 self-center" />
@@ -77,7 +77,7 @@ export function DocsSidebar(): JSX.Element {
         <MenuHeader title="How To" />
         <MenuHeader title="API Reference" />
         <div className="mt-20">
-          <div className="text-truegray-400 hover:text-white">
+          <div className="text-neutral-400 hover:text-white">
             <Link href="/">
               <a>← fider.io</a>
             </Link>
@@ -95,7 +95,7 @@ export function DocsSidebar(): JSX.Element {
           </div>
         </div>
       </nav>
-      <p className="text-truegray-200 text-sm">© {new Date().getFullYear()} Fider</p>
+      <p className="text-neutral-200 text-sm">© {new Date().getFullYear()} Fider</p>
     </>
   )
 }
@@ -121,11 +121,7 @@ export function DocsLayout(props: DocsLayoutProps): JSX.Element {
               </Link>
             </div>
             <div className="hidden lg:flex items-center justify-end space-x-10">
-              <a
-                href="https://github.com/getfider/fider"
-                rel="noopener"
-                className="text-gray-500 hover:text-black transition-colors duration-200"
-              >
+              <a href="https://github.com/getfider/fider" rel="noopener" className="text-gray-500 hover:text-black transition-colors duration-200">
                 <GitHubLogo className="w-6" />
               </a>
             </div>
@@ -139,7 +135,7 @@ export function DocsLayout(props: DocsLayoutProps): JSX.Element {
           </div>
         </div>
         <div className="flex">
-          <div className={`${sidebarClasses} flex-col w-full max-w-xs bg-truegray-800 overflow-y-scroll p-4 h-screen`}>
+          <div className={`${sidebarClasses} flex-col w-full max-w-xs bg-neutral-800 overflow-y-scroll p-4 h-screen`}>
             <DocsSidebar />
           </div>
           <div className="flex-1 bg-white overflow-auto">{props.children}</div>

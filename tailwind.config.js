@@ -7,17 +7,14 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: {
-    enabled: isProduction,
-    content: ['./src/**/*.tsx', './src/**/*.css', './content/**/*.mdx'],
-  },
+  content: ['./src/**/*.tsx', './src/**/*.css', './content/**/*.mdx'],
   theme: {
     extend: {
       scale: {
         flip: '-1',
       },
       colors: {
-        truegray: colors.trueGray,
+        neutral: colors.neutral,
       },
     },
   },
