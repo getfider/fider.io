@@ -53,7 +53,7 @@ services:
 
       ###
       # EMAIL
-      # Either EMAIL_MAILGUN_* or EMAIL_SMTP_* is required
+      # Either EMAIL_MAILGUN_* or EMAIL_SMTP_* or EMAIL_AWSSES_* is required
       ###
 
       # EMAIL_MAILGUN_API: key-yourkeygoeshere
@@ -64,6 +64,10 @@ services:
       # EMAIL_SMTP_USERNAME: user@yourdomain.com
       # EMAIL_SMTP_PASSWORD: s0m3p4ssw0rd
       # EMAIL_SMTP_ENABLE_STARTTLS: 'true'
+
+      # EMAIL_AWSSES_REGION: us-east-1
+      # EMAIL_AWSSES_ACCESS_KEY_ID: youraccesskeygoeshere
+      # EMAIL_AWSSES_SECRET_ACCESS_KEY: yoursecretkeygoeshere
 ```
 
 The Docker Compose file above defines two services: `db` and `app`. In case you're using an external Postgres database, remove the db service and replace `DATABASE_URL` environment variable with your connection string.
