@@ -43,7 +43,7 @@ Repeat the operation with the **nodejs** buildpack. You should now have two buil
 
 In the **Config Vars** section of the **Settings** tab, click on **Reveal Config Vars** to display the current environment variables set on your application. You should already have one `DATABASE_URL` variable set. Don't touch it, it was automatically set by Heroku when you provisioned your database. You need to add some values for the Fider instance to work properly:
 
-- `HOST_DOMAIN`: {APPNAME}.herokuapp.com
+- `BASE_URL`: https://yourapplicationame.herokuapp.com
 - `JWT_SECRET`: It's a secret key used for authentication tokens, you can generate a good secret using an online tool like [this one](https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx) (take at least 512-bit for security).
 - `EMAIL_NOREPLY`: Set this variable to a no-reply address associated to your instance.
 - `EMAIL_MAILGUN_API`: Your Mailgun API key.

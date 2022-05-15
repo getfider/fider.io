@@ -48,7 +48,7 @@ We recommend using Linux and Basic B1 at a minimum, but if you're expecting high
 Select **Configuration** on your App Service blade and add the following Application Settings:
 
 - `DATABASE_URL`: postgresql://{POSTGRES_SERVER}.postgres.database.azure.com:5432/fider?user={DB_USERNAME}@{POSTGRES_SERVER}&password={DB_PASSWORD}&sslmode=require
-- `HOST_DOMAIN`: {APPNAME}.azurewebsites.net
+- `BASE_URL`: https://yourapplicationame.azurewebsites.net
 - `JWT_SECRET`: It's a secret key used for authentication tokens, you can generate a good secret using an online tool like [this one](https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx) (take at least 512-bit for security).
 - `EMAIL_NOREPLY`: Set this variable to a no-reply address associated to your instance.
 - `EMAIL_MAILGUN_API`: Your Mailgun API key.

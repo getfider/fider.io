@@ -40,7 +40,7 @@ services:
       - "80:3000"
     environment:
       # Public Host Name
-      HOST_DOMAIN: feedback.yoursite.com
+      BASE_URL: https://feedback.yoursite.com
 
       # Connection string to the PostgreSQL database
       DATABASE_URL: postgres://fider:s0m3g00dp4ssw0rd@db:5432/fider?sslmode=disable
