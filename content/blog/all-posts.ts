@@ -8,6 +8,13 @@ export interface PostMetadata {
 }
 
 const posts = {
+  'the-way-we-blog-is-changing': {
+    title: 'The way we blog is changing!',
+    category: 'Announcements',
+    publishedOn: new Date('2022-05-16T00:00:00Z'),
+    slug: 'the-way-we-blog-is-changing',
+    excerpt: 'Going forward we’ll use this blog for announcements instead of releases.',
+  },
   'version-0.19.0': {
     title: 'Fider 0.19.0 has been released with a design refresh, multi-language support and other great additions',
     category: 'Release',
