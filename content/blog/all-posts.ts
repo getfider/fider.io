@@ -8,6 +8,13 @@ export interface PostMetadata {
 }
 
 const posts = {
+  '2022-05-18-oauth-trusted-source': {
+    title: 'We’ve simplified authentication management on private Fider sites, check this out!',
+    category: 'New Features',
+    publishedOn: new Date('2022-05-18:00:00Z'),
+    slug: '2022-05-18-oauth-trusted-source',
+    excerpt: 'Custom OAuth providers can now be marked as trusted to simplify sign-in management on private sites.',
+  },
   'the-way-we-blog-is-changing': {
     title: 'The way we blog is changing!',
     category: 'Announcements',

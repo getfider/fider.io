@@ -1,0 +1,19 @@
+Over the last few years we’ve seen many organisations using Fider in many different ways. While the most popular is to host a public site where anyone can contribute and vote, there’s a large number of sites that are made private so that only a selected group of people can access.
+
+Until today, the only option to grant access to a private site was through invitations. This worked pretty well for customer facing sites, where [Fider API](/docs/api) could be used to automate the invitation process.
+
+But there’s another popular scenario where Fider sites are made private and only employees should have access too. It becomes quite cumbersome to invite so many users and manage those, even when using the API.
+
+### Trusted Sources
+
+Today we’re happy to announce that when configuring an [OAuth Provider](/docs/configuring-oauth) on Fider, they can be marked as “Trusted Source”.
+
+A trusted OAuth provider means that anyone who has been authenticated by that provider will be granted access to Fider automatically, without going through the invite process. This is setting is ideal for providers such as Microsoft AD, Google Workplace, Okta and other corporate SSO providers!
+
+<figure>
+  <img src="/images/blog/2022-05-18/trusted-source-toggle.png" />
+</figure>
+
+You can start using this now on [Fider.io](https://fider.io)!
+
+If you have any feedback or further suggestions, visit our [Feedback Site](https://feedback.fider.io).
