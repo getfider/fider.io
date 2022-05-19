@@ -6,9 +6,13 @@ export const getMonthName = (date: Date): string => {
 }
 
 export const formatDate = (date: Date, format: 'short' | 'full' = 'short'): string => {
-  if (format === 'short') {
-    return `${getMonthName(date).substring(0, 3)} ${date.getDate()}, ${date.getFullYear()}`
-  }
+  try {
+    if (format === 'short') {
+      return `${getMonthName(date).substring(0, 3)} ${date.getDate()}, ${date.getFullYear()}`
+    }
 
-  return `${weekNames[date.getDay()]}, ${getMonthName(date)} ${date.getDate()}, ${date.getFullYear()}`
+    return `${weekNames[date.getDay()]}, ${getMonthName(date)} ${date.getDate()}, ${date.getFullYear()}`
+  } catch (e) {
+    return date.toString()
+  }
 }
