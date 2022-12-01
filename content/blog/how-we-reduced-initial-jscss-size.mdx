@@ -64,7 +64,7 @@ It’s very common to have applications that push one big bundle that contains a
 
 The idea of Code Splitting is to generate multiple smaller bundles, usually one per route, and a main bundle. The only bundle we send to all the users is the main bundle, which will then asynchronously download all the required bundles to render the current page.
 
-It seems complicated, but thanks to React and Webpack, this is not rocket science anymore. For those using React <= 16.5, we recommend [react-loadable](https://github.com/jamiebuilds/react-loadable). If you’re already on React 16.6, then you can use React.lazy() which has been a new addition to this version.
+It seems complicated, but thanks to React and Webpack, this is not rocket science anymore. For those using React {'<='} 16.5, we recommend [react-loadable](https://github.com/jamiebuilds/react-loadable). If you’re already on React 16.6, then you can use React.lazy() which has been a new addition to this version.
 
 - In this PR you can find how <a href="https://github.com/cfilby">@cfilby</a> (thank you!) added code splitting to Fider with react-loadable: [PR #596](https://github.com/getfider/fider/pull/596)
 - After we migrated to React 16.6, we have then replaced this external package with React.lazy and Suspense: [PR #646](https://github.com/getfider/fider/pull/646)
