@@ -17,8 +17,8 @@ export default function PageNotFound(): JSX.Element {
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Oops, we cound&apos;t find the page you were looking for.</p>
           </div>
           <div className="flex mt-6">
-            <Link href="/">
-              <a className="mx-auto text-blue-500 text-sm uppercase hover:text-blue-800">← Back to home page</a>
+            <Link href="/" className="mx-auto text-blue-500 text-sm uppercase hover:text-blue-800">
+              ← Back to home page
             </Link>
           </div>
         </div>

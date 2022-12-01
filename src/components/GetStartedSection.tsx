@@ -1,23 +1,75 @@
-import React, { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import CheckIcon from '@assets/icons/heroicons-check.svg'
 import { useCache, useScript } from '@app/hooks'
 import { SignUpLink } from './SignUpLink'
 
-const includedFeatures = ['All Features', 'Unlimited Users', 'Unlimited Feedback', 'Unlimited Admins']
+const includedFeatures = [
+  'All Features',
+  'Unlimited Customers',
+  'Unlimited Feedback',
+  'Unlimited Members',
+  'Multiple Languages',
+  'Your own domain',
+  'Brand Customization',
+  'Developer API',
+  'Social Login',
+  'Enterprise SSO Login',
+  'Private Site',
+]
 
-export function GetStartedSection(): JSX.Element {
+function Pricing() {
   const status = useScript('https://cdn.paddle.com/paddle/paddle.js')
-  const [price, setPrice] = useCache('price', '$30')
+  const [monthlyPrice, setMonthlyPrice] = useCache('price', '$30')
+  const [yearlyPrice, setYearlyPrice] = useCache('price', '$300')
+
+  const [interval, setInterval] = useState('monthly')
 
   useEffect(() => {
     if (status === 'ready') {
       window.Paddle.Setup({ vendor: 132914 })
       window.Paddle.Product.Prices(742576, (response) => {
-        setPrice(response.price.net.replace(/\.00/g, ''))
+        setMonthlyPrice(response.price.net.replace(/\.00/g, ''))
+      })
+      window.Paddle.Product.Prices(802946, (response) => {
+        setYearlyPrice(response.price.net.replace(/\.00/g, ''))
       })
     }
-  }, [status, setPrice])
+  }, [status, setMonthlyPrice, setYearlyPrice])
 
+  const activeIntervalClassName =
+    'border-gray-200 bg-white text-gray-900 shadow-sm relative w-1/2 whitespace-nowrap rounded-md border py-2 text-sm font-medium focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:w-auto sm:px-8'
+  const inactiveIntervalClassName =
+    'border-transparent relative w-1/2 whitespace-nowrap rounded-md border py-2 text-sm font-medium focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:w-auto sm:px-8'
+
+  return (
+    <>
+      <div className="sm:align-center sm:flex sm:flex-col">
+        <div className="relative flex self-center rounded-lg bg-gray-100 p-0.5">
+          <button onClick={() => setInterval('monthly')} type="button" className={interval === 'monthly' ? activeIntervalClassName : inactiveIntervalClassName}>
+            Monthly
+          </button>
+          <button onClick={() => setInterval('yearly')} type="button" className={interval === 'yearly' ? activeIntervalClassName : inactiveIntervalClassName}>
+            Yearly
+          </button>
+        </div>
+      </div>
+      <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
+        <span>{interval === 'monthly' ? monthlyPrice : yearlyPrice}</span>
+        <span className="ml-3 text-xl font-medium text-gray-500">{interval === 'monthly' ? '/month' : '/year'}</span>
+      </div>
+      <div className="mt-6">
+        <div className="rounded-md shadow">
+          <SignUpLink
+            area="pricing"
+            className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900"
+          />
+        </div>
+      </div>
+    </>
+  )
+}
+
+export function GetStartedSection(): JSX.Element {
   return (
     <>
       <section id="get-started">
@@ -48,7 +100,7 @@ export function GetStartedSection(): JSX.Element {
                         <h4 className="flex-shrink-0 pr-4 text-sm tracking-wider font-semibold uppercase text-blue-600">What&apos;s included</h4>
                         <div className="flex-1 border-t-2 border-gray-200" />
                       </div>
-                      <ul role="list" className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
+                      <ul role="list" className="mt-8 space-y-2 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-2 lg:gap-y-2">
                         {includedFeatures.map((feature) => (
                           <li key={feature} className="flex items-start lg:col-span-1">
                             <div className="flex-shrink-0">
@@ -61,20 +113,12 @@ export function GetStartedSection(): JSX.Element {
                     </div>
                   </div>
                   <div className="py-8 px-6 text-center lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
-                    <p className="text-lg leading-6 font-medium text-gray-900">15-Day Free Trial</p>
-                    <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
-                      <span>{price}</span>
-                      <span className="ml-3 text-xl font-medium text-gray-500">/mo</span>
+                    <p className="text-lg mb-4 leading-6 font-medium text-gray-900">15-Day Free Trial</p>
+                    <Pricing />
+                    <div className="mt-4 text-xs">
+                      No credit card required. <br />
+                      VAT/Taxes may apply.
                     </div>
-                    <div className="mt-6">
-                      <div className="rounded-md shadow">
-                        <SignUpLink
-                          area="pricing"
-                          className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900"
-                        />
-                      </div>
-                    </div>
-                    <div className="mt-4 text-sm">No credit card required.</div>
                   </div>
                 </div>
               </div>

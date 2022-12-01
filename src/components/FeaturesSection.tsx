@@ -112,12 +112,7 @@ export function FeaturesSection(): JSX.Element {
               title="Your own domain"
               description="When using our hosted service, you can use your own domain and get a free TLS certificate to keep it secure."
             />
-            <Feature
-              color={colors[4]}
-              icon={<IconGitHub className="w-6 h-6" />}
-              title="Open Source"
-              description="Fider is 100% Open Source. Visit us on GitHub."
-            />
+            <Feature color={colors[4]} icon={<IconGitHub className="w-6 h-6" />} title="Open Source" description="Fider is 100% Open Source." />
           </div>
         </div>
       </div>

@@ -8,14 +8,14 @@ import { SignUpLink } from './SignUpLink'
 
 const links = (
   <>
-    <Link href="#get-started">
-      <a className="text-base font-medium text-gray-500 hover:text-gray-900">Pricing</a>
+    <Link href="/#get-started" className="text-base font-medium text-gray-500 hover:text-gray-900">
+      Pricing
     </Link>
-    <Link href="/blog">
-      <a className="text-base font-medium text-gray-500 hover:text-gray-900">Blog</a>
+    <Link href="/blog" className="text-base font-medium text-gray-500 hover:text-gray-900">
+      Blog
     </Link>
-    <Link href="/docs">
-      <a className="text-base font-medium text-gray-500 hover:text-gray-900">Documentation</a>
+    <Link href="/docs" className="text-base font-medium text-gray-500 hover:text-gray-900">
+      Documentation
     </Link>
   </>
 )
@@ -27,10 +27,8 @@ export function Header() {
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
-              <a>
-                <span className="sr-only">Fider</span>
-                <LogoTitle className="h-12" />
-              </a>
+              <span className="sr-only">Fider</span>
+              <LogoTitle className="h-12" />
             </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">

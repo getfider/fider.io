@@ -1,4 +1,4 @@
-import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react'
+import { MDXProvider } from '@mdx-js/react'
 import { ReactNode } from 'react'
 import Link from 'next/link'
 
@@ -6,8 +6,8 @@ interface MDXWrapperProps {
   children: ReactNode
 }
 
-const components: MDXProviderComponentsProp = {
-  a: (props) => {
+const components = {
+  a: (props: any) => {
     const href = props.href as string
     if (href.startsWith('http://') || href.startsWith('https://')) {
       return (
@@ -17,11 +17,7 @@ const components: MDXProviderComponentsProp = {
       )
     }
 
-    return (
-      <Link href={href}>
-        <a>{props.children}</a>
-      </Link>
-    )
+    return <Link href={href}>{props.children}</Link>
   },
 }
 

@@ -4,9 +4,9 @@ export default function Home(): JSX.Element {
   return (
     <MainLayout>
       <SEO
-        title="Collect and prioritize customer feedback · Fider"
-        description="Fider can help you collect and prioritize product feedback so that you can focus on building the right product."
-        imageUrl="/images/cover/home.jpg"
+        title="Feedback portal that helps you build better products · Fider"
+        description="Give your customers a voice and let them tell you what they need. Spend less time guessing and more time building the right product."
+        imageUrl="/images/cover/home.png"
       />
       <HeroSection />
       <FeaturesSection />

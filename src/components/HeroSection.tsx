@@ -47,12 +47,12 @@ export function HeroSection(): JSX.Element {
           <div className="relative pt-6 pb-16 sm:pb-24">
             <div className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6">
               <div className="text-center">
-                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                  <span className="block">Customer Feedback</span>
-                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-blue-700">Made Easy</span>
+                <h1 className="text-4xl tracking-tighter font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                  <span className="block">Feedback portal that helps you</span>
+                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-blue-700">build better products</span>
                 </h1>
                 <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                  Fider is a feedback portal that helps teams collect and prioritize customer feedback in one place, based on votes and ideas submitted.
+                  Give your customers a voice and let them tell you what they need. Spend less time guessing and more time building the right product.
                 </p>
               </div>
             </div>
@@ -65,7 +65,7 @@ export function HeroSection(): JSX.Element {
             </div>
             <div className="max-w-7xl mx-auto px-0 md:px-4 mb-2">
               <div className="flex justify-end">
-                <p className="text-xs md:text-sm text-gray-700">We use our own product as well ☺️</p>
+                <p className="text-xs md:text-sm text-gray-700">We use our own product as well 😊</p>
                 <svg className="-mb-12 scale-x-flip" width="42" height="61" viewBox="0 0 42 61" fill="none">
                   <path d="M27.147 3.228C7.794 18.443 6.296 44.021 21.7 56.675m0 0l-.081-6.964m.08 6.964l-6.2.898" stroke="#FF6A00" strokeWidth="2"></path>
                 </svg>
@@ -85,13 +85,13 @@ export function HeroSection(): JSX.Element {
               <p className="mt-3 text-xl text-blue-200 sm:mt-4">You{"'"}re in good company.</p>
             </div>
             <dl className="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">
+              <div className="flex flex-col mt-10 sm:mt-0">
+                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-blue-200">Sites</dt>
+                <dd className="order-1 text-5xl font-bold text-white">2k+</dd>
+              </div>
               <div className="flex flex-col">
                 <dt className="order-2 mt-2 text-lg leading-6 font-medium text-blue-200">Ideas</dt>
                 <dd className="order-1 text-5xl font-bold text-white">30k+</dd>
-              </div>
-              <div className="flex flex-col mt-10 sm:mt-0">
-                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-blue-200">Users</dt>
-                <dd className="order-1 text-5xl font-bold text-white">45k+</dd>
               </div>
               <div className="flex flex-col mt-10 sm:mt-0">
                 <dt className="order-2 mt-2 text-lg leading-6 font-medium text-blue-200">Votes</dt>

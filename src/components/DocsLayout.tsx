@@ -48,9 +48,7 @@ interface MenuItemProps {
 export function MenuItem(props: MenuItemProps): JSX.Element {
   return (
     <li className="text-neutral-400 hover:text-white mt-1">
-      <Link href={props.href}>
-        <a>{props.title}</a>
-      </Link>
+      <Link href={props.href}>{props.title}</Link>
     </li>
   )
 }
@@ -59,13 +57,11 @@ export function DocsSidebar(): JSX.Element {
   return (
     <>
       <div className="pb-4 border-b border-neutral-700 self-center w-3/4">
-        <Link href="/docs">
-          <a className="flex flex-col">
-            <Logo className="w-10 mb-2 self-center" />
-            <h1 className="text-2xl font-light self-center text-white">
-              Fider<span className="text-blue-500">:docs</span>
-            </h1>
-          </a>
+        <Link href="/docs" className="flex flex-col">
+          <Logo className="w-10 mb-2 self-center" />
+          <h1 className="text-2xl font-light self-center text-white">
+            Fider<span className="text-blue-500">:docs</span>
+          </h1>
         </Link>
       </div>
       <nav className="flex-1 text-gray-300 text-sm">
@@ -78,9 +74,7 @@ export function DocsSidebar(): JSX.Element {
         <MenuHeader title="API Reference" />
         <div className="mt-20">
           <div className="text-neutral-400 hover:text-white">
-            <Link href="/">
-              <a>← fider.io</a>
-            </Link>
+            <Link href="/">← fider.io</Link>
           </div>
           <div className="flex p-4">
             <a className="text-gray-500 hover:text-white" href="https://github.com/getfider/fider" target="_blank" rel="noreferrer noopener">
@@ -114,10 +108,8 @@ export function DocsLayout(props: DocsLayoutProps): JSX.Element {
         <div className="flex lg:hidden sticky z-40 top-0 bg-white py-2 shadow-lg px-4 sm:px-6 xl:px-8">
           <div className="lg:z-50 w-full max-w-7xl mx-auto bg-white flex-none flex flex-row justify-between">
             <div className="flex-none flex items-center lg:w-60 xl:w-72">
-              <Link href="/docs">
-                <a className="overflow-hidden">
-                  <LogoTitle className="h-12" />
-                </a>
+              <Link href="/docs" className="overflow-hidden">
+                <LogoTitle className="h-12" />
               </Link>
             </div>
             <div className="hidden lg:flex items-center justify-end space-x-10">

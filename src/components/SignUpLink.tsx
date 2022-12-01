@@ -12,7 +12,7 @@ export function SignUpLink(props: SignUpLinkProps): JSX.Element {
 
   return (
     <a className={props.className} onClick={handleClick} href="https://login.fider.io/signup" target="_blank" rel="noopener noreferrer">
-      Sign up
+      Get Started
     </a>
   )
 }

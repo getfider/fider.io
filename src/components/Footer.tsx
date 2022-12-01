@@ -24,8 +24,8 @@ export function Footer(): JSX.Element {
             <nav className="list-none mb-10">
               {orderedPosts.slice(0, 4).map((p) => (
                 <li key={p.slug} className="mt-4">
-                  <Link href={`/blog/${p.slug}`}>
-                    <a className="text-gray-500 hover:text-blue-800 transition-colors duration-200">{p.title}</a>
+                  <Link href={`/blog/${p.slug}`} className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
+                    {p.title}
                   </Link>
                 </li>
               ))}
@@ -35,18 +35,18 @@ export function Footer(): JSX.Element {
             <h2 className="font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Documentation</h2>
             <nav className="list-none mb-10">
               <li className="mt-4">
-                <Link href="/docs/hosting-instance">
-                  <a className="text-gray-500 hover:text-blue-800 transition-colors duration-200">Hosting your own instance</a>
+                <Link href="/docs/hosting-instance" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
+                  Hosting your own instance
                 </Link>
               </li>
               <li className="mt-4">
-                <Link href="/docs/api">
-                  <a className="text-gray-500 hover:text-blue-800 transition-colors duration-200">API Reference</a>
+                <Link href="/docs/api" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
+                  API Reference
                 </Link>
               </li>
               <li className="mt-4">
-                <Link href="/docs/configuring-oauth">
-                  <a className="text-gray-500 hover:text-blue-800 transition-colors duration-200">Configuring OAuth</a>
+                <Link href="/docs/configuring-oauth" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
+                  Configuring OAuth
                 </Link>
               </li>
             </nav>
