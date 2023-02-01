@@ -1,8 +1,14 @@
-const withMDX = require('@next/mdx')({
+import nextMDX from '@next/mdx'
+import remarkGfm from 'remark-gfm'
+
+const withMDX = nextMDX({
   extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm],
+  },
 })
 
-module.exports = withMDX({
+const nextConfig = withMDX({
   pageExtensions: ['ts', 'tsx', 'mdx'],
   reactStrictMode: true,
   webpack(config) {
@@ -26,3 +32,5 @@ module.exports = withMDX({
     ]
   },
 })
+
+export default nextConfig
