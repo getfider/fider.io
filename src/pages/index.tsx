@@ -4,7 +4,7 @@ export default function Home(): JSX.Element {
   return (
     <MainLayout>
       <SEO
-        title="Feedback portal that helps you build better products · Fider"
+        title="Prioritize what your customers really needs · Fider"
         description="Give your customers a voice and let them tell you what they need. Spend less time guessing and more time building the right product."
         imageUrl="/images/cover/home.png"
       />

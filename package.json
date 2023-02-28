@@ -10,30 +10,30 @@
     "generate-sitemap": "npm run build && next-sitemap"
   },
   "dependencies": {
-    "@headlessui/react": "1.7.8",
-    "@mdx-js/react": "2.2.1",
-    "next": "13.1.6",
+    "@headlessui/react": "1.7.12",
+    "@mdx-js/react": "2.3.0",
+    "next": "13.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tslib": "2.5.0"
   },
   "devDependencies": {
-    "@mdx-js/loader": "2.1.5",
-    "@next/mdx": "13.1.6",
+    "@mdx-js/loader": "2.3.0",
+    "@next/mdx": "13.2.1",
     "@svgr/webpack": "6.5.1",
     "@tailwindcss/forms": "0.5.3",
     "@types/gtag.js": "0.0.12",
     "@types/mdx-js__react": "1.5.5",
-    "@types/node": "18.11.10",
-    "@types/react": "18.0.25",
+    "@types/node": "18.14.2",
+    "@types/react": "18.0.28",
     "autoprefixer": "10.4.13",
-    "eslint": "8.28.0",
-    "eslint-config-next": "13.0.5",
-    "next-sitemap": "3.1.32",
-    "postcss-import": "15.0.0",
-    "prettier": "2.8.0",
+    "eslint": "8.35.0",
+    "eslint-config-next": "13.2.1",
+    "next-sitemap": "3.1.54",
+    "postcss-import": "15.1.0",
+    "prettier": "2.8.4",
     "remark-gfm": "^3.0.1",
-    "tailwindcss": "3.2.4",
-    "typescript": "4.9.3"
+    "tailwindcss": "3.2.7",
+    "typescript": "4.9.5"
   }
 }

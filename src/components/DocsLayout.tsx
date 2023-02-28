@@ -47,8 +47,10 @@ interface MenuItemProps {
 
 export function MenuItem(props: MenuItemProps): JSX.Element {
   return (
-    <li className="text-neutral-400 hover:text-white mt-1">
-      <Link href={props.href}>{props.title}</Link>
+    <li className="mt-1">
+      <Link className="text-neutral-400 hover:text-white" href={props.href}>
+        {props.title}
+      </Link>
     </li>
   )
 }
@@ -57,7 +59,7 @@ export function DocsSidebar(): JSX.Element {
   return (
     <>
       <div className="pb-4 border-b border-neutral-700 self-center w-3/4">
-        <Link href="/docs" className="flex flex-col">
+        <Link href="/" className="flex flex-col">
           <Logo className="w-10 mb-2 self-center" />
           <h1 className="text-2xl font-light self-center text-white">
             Fider<span className="text-blue-500">:docs</span>
@@ -67,7 +69,7 @@ export function DocsSidebar(): JSX.Element {
       <nav className="flex-1 text-gray-300 text-sm">
         <MenuHeader title="" />
         <ul>
-          <MenuItem title="Home" href="/docs" />
+          <MenuItem title="Docs" href="/docs" />
         </ul>
         <MenuHeader title="Self-Hosted" />
         <MenuHeader title="How To" />
@@ -108,7 +110,7 @@ export function DocsLayout(props: DocsLayoutProps): JSX.Element {
         <div className="flex lg:hidden sticky z-40 top-0 bg-white py-2 shadow-lg px-4 sm:px-6 xl:px-8">
           <div className="lg:z-50 w-full max-w-7xl mx-auto bg-white flex-none flex flex-row justify-between">
             <div className="flex-none flex items-center lg:w-60 xl:w-72">
-              <Link href="/docs" className="overflow-hidden">
+              <Link href="/" className="overflow-hidden">
                 <LogoTitle className="h-12" />
               </Link>
             </div>

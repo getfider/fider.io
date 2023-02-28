@@ -37,13 +37,7 @@ export function Header() {
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <nav className="hidden md:flex space-x-10">{links}</nav>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <SignUpLink
-              area="header-desktop"
-              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
-            />
-          </div>
+          <nav className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10">{links}</nav>
         </div>
       </div>
 
