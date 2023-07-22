@@ -52,7 +52,7 @@ export function HeroSection(): JSX.Element {
                     <span className="text-gray-900">Stop wasting time</span>
                   </span>
                   <span className="mt-8 block text-transparent bg-clip-text bg-gradient-to-br from-blue-900 to-blue-500">Prioritize what your</span>
-                  <span className="block">customers really needs</span>
+                  <span className="block">customers really need</span>
                 </h1>
                 <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                   Give your customers a voice and let them tell you what they need. Spend less time guessing and more time building the right product.
