@@ -50,14 +50,6 @@ const posts = {
     slug: 'version-0.17.0',
     excerpt: 'In this next Fider release, we have released features like list of voters, better user management and huge performance improvements',
   },
-  'how-we-reduced-initial-jscss-size': {
-    title: 'How we reduced our initial JS/CSS size by 67%',
-    category: 'Knowledge Share',
-    publishedOn: new Date('2018-10-24T00:00:00Z'),
-    slug: 'how-we-reduced-initial-jscss-size',
-    excerpt:
-      'We have been working on reducing the amount of bytes that we send to all Fider users. Being a web application built with React, we have focused on JS and CSS. On this post we share our learnings, some concepts and suggestions on how you can do the same with your web application.',
-  },
   'version-0.16.0': {
     title: 'Fider 0.16 released with Public API, delete comments and other improvements',
     category: 'Release',
