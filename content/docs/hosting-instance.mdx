@@ -44,7 +44,7 @@ services:
       - "80:3000"
     environment:
       # Public Host Name
-      BASE_URL: https://feedback.yoursite.com
+      BASE_URL: http://localhost
 
       # Connection string to the PostgreSQL database
       DATABASE_URL: postgres://fider:s0m3g00dp4ssw0rd@db:5432/fider?sslmode=disable
@@ -82,20 +82,43 @@ The Docker Compose file above defines two services: `db` and `app`. In case you'
 Open your favorite terminal, navigate to `/var/fider` and run
 
 ```
-docker-compose pull
-docker-compose up -d
+docker compose pull
+docker compose up -d
 ```
 
 > **Important!** If you see messages like `Error: dial tcp <ip-address>:5432: connect: connection refused`. Don't panic, that's expected when using PostgreSQL in Docker. That happens when the application starts before the database is still ready.
 
 You can find the logs by using `docker-compose logs app`. The message `http server started on :3000` means everything is ok and you're ready to go.
 
-Just open your favorite browser and navigate to [http://188.166.41.145](http://188.166.41.145). You should see a page like the following.
+Just open your favorite browser and navigate to [http://localhost](http://localhost). You should see a page like the following.
 
 <figure>
   <img src="/images/docs/fider-clean-install.png" />
   <figcaption>Installation page of a clean Fider instance</figcaption>
 </figure>
+
+### Use a testing SMTP server
+
+You need a valid SMTP server to start the application, or you will see `panic: could not find environment variable named 'EMAIL_SMTP_HOST'` errors.
+
+If you don't have one and just want to test, you can use [MailHog](https://github.com/mailhog/MailHog). Add a new service to your docker-composer.yml, and configure it:
+
+``` patch
+  app:
+    environment:
+      # use this EMAIL config:
+      EMAIL_SMTP_HOST: mailhog
+      EMAIL_SMTP_PORT: 1025
+
+  # add this service:
+  mailhog:
+    image: mailhog/mailhog
+    restart: always
+    ports:
+      - "8025:8025"
+```
+
+Then restart docker compose. You can now browse to [http://localhost:8025](http://localhost:8025) and read mails sent by fider, especially the sign-in link.
 
 ### Secure Fider with HTTPS
 
