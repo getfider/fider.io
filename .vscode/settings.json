@@ -2,7 +2,7 @@
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "files.exclude": {
     "**/.git": true,
@@ -12,7 +12,7 @@
     "**/.DS_Store": true,
     "node_modules": true,
     ".next": true,
-    ".vercel": true,
+    ".vercel": true
   },
   "files.associations": {
     "*.css": "postcss"

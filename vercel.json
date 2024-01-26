@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/blog/how-we-reduced-initial-jscss-size",
+      "destination": "https://goenning.net/blog/how-we-reduced-initial-jscss-size/",
+      "permanent": true
+    },
+    {
       "source": "/blog/how-we-reduced-initial-jscss-size/",
       "destination": "https://goenning.net/blog/how-we-reduced-initial-jscss-size/",
       "permanent": true

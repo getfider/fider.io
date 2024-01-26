@@ -50,6 +50,24 @@ export function Footer(): JSX.Element {
                 </Link>
               </li>
             </nav>
+            <h2 className="font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Other Products</h2>
+            <nav className="list-none mb-10">
+              <li className="mt-4">
+                <Link href="https://aptakube.com" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
+                  Aptakube: Kubernetes GUI
+                </Link>
+              </li>
+              <li className="mt-4">
+                <Link href="https://aptabase.com" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
+                  Aptabase: Analytics for Apps
+                </Link>
+              </li>
+              <li className="mt-4">
+                <Link href="https://seogets.com" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
+                  SEO Gets: Organic Traffic Analytics
+                </Link>
+              </li>
+            </nav>
           </div>
         </div>
       </div>
