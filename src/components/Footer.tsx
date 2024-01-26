@@ -16,6 +16,15 @@ export function Footer(): JSX.Element {
             <LogoTitle className="h-10" />
           </a>
           <p className="mt-2 text-sm text-gray-500">Solve problems together.</p>
+          <div className="flex flex-row items-center gap-1 mt-1">
+            <Link className="text-gray-500 hover:text-black text-sm" href="/legal/privacy">
+              Privacy
+            </Link>
+            <span>&bull;</span>
+            <Link className="text-gray-500 hover:text-black text-sm" href="/legal/terms">
+              Terms
+            </Link>
+          </div>
         </div>
         <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
           <div className="lg:w-1/3 lg:block md:hidden w-full px-4"></div>
@@ -74,7 +83,7 @@ export function Footer(): JSX.Element {
       <div className="bg-white shadow-lg">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-gray-500 text-sm text-center sm:text-left">© {new Date().getFullYear()} Fider</p>
-          <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+          <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 items-center justify-center sm:justify-start">
             <a className="text-gray-500 hover:text-black" href="https://github.com/getfider/fider" target="_blank" rel="noreferrer noopener">
               <GitHubLogo className="w-6" />
             </a>
