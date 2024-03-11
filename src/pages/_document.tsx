@@ -34,12 +34,6 @@ export default class MyDocument extends Document {
         <body className="text-gray-700">
           <Main />
           <NextScript />
-          <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{
-              __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="a79f6186-73d3-4fa5-8434-fefb329973b1";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`,
-            }}
-          ></script>
         </body>
       </Html>
     )
