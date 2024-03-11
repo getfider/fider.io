@@ -1,4 +1,4 @@
-import { MainLayout, FeaturesSection, GetStartedSection, HeroSection, HowItWorksSection, SEO } from '@app/components'
+import { MainLayout, FeaturesSection, HeroSection, SEO } from '@app/components'
 
 export default function Home(): JSX.Element {
   return (
@@ -10,8 +10,6 @@ export default function Home(): JSX.Element {
       />
       <HeroSection />
       <FeaturesSection />
-      <HowItWorksSection />
-      <GetStartedSection />
     </MainLayout>
   )
 }
