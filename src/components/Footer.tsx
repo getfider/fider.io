@@ -67,11 +67,6 @@ export function Footer(): JSX.Element {
                 </Link>
               </li>
               <li className="mt-4">
-                <Link href="https://aptabase.com" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
-                  Aptabase: Analytics for Apps
-                </Link>
-              </li>
-              <li className="mt-4">
                 <Link href="https://seogets.com" className="text-gray-500 hover:text-blue-800 transition-colors duration-200">
                   SEO Gets: Organic Traffic Analytics
                 </Link>
