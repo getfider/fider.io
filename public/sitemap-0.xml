@@ -3,6 +3,7 @@
 <url><loc>https://fider.io</loc></url>
 <url><loc>https://fider.io/blog</loc></url>
 <url><loc>https://fider.io/blog/2022-05-18-oauth-trusted-source</loc></url>
+<url><loc>https://fider.io/blog/2024-06-25-new-owners</loc></url>
 <url><loc>https://fider.io/blog/the-way-we-blog-is-changing</loc></url>
 <url><loc>https://fider.io/blog/version-0.10.0</loc></url>
 <url><loc>https://fider.io/blog/version-0.11.0</loc></url>
@@ -31,4 +32,6 @@
 <url><loc>https://fider.io/docs/how-to-enable-ssl</loc></url>
 <url><loc>https://fider.io/docs/how-to-show-legal-pages</loc></url>
 <url><loc>https://fider.io/docs/using-webhooks</loc></url>
+<url><loc>https://fider.io/legal/privacy</loc></url>
+<url><loc>https://fider.io/legal/terms</loc></url>
 </urlset>

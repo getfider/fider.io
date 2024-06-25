@@ -8,6 +8,13 @@ export interface PostMetadata {
 }
 
 const posts = {
+  '2024-06-25-new-owners': {
+    title: 'Fider has new owners!',
+    category: 'Announcements',
+    publishedOn: new Date('2024-06-25T00:00:00Z'),
+    slug: '2024-06-25-new-owners',
+    excerpt: 'Exciting news! Fider has been acquired by a new team.',
+  },
   '2022-05-18-oauth-trusted-source': {
     title: 'We’ve simplified authentication management on private Fider sites, check this out!',
     category: 'New Features',
