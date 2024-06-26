@@ -77,7 +77,7 @@ export function Footer(): JSX.Element {
       </div>
       <div className="bg-white shadow-lg">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-          <p className="text-gray-500 text-sm text-center sm:text-left">© {new Date().getFullYear()} Fider</p>
+          <p className="text-gray-500 text-sm text-center sm:text-left">© {new Date().getFullYear()} Fider is a Northern App Labs Ltd project</p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 items-center justify-center sm:justify-start">
             <a className="text-gray-500 hover:text-black" href="https://github.com/getfider/fider" target="_blank" rel="noreferrer noopener">
               <GitHubLogo className="w-6" />
